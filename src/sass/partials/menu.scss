@@ -1,0 +1,56 @@
+
+
+.menu{
+    height:40px;
+    padding:25px;
+    transition: padding 500ms;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    top:0;
+
+    @include media-breakpoint-up(sm) {
+
+     }
+
+    @include media-breakpoint-up(md) {
+          padding: 50px;
+      }
+
+
+
+
+    @include media-breakpoint-up(lg) {
+
+     }
+    @include media-breakpoint-up(xl) {
+     }
+
+}
+.case-study-logo{
+  border: 0px solid red;
+    float: left;
+    width:140px;
+    transition: width 500ms;
+    img{
+      border: 0px solid red;
+      width:100%;
+    }
+
+    @include media-breakpoint-up(md) {
+          width: 160px;
+      }
+
+
+}
+
+.hamburger-menu{
+  margin-top:5px;
+  float: right;
+  width:30px;
+  img{
+          border: 0px solid red;
+          width:100%;
+  }
+
+}

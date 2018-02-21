@@ -1,0 +1,15 @@
+/* line 1, ../../sass/partials/image-grid.scss */
+.image-grid {
+  border: 1px solid red;
+  display: flex;
+  height: 1145px;
+  margin: 200px 0 200px 0;
+}
+/* line 6, ../../sass/partials/image-grid.scss */
+.image-grid div {
+  border: 1px solid pink;
+}
+/* line 8, ../../sass/partials/image-grid.scss */
+.image-grid div img {
+  width: 100%;
+}

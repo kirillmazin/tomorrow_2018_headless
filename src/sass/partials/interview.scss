@@ -1,0 +1,154 @@
+.interview{
+
+    background-color: #FFFFFF;
+    padding-top: 70px;
+    border: 0px solid red;
+
+    h1{
+        border:0px solid red;
+
+    }
+    .section-title{
+
+          margin:0;
+          padding: 0;
+          /*  background-image: url("../imgs/ui/line-gray.png");*/
+
+
+        /*  border: 0px solid red;*/
+
+
+
+        a{
+
+          background-image: linear-gradient(90deg, #EEEEEC, #EEEEEC);
+          background-repeat: no-repeat;
+          background-position: 0 20px;
+          color:$body-color;
+          text-decoration: none;
+          border:0px solid red;
+
+        }
+
+        a:hover{
+
+        }
+        /*
+
+          a{
+              background-image: linear-gradient(90deg, #EEEEEC, #EEEEEC);
+              background-position: 0 20px;
+              border: 0px solid red;
+              display:inline-block;
+              color:#000;
+
+          }*/
+    }
+
+
+/*
+    .strike{
+      position: relative;
+      display: inline-block;
+    }
+
+    .strike::before{
+      content:"";
+      border-bottom: 2px solid red;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+
+*/
+
+    .interview-work{
+        margin-bottom: 100px;
+
+        img{
+            width:100%;
+
+        }
+    }
+
+    .interview-content{
+        font-size: 1.7rem;
+        margin-top:50px;
+
+        padding-bottom: 30px;
+        @include media-breakpoint-up(sm) {
+            text-align:left;
+         }
+
+        @include media-breakpoint-up(md) {
+
+         }
+        @include media-breakpoint-up(lg) {
+            margin-top:75px;
+            padding-bottom: 70px;
+
+         }
+        @include media-breakpoint-up(xl) {
+
+
+         }
+
+
+        h4{
+            font-family: "Akkurat-Bold";
+            border:0px solid red;
+            margin:0 0 3rem 0;
+
+
+        }
+
+        h2{
+
+        }
+        p{
+          margin: 0 0 3rem 0;
+        }
+
+
+        .interview-photo{
+
+
+
+          text-align: center;
+
+          img{
+            width:80%;
+            margin-bottom:50px;
+            @include media-breakpoint-up(sm) {
+
+             }
+
+             @include media-breakpoint-up(md) {
+                border: 0px solid red;
+              }
+          }
+
+          @include media-breakpoint-up(sm) {
+              text-align:left;
+           }
+
+          @include media-breakpoint-up(md) {
+
+           }
+          @include media-breakpoint-up(lg) {
+
+
+           }
+          @include media-breakpoint-up(xl) {
+
+
+           }
+
+        }
+    }
+
+
+
+
+}

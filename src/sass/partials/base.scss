@@ -1,0 +1,46 @@
+
+
+html{
+    font-size:62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid{
+    border: 0px solid red;
+}
+
+body{
+    font-family: "Akkurat-Light";
+    background-color: #EEEEEC !important;
+    color: $body-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+
+
+}
+
+
+.component-margin{
+  border: 0px solid red;
+  margin: $component-margin-sm;
+  @include media-breakpoint-up(sm) {
+      margin: $component-margin-sm;
+   }
+
+  @include media-breakpoint-up(md) {
+      margin: $component-margin-md;
+    }
+
+
+
+
+  @include media-breakpoint-up(lg) {
+      margin: $component-margin-lg;
+
+   }
+  @include media-breakpoint-up(xl) {
+   }
+
+}

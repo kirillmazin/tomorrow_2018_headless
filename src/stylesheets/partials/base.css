@@ -1,0 +1,20 @@
+/* line 1, ../../sass/partials/base.scss */
+html {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 7, ../../sass/partials/base.scss */
+.container-fluid {
+  border: 1px solid red;
+}
+
+/* line 11, ../../sass/partials/base.scss */
+body {
+  font-family: "Akkurat-Light";
+  background-color: #EEEEEC !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}

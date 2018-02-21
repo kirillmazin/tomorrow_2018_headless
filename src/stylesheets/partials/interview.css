@@ -1,0 +1,41 @@
+/* line 1, ../../sass/partials/interview.scss */
+.interview {
+  background-color: #FFFFFF;
+  padding-top: 70px;
+}
+/* line 5, ../../sass/partials/interview.scss */
+.interview h1 {
+  border: 1px solid red;
+}
+/* line 9, ../../sass/partials/interview.scss */
+.interview h2 {
+  display: inline;
+  background-image: url("../imgs/ui/line-gray.png");
+  background-repeat: repeat-x;
+}
+
+/* line 28, ../../sass/partials/interview.scss */
+.interview-photo {
+  margin-bottom: 100px;
+}
+/* line 30, ../../sass/partials/interview.scss */
+.interview-photo img {
+  width: 100%;
+}
+
+/* line 36, ../../sass/partials/interview.scss */
+.interview-content {
+  font-size: 1.7rem;
+  margin-top: 75px;
+  padding-bottom: 70px;
+  border: 0px solid red;
+}
+/* line 41, ../../sass/partials/interview.scss */
+.interview-content h4 {
+  font-family: "Akkurat-Bold";
+  margin: 0 0 40px 0;
+}
+/* line 48, ../../sass/partials/interview.scss */
+.interview-content p {
+  margin: 0 0 40px 0;
+}

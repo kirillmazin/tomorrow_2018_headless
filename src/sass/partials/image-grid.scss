@@ -1,0 +1,60 @@
+.image-grid{
+  border: 0px solid red;
+
+  .image-horizontal:before{
+    content:"";
+    display: block;
+    padding-top: 50%;
+
+
+  }
+
+  .image-vertical:before{
+    content:"";
+    display: block;
+    padding-top: 110%;
+    border:1px solid red;
+  }
+
+
+
+
+
+
+    .image-horizontal, .image-vertical{
+
+        width:100%;
+        .image-source{
+          position: absolute;
+          top:0;
+          left:0;
+          bottom: 0;
+          right: 0;
+          background-size:100% auto;
+          background-position:"center center";
+          background-repeat:no-repeat;
+        }
+    }
+
+
+
+}
+
+.image_tile_left{
+    margin-top:0;
+    border:0px solid red;
+    margin-top:200px;
+
+}
+
+.row_1{
+
+
+
+}
+
+.row_2{
+
+
+
+}

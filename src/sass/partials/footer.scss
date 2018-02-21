@@ -1,0 +1,126 @@
+
+
+
+
+footer{
+    margin-bottom:15rem;
+
+    .phone{
+
+      margin: 0 0 0 -12px;
+      padding: 0;
+    }
+    .email{
+
+
+            font-family: "Akkurat-Light";
+
+            background-position: 0 15px;
+            border: 0px solid red;
+            display: inline-block;
+            margin: 0 0 0 0px;
+            padding: 0 0 0 0;
+            font-size: 1.7rem;
+            @include media-breakpoint-up(md) {
+
+                background-position: 0 0px;
+             }
+            @include media-breakpoint-up(lg) { }
+            @include media-breakpoint-up(xl) { }
+
+
+
+              a{
+
+                background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+                background-image: linear-gradient(90deg, #fff, #fff);
+                background-repeat: no-repeat;
+                background-position: 0 19px;
+                background-size: 0% 100%;
+                color:$body-color;
+                text-decoration: none;
+                border:0px solid red;
+                transition: background-size 500ms;
+
+              }
+
+              a:hover{
+                transition: background-size 500ms;
+                transition-timing-function: ease-in;
+                    background-size: 100% 100%;
+
+              }
+
+    }
+
+
+    a{
+      margin:0;
+      padding: 0;
+      color: $color-footer-link;
+
+
+
+
+    }
+
+
+
+    h4{
+        border-bottom: 1px solid black;
+        font-family:$font-serif-bold;
+        font-size: 2rem;
+        margin:0;
+        padding:0 0 1rem 0;
+        @include media-breakpoint-up(md) {
+            padding:0 0 2.6rem 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 3.6rem;
+
+        }
+
+
+        @include media-breakpoint-up(xl) {
+
+
+        }
+    }
+
+    address, div{
+        margin:0;
+        padding:10px 0 0 0;
+        font-size: 1.7rem;
+        border: 0px solid red;
+        transition: all 1s;
+    }
+
+    .social-media{
+      display: flex;
+      border: 0px solid red;
+      @include media-breakpoint-up(sm) {
+        margin-top: 10px;
+      }
+      @include media-breakpoint-up(md) {
+          justify-content: flex-end;
+      }
+
+
+
+      img{
+        border: 0px solid red;
+        margin-right: 15px;
+        margin-top: 10px;
+        @include media-breakpoint-up(md) {
+            margin-left: 20px;
+            margin-top:0;
+            margin-right: 0;
+        }
+
+      }
+    }
+
+
+
+}

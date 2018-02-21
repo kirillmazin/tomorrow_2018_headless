@@ -1,0 +1,65 @@
+$margin-sm: 40px;
+$margin-md: 40px;
+
+.website-module{
+
+    display: flex;
+
+
+    .overlap{
+
+         border:0px solid green;
+         position: relative;
+
+        @include media-breakpoint-up(xs) {  }
+
+        @include media-breakpoint-up(md) { border:0px solid pink; }
+        @include media-breakpoint-up(lg) { border:0px solid red;}
+        @include media-breakpoint-up(xl) { border:0px solid green;}
+
+    }
+    .browser{
+
+        position: relative;
+         @include media-breakpoint-up(md) {  }
+         @include media-breakpoint-up(lg) { position: absolute;}
+         @include media-breakpoint-up(xl) {  position: absolute;}
+
+
+        img{
+            width:100%;
+        }
+    }
+
+    .ipad-overlap{
+      margin-top:25px;
+      transition: margin 1s;
+      margin-top:25px;
+      @include media-breakpoint-up(md) { margin-top:$margin-md; }
+      @include media-breakpoint-up(lg) { margin-top: 300px;}
+      @include media-breakpoint-up(xl) { margin-top: 400px;}
+
+
+        img{
+            width:100%;
+
+        }
+
+    }
+
+
+    div.ipad{
+        margin-top:25px;
+        transition: margin 1s;
+        @include media-breakpoint-up(md) { margin:$margin-md 0 0 0; }
+        @include media-breakpoint-up(lg) { margin:200px 0 0 0;}
+        @include media-breakpoint-up(xl) { margin:200px 0 0 0;}
+        img{
+            width:100%;
+        }
+
+    }
+
+
+
+}

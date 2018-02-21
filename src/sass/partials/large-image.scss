@@ -1,0 +1,16 @@
+.large-image{
+    border: 0px solid red;
+    margin:0;
+    padding: 0;
+  .image{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-size:100% auto;
+    background-position:"center center";
+    background-repeat:no-repeat;
+  }
+
+}
