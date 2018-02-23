@@ -14,13 +14,13 @@ class Menu extends Component {
     return (
 
 
+      
 
-      <Router>
       <div className="menu">
-            <div className="case-study-logo"><Link to="/"><img src={Img_logo} /></Link></div>
+            <div className="case-study-logo"><Link to="/work/"><img src={Img_logo} /></Link></div>
             <div className="hamburger-menu"><img src={Img_hm}  /></div>
       </div>
-      </Router>
+
 
     );
   }

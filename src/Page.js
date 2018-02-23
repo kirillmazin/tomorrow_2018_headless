@@ -10,6 +10,7 @@ import Whatwedid from './components/casestudies/Whatwedid';
 import Window from './components/casestudies/Window';
 import Footer from './components/_globals/Footer';
 import Interview from './components/casestudies/Interview';
+import Menu from './components/_globals/Menu.js';
 // Declare your component
 export default class Page extends React.Component {
 
@@ -52,7 +53,7 @@ export default class Page extends React.Component {
     // We will fill in this section in Step 3...
     if (this.state.doc) {
       // process the object
-      console.log(this.state.doc.data)
+    
       let cs_modules = [];
       const subtitle = this.state.doc.data.subtitle[0].text;
       const title = this.state.doc.data.title[0].text;
@@ -160,6 +161,8 @@ export default class Page extends React.Component {
 
 
     return(
+      <div>
+          <Menu/>
       <div className="case-study">
 
       <Window image={hero_image} title={title} subtitle={subtitle}/>
@@ -169,7 +172,7 @@ export default class Page extends React.Component {
               <Footer/>
         </div>
       </div>
-
+      </div>
     );
 
 

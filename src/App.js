@@ -16,7 +16,7 @@ import Footer from './components/_globals/Footer.js';
 const App = (props) => (
 
 <div>
-  <Menu />
+
   <Main prismicCtx={props.prismicCtx}/>
 
 

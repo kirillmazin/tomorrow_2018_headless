@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll'
 
-
+import Fade from 'react-reveal/Fade';
 class LargeImage extends Component {
 
   render(props) {
@@ -30,6 +30,7 @@ class LargeImage extends Component {
 
 
         <ScrollAnimation animateIn="slideInUp" animateOnce="true" offset={0} >
+        
           <div className="component-margin">
             <span style={style2}></span>
             <div className="large-image">
@@ -41,6 +42,7 @@ class LargeImage extends Component {
 
             </div>
           </div>
+        
         </ScrollAnimation>
 
 
