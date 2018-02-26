@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import Fade from 'react-reveal/Fade';
 class ImageGridTwoImages extends Component {
 
 
@@ -21,7 +21,7 @@ class ImageGridTwoImages extends Component {
       <div class="image-grid component-margin row no-gutters">
 
 
-
+    <Fade bottom>
 
 
 
@@ -29,11 +29,11 @@ class ImageGridTwoImages extends Component {
 
               <div className="image_tile_left image_tile col-6">
 
-                <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+                
                 <div className="image-vertical left-image">
                     <div className="image-source " style={imageVertical_1}></div>
                 </div>
-              </ScrollAnimation>
+        
 
             </div>
 
@@ -41,14 +41,14 @@ class ImageGridTwoImages extends Component {
 
               <div className="image_tile col-6">
 
-<ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+
                 <div className="image-vertical">
                     <div className="image-source" style={imageVertical_2}></div>
                 </div>
-</ScrollAnimation>
+
 
             </div>
-
+</Fade>
       </div>
 
 

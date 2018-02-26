@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import ScrollAnimation from 'react-animate-on-scroll'
+import Fade from 'react-reveal/Fade';
 
 class Window extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class Window extends React.Component {
     }
 
 
-    console.log(style);
+
       return (
 
       <div className="case-study-hero" ref={el => this.el = el} >
@@ -72,12 +72,11 @@ class Window extends React.Component {
         <div className="container">
 
          <div className="case-study-header">
-            <ScrollAnimation animateIn={effect} animateOnce="true">
+              <Fade bottom>
                <h4>{this.props.subtitle}</h4>
-                 </ScrollAnimation>
-                 <ScrollAnimation animateIn={effect} animateOnce="true">
+
                <h1>{this.props.title}</h1>
-               </ScrollAnimation>
+               </Fade>
            </div>
 
        </div>

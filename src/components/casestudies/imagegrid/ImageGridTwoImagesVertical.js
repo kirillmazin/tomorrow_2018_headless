@@ -28,7 +28,7 @@ class ImageGridTwoImagesVertical extends Component {
 
 
       <div className="image-grid component-margin">
-        <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+      
           <div className="row no-gutters col-lg-10 offset-lg-2">
 
 
@@ -39,8 +39,8 @@ class ImageGridTwoImagesVertical extends Component {
 
 
         </div>
-      </ScrollAnimation>
-      <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+  
+      
           <div className="row no-gutters col-lg-6">
 
 
@@ -50,7 +50,7 @@ class ImageGridTwoImagesVertical extends Component {
 
 
         </div>
-      </ScrollAnimation>
+      
       </div>
 
 

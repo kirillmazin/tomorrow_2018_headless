@@ -15,10 +15,24 @@ class Tags extends Component {
        
     this.state = {
       tags: this.props.elements,
-      styles: ["selected","normal","normal","normal","normal","normal"],
+      styles: [],
       selected:'Everything'
     };
+    //this.state.tags.push("selected")
+    
+      
+    this.state.styles.push("selected");
+    for(let i=0;i<this.props.elements.length-1;i++){
+    
+      this.state.styles.push("normal")
+    //  this.state.tags.push("normal")
+  } 
+
   }
+
+  
+  
+  
   
   buildTags(){
     var tags = [];
@@ -50,9 +64,7 @@ class Tags extends Component {
     let tagStyles = this.state.styles.slice();
     tagStyles = tagStyles.map((x) => x = "normal");
    
-    console.log(" we have a click " + id);
-    
-    console.log("Selected " + this.state.tags[id]);
+  
 
     tagStyles[id] = "selected"
     
@@ -64,8 +76,11 @@ class Tags extends Component {
   }
   
   render() {
-      console.log(this.state.tags[0])
-
+      
+    
+    
+  
+      let mytext = "We cross sectors and merge mindsets to find creative impactful solutions for every kind of client";
     return (
 
 
@@ -76,7 +91,8 @@ class Tags extends Component {
       
   <div>
   <div className="container">
-      <Intro copy="We cross sectors and merge mindsets to find creative impactful solutions for every kind of client"/> 
+
+      <Intro introtext={mytext}/> 
         
           <div className="tags">
           {this.buildTags()}

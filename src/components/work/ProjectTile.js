@@ -8,37 +8,37 @@ import { BrowserRouter as Router,Link} from 'react-router-dom'
  * This is a quote component used on the case study page
  */
 class ProjectTile extends Component {
-  
+
   constructor(props) {
     super(props);
-      
+
     this.state = {
-      
+
       show: true
     };
   }
-  
-  
+
+
   render() {
     //  console.log("selected " +  this.props.show);
     //  console.log(this.props.data.area_of_expertise);
       let isHide = true;
-      
+
       if(isHide && this.props.show != "Everything"){
         for(let i=0;i<this.props.data.area_of_expertise.length;i++){
           if( this.props.show == this.props.data.area_of_expertise[i]){
             isHide = false;
             break;
-          } 
-        
-        
-      } 
+          }
+
+
+      }
     } else {
       isHide = false;
     }
-      
-      console.log("Should we hide this? " + isHide);
-      
+
+
+
       if(isHide === false){
     return (
 
@@ -49,21 +49,21 @@ class ProjectTile extends Component {
 
       <div className="col-6">
     <div className="projectTile ">
-    
-      <p><Link to={this.props.data.uid}><img src={this.props.data.hero_image}/></Link></p>
+    <Link to={this.props.data.uid}>
+      <p><img src={this.props.data.hero_image}/></p>
       <h4> {this.props.data.title}</h4>
       <h2> {this.props.data.subtitle} </h2>
-      
+      </Link>
       </div>
-    
+
       </div>
   </Fade>
     );
-    
+
   } else{
       return'';
   }
-  
+
   }
 }
 /** @component */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll'
+import Fade from 'react-reveal/Fade';
 
 
 class Whatwedid extends Component {
@@ -30,8 +30,7 @@ class Whatwedid extends Component {
 
 
     }
-    const animation = "slideInUp";
-    const animateOnce = "true";
+
 
     return (
 
@@ -41,19 +40,21 @@ class Whatwedid extends Component {
 
       <div className="what-we-did row no-gutters component-margin">
 
-
+<Fade bottom cascade>
           <div className="col-lg-3 offset-lg-1">
 
 
 
-              <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+            
                 <h2 className="section-title"><a href="">What we did</a></h2>
-                  </ScrollAnimation>
+            
 
         </div>
+</Fade>  
 
+<Fade bottom cascade>
           <div className="col-lg-3">
-            <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+            
             <ul>
                 {
 
@@ -66,10 +67,13 @@ class Whatwedid extends Component {
                 }
 
             </ul>
-          </ScrollAnimation>
+        
           </div>
+          
+          </Fade>
+          <Fade bottom cascade>
           <div className="col-lg-5">
-            <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+            
             <ul>
               {
 
@@ -82,9 +86,9 @@ class Whatwedid extends Component {
               }
 
               </ul>
-                </ScrollAnimation>
+              
           </div>
-
+</Fade>
 
 
 

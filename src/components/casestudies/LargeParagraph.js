@@ -18,7 +18,7 @@ class LargeParagraph extends Component {
       <div className="row no-gutters comp component-margin">
 
 
-<Fade bottom cascade>
+        <Fade bottom cascade>
           <div className="large-paragraph col-lg-7 offset-lg-4">
             
               <p>
@@ -26,13 +26,7 @@ class LargeParagraph extends Component {
               </p>
               
               </div>
-</Fade>
-
-
-
-
-
-
+        </Fade>
       </div>
 
 

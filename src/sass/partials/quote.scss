@@ -1,11 +1,12 @@
 .quote{
     font-weight: bold;
+    border: 0px solid red;
     font-size: 2.7rem;
     font-family: "Tiempos-Bold";
     line-height: 120%;
     background-image: url("../imgs/ui/line-black-60-9.svg");
     background-repeat: no-repeat;
-    padding: 0 0 25px 0;
+    padding: 0 0 4rem 0;
     background-position: bottom left;
     transition: font-size 1s;
 

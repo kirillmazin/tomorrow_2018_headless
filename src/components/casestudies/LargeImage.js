@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll'
+
 
 import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
 class LargeImage extends Component {
 
   render(props) {
 
-    console.log(this.props.aspect_ratio)
+  
     const style = {
 
         backgroundImage: "url(" + this.props.image + ")"
@@ -17,7 +18,7 @@ class LargeImage extends Component {
 
     }
 
-    const style2 = {
+    const image_height = {
       border:'0px solid red',
       'paddingTop': 100/this.props.aspect_ratio+'%',
        display:'block'
@@ -29,11 +30,11 @@ class LargeImage extends Component {
 
 
 
-        <ScrollAnimation animateIn="slideInUp" animateOnce="true" offset={0} >
-        
-          <div className="component-margin">
-            <span style={style2}></span>
-            <div className="large-image">
+      <div className="component-margin">
+
+
+            <Fade bottom cascade>
+            <div className="large-image" style={image_height}>
 
 
 
@@ -41,9 +42,9 @@ class LargeImage extends Component {
 
 
             </div>
-          </div>
-        
-        </ScrollAnimation>
+            </Fade>
+
+    </div>
 
 
     );

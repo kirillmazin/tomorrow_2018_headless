@@ -10,7 +10,11 @@ import Whatwedid from './components/casestudies/Whatwedid';
 import Window from './components/casestudies/Window';
 import Footer from './components/_globals/Footer';
 import Interview from './components/casestudies/Interview';
+import ImageGrid from './components/casestudies/ImageGrid';
 import Menu from './components/_globals/Menu.js';
+import Research from './components/casestudies/Research';
+import Website from './components/casestudies/Website';
+
 // Declare your component
 export default class Page extends React.Component {
 
@@ -21,6 +25,7 @@ export default class Page extends React.Component {
 
   componentWillMount() {
     this.fetchPage(this.props);
+    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(props) {
@@ -29,6 +34,7 @@ export default class Page extends React.Component {
 
   componentDidUpdate() {
     this.props.prismicCtx.toolbar();
+    window.scrollTo(0, 0);
   }
 
   fetchPage(props) {
@@ -53,33 +59,64 @@ export default class Page extends React.Component {
     // We will fill in this section in Step 3...
     if (this.state.doc) {
       // process the object
-    
+
+
+
       let cs_modules = [];
       const subtitle = this.state.doc.data.subtitle[0].text;
       const title = this.state.doc.data.title[0].text;
       const hero_image = this.state.doc.data.hero_image.url;
 
-      //console.log(this.state.doc.data)
-    //  console.log(this.state.doc.data.hero_image)
+
 
 
 
 
       for(var i=0; i<this.state.doc.data.body.length;i++){
-      //  console.log(this.state.doc.data.body[i])
+
         let slice_type = this.state.doc.data.body[i].slice_type;
         let o = {};
 
         o.slice_type = slice_type;
-        console.log("----- " + o.slice_type)
+
+
+
+        if(o.slice_type == "research"){
+
+          o.research_title = this.state.doc.data.body[i].primary.research_title[0].text;
+          o.research_items = this.state.doc.data.body[i].items;
+
+        }
+
+        if(o.slice_type == "website"){
+          console.log("Website module");
+          o.layout_type = this.state.doc.data.body[i].primary.type;
+          o.image_items = this.state.doc.data.body[i].items;
+            console.log("-----");
+            console.log(o.image_items);
+          console.log(this.state.doc.data.body[i]);
+          //o.research_title = this.state.doc.data.body[i].primary.research_title[0].text;
+          //o.research_items = this.state.doc.data.body[i].items;
+
+        }
+
+
         if(o.slice_type == "what_we_did"){
-          o.scope = [];
-            console.log(this.state.doc.data.body[i].items);
+            o.scope = [];
+
             for(var l=0;l<this.state.doc.data.body[i].items.length;l++){
-              //  console.log("---"+ this.state.doc.data.body[i].items[l].work_item);
                 o.scope.push(this.state.doc.data.body[i].items[l].work_item);
             }
 
+        }
+
+        if(o.slice_type == "grid_of_images"){
+
+            o.images = [];
+            console.log(this.state.doc.data.body[i]);
+            for(let l=0;l<this.state.doc.data.body[i].items.length;l++){
+                o.images.push(this.state.doc.data.body[i].items[l].image.url)
+            }
         }
         if(  o.slice_type == "large_paragraph"){
 
@@ -88,40 +125,37 @@ export default class Page extends React.Component {
         }
 
           if( o.slice_type == "quote"){
-              //o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
-
                 o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
           }
 
 
             if( o.slice_type == "large_image"){
-
-
               o.image_width =  this.state.doc.data.body[i].primary.image.dimensions.width;
               o.image_height = this.state.doc.data.body[i].primary.image.dimensions.height;
               o.aspect_ratio = o.image_width / o.image_height ;
-
-
               o.image = this.state.doc.data.body[i].primary.image.url;
-
             }
-            
-            
+
+
             if( o.slice_type == "interview"){
-              console.log(" we have an interview");
-              console.log(this.state.doc.data.body[i].primary);
+
+              console.log(this.state.doc.data.body[i].items);
+
+              o.questions = this.state.doc.data.body[i].items;
+
+
               //console.log(this.state.doc.data.primary[0]);
-              
+
               o.interview_title = this.state.doc.data.body[i].primary.interview_title[0].text;
               o.staff_photo = this.state.doc.data.body[i].primary.staff_photo.url;
               o.work_sample = this.state.doc.data.body[i].primary.work_sample.url;
-              console.log(o.staff_photo);
+
                 //o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
 
                   //o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
             }
-            
-            
+
+
 
         cs_modules.push(o);
       }
@@ -141,6 +175,12 @@ export default class Page extends React.Component {
 
           }
 
+          if(cs_modules[i].slice_type  == "grid_of_images"){
+            to_render.push(<ImageGrid images={cs_modules[i].images}/>)
+
+
+          }
+
           if(cs_modules[i].slice_type == "large_image"){
 
             to_render.push(<LargeImage image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
@@ -150,13 +190,21 @@ export default class Page extends React.Component {
           if(cs_modules[i].slice_type == "what_we_did"){
               to_render.push(<Whatwedid scope={cs_modules[i].scope}/>);
           }
-          
+
           if(cs_modules[i].slice_type == "interview"){
-              to_render.push(<Interview image={cs_modules[i].work_sample} staff_photo={cs_modules[i].staff_photo} interview_title={cs_modules[i].interview_title}/>);
+              to_render.push(<Interview image={cs_modules[i].work_sample} staff_photo={cs_modules[i].staff_photo} interview_title={cs_modules[i].interview_title} questions={cs_modules[i].questions}/>);
           }
-        
-          
-          
+
+          if(cs_modules[i].slice_type == "research"){
+              to_render.push(<Research title={cs_modules[i].research_title} research_items={cs_modules[i].research_items}/>);
+          }
+
+          if(cs_modules[i].slice_type == "website"){
+              to_render.push(<Website  layout_type={cs_modules[i].layout_type} image_items={cs_modules[i].image_items}/>);
+          }
+
+
+
     }
 
 

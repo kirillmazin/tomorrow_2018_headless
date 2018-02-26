@@ -1,7 +1,9 @@
 .large-image{
-    border: 0px solid red;
+    border: 1px solid red;
     margin:0;
     padding: 0;
+    position: relative;
+  
   .image{
     position: absolute;
     top:0;

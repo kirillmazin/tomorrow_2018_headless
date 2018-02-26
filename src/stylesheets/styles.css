@@ -6902,7 +6902,7 @@ footer {
     content: "";
     display: block;
     padding-top: 110%;
-    border: 1px solid red; }
+    border: 0px solid red; }
   .image-grid .image-horizontal, .image-grid .image-vertical {
     width: 100%; }
     .image-grid .image-horizontal .image-source, .image-grid .image-vertical .image-source {
@@ -7002,12 +7002,13 @@ footer {
 
 .quote {
   font-weight: bold;
+  border: 0px solid red;
   font-size: 2.7rem;
   font-family: "Tiempos-Bold";
   line-height: 120%;
   background-image: url("../imgs/ui/line-black-60-9.svg");
   background-repeat: no-repeat;
-  padding: 0 0 25px 0;
+  padding: 0 0 4rem 0;
   background-position: bottom left;
   transition: font-size 1s; }
   @media (min-width: 768px) {
@@ -7018,9 +7019,10 @@ footer {
       font-size: 5rem; } }
 
 .large-image {
-  border: 0px solid red;
+  border: 1px solid red;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  position: relative; }
   .large-image .image {
     position: absolute;
     top: 0;
@@ -7055,6 +7057,9 @@ footer {
 .projectTile h2 {
   font-size: 3rem;
   margin: 0 0 20rem 0; }
+.projectTile a {
+  text-decoration: none;
+  color: black; }
 
 .tags {
   border: 0px solid red;

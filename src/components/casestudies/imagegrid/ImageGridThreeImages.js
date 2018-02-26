@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
-
+import Fade from 'react-reveal/Fade';
 class ImageGridThreeImages extends Component {
 
 
@@ -27,35 +26,39 @@ class ImageGridThreeImages extends Component {
 
           <div className="row no-gutters row_1">
 
-
+    <Fade bottom>
                     <div className="image_tile_left col-6">
-                        <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+                        
                               <div className="image-vertical left-image">
                                   <div className="image-source" style={imageVertical_1}></div>
                               </div>
-                            </ScrollAnimation>
+                            
                             </div>
+</Fade>
 
-
-
+    <Fade bottom>
                       <div className="image_tile col-6">
-                        <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+                      
                               <div className="image-vertical">
                                 <div className="image-source" style={imageVertical_2}></div>
                             </div>
-                          </ScrollAnimation>
+                        
                      </div>
-
+</Fade>
               </div>
 
               <div className="row no-gutters">
+              
+                  <Fade bottom>
                   <div className="image_tile col-6 offset-6">
-                    <ScrollAnimation animateIn={animation} animateOnce={animateOnce}>
+                    
                       <div className="image-vertical">
                           <div className="image-source" style={imageVertical_3}></div>
                       </div>
-                    </ScrollAnimation>
+                  
                     </div>
+                    
+                    </Fade>
                 </div>
 
 

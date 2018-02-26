@@ -73,7 +73,8 @@ export default class Work extends React.Component {
     
     
       if (this.state.doc) {
-        
+        console.log("")
+        console.log(this.state.doc)
         let cms_data = [];
         let all_areas_of_expertise = ["Everything"];
         let all_projects = []
@@ -89,16 +90,12 @@ export default class Work extends React.Component {
             
             let project_data = {};
             project_data.title = this.state.doc.results[i].data.title[0].text;
-            project_data.subtitle = this.state.doc.results[i].data.subtitle[0].text;
+            project_data.subtitle =  this.state.doc.results[i].data.subtitle[0] != undefined ? this.state.doc.results[i].data.subtitle[0].text : '';
             project_data.hero_image = this.state.doc.results[i].data.hero_image.url;
             project_data.uid = this.state.doc.results[i].uid;
             project_data.area_of_expertise = [];
-            console.log("data --------")
-            console.log(this.state.doc.results[i]);
-            console.log("title " + this.state.doc.results[i].data.title[0].text);
-            console.log("subtitle " + this.state.doc.results[i].data.subtitle[0].text);
             
-            console.log("hero image " + project_data.hero_image);
+              console.log("subtitle " + project_data.subtitle);
             
             for(let l=0;l<this.state.doc.results[i].data.area_of_expertise.length;l++){
               let area = this.state.doc.results[i].data.area_of_expertise[l].area;

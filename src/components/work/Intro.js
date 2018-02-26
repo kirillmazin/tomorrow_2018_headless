@@ -22,7 +22,7 @@ class Tag extends Component {
 
 
 
-        {this.props.copy}
+        {this.props.introtext}
 
 
       </div>

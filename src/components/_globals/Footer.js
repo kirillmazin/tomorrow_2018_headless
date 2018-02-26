@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Fade from 'react-reveal/Fade';
 class Footer extends Component {
 
   constructor(props){
@@ -41,11 +41,16 @@ class Footer extends Component {
 
 
       <footer className="component-margin">
+    
+        <Fade bottom>
         <h4 className="row no-gutters ">
+        
            Let’s imagine tomorrow together.
-
+           
         </h4>
+        </Fade>
         <div className="row no-gutters ">
+          <Fade bottom>
         <address className="col-md-4 col-lg-3">
 
                 2332 Fifth Street<br/>
@@ -65,7 +70,9 @@ class Footer extends Component {
                   <a href="https://www.instagram.com/tomorrowpartners/"><img src="/imgs/case-studies/yerba-buena/icon-instagram.svg" /></a>
 
             </div>
+            </Fade>
         </div>
+        
       </footer>
 
 

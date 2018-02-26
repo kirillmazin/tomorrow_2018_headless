@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll'
+import Fade from 'react-reveal/Fade';
 class Header extends Component {
   render() {
     const effect = "slideInUpCustom";
@@ -21,12 +21,11 @@ class Header extends Component {
          <div className="container">
 
           <div className="case-study-header">
-             <ScrollAnimation animateIn={effect} animateOnce="true">
+          <Fade bottom>
                 <h4>{this.props.subtitle}</h4>
-                  </ScrollAnimation>
-                  <ScrollAnimation animateIn={effect} animateOnce="true">
+
                 <h1>{this.props.title}</h1>
-                </ScrollAnimation>
+          </Fade>
             </div>
 
         </div>
