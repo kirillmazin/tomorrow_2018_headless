@@ -1,6 +1,8 @@
 .research{
 
-
+  .section-title{
+    width:50%;
+  }
 }
 
 .stats{
@@ -52,58 +54,5 @@ h2.research-number{
     @include media-breakpoint-up(xl) { }
 
 
-
-}
-
-
-.research{
-    h2{
-
-    }
-
-    ul{
-            border: 10px solid red;
-            display: flex;
-            list-style-type:none;
-            margin:0;
-            padding:0;
-            flex-direction: row;
-            flex-wrap:wrap;
-            height:600px;
-            align-items: center;
-            /*justify-content: flex-end;
-            justify-content: space-between;*/
-        li{
-            border-top:4px solid $color-blue;
-            width:195px;
-
-
-            font-size:4.8rem;
-            color: $color-blue;
-            font-family: "Akkurat-Regular";
-        }
-        li:first-child{
-            background: #ffffff;
-            opacity: 0.1;
-
-        }
-        li:nth-child(2){
-            background: #ffffff;
-            opacity: 0.3;
-            align-self: flex-end;
-        }
-         li:nth-child(3){
-            background: #ffffff;
-            opacity: 0.4;
-        }
-          li:nth-child(4){
-            background: #ffffff;
-            opacity: 0.5;
-        }
-         li:last-child{
-            background: #ffffff;
-            opacity: 1;
-        }
-    }
 
 }

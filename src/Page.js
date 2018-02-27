@@ -89,14 +89,10 @@ export default class Page extends React.Component {
         }
 
         if(o.slice_type == "website"){
-          console.log("Website module");
+
           o.layout_type = this.state.doc.data.body[i].primary.type;
           o.image_items = this.state.doc.data.body[i].items;
-            console.log("-----");
-            console.log(o.image_items);
-          console.log(this.state.doc.data.body[i]);
-          //o.research_title = this.state.doc.data.body[i].primary.research_title[0].text;
-          //o.research_items = this.state.doc.data.body[i].items;
+
 
         }
 
@@ -111,11 +107,27 @@ export default class Page extends React.Component {
         }
 
         if(o.slice_type == "grid_of_images"){
-
+            o.grid_type = this.state.doc.data.body[i].primary.grid_type;
             o.images = [];
-            console.log(this.state.doc.data.body[i]);
+
             for(let l=0;l<this.state.doc.data.body[i].items.length;l++){
-                o.images.push(this.state.doc.data.body[i].items[l].image.url)
+
+                let img_obj = {};
+
+
+
+                //o.images.push(this.state.doc.data.body[i].items[l].image.url)
+
+                o.image_width =  this.state.doc.data.body[i].items[l].image.dimensions.width;
+                o.image_height = this.state.doc.data.body[i].items[l].image.dimensions.height;
+
+
+                img_obj.url  =  this.state.doc.data.body[i].items[l].image.url;
+                img_obj.aspect_ratio = o.image_width / o.image_height;
+
+                o.images.push(img_obj);
+
+
             }
         }
         if(  o.slice_type == "large_paragraph"){
@@ -176,7 +188,7 @@ export default class Page extends React.Component {
           }
 
           if(cs_modules[i].slice_type  == "grid_of_images"){
-            to_render.push(<ImageGrid images={cs_modules[i].images}/>)
+            to_render.push(<ImageGrid images={cs_modules[i].images} grid_type={cs_modules[i].grid_type}/>)
 
 
           }

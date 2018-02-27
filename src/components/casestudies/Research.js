@@ -19,7 +19,7 @@ class Research extends Component {
 
 
   render() {
-      console.log("RESEARCH ITEMS ");
+
     console.log(this.props.research_items);
     return (
 
@@ -32,7 +32,7 @@ class Research extends Component {
 
 
       <Fade bottom cascade>
-        <div className="row">
+        <div className="row  no-gutters">
         <div  className="col-lg-3 offset-lg-1">
           <h2 className="section-title"><a href="">{this.props.title}</a></h2 >
         </div>

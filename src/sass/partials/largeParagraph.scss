@@ -8,7 +8,7 @@
         font-size: 1.8rem;
         font-family: "Akkurat-Light";
         line-height: 130%;
-        margin: $component-margin-sm;
+
 
 
 
@@ -16,7 +16,7 @@
       @include media-breakpoint-up(sm) {
         p{
           font-size: 2.4rem;
-          margin: $component-margin-sm;
+
         }
 
 
@@ -26,7 +26,7 @@
       @include media-breakpoint-up(md) {
         p{
           font-size: 2.4rem;
-          margin: $component-margin-md;
+
         }
 
 
@@ -36,7 +36,7 @@
 
                     p{
                       font-size: 3rem;
-                      margin: $component-margin-md;
+                      
                     }
 
        }

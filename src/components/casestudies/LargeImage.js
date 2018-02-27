@@ -7,7 +7,7 @@ class LargeImage extends Component {
 
   render(props) {
 
-  
+
     const style = {
 
         backgroundImage: "url(" + this.props.image + ")"
@@ -35,8 +35,6 @@ class LargeImage extends Component {
 
             <Fade bottom cascade>
             <div className="large-image" style={image_height}>
-
-
 
               <div class="image" style={style}></div>
 

@@ -41,9 +41,9 @@ class Interview extends Component {
 
 
 
-  <Fade bottom>
-      <div className="interview component-margin">
 
+      <div className="interview component-margin">
+            <Fade bottom>
             <div className="interview-work col-lg-10 offset-lg-1">
               <Fade bottom>
                 <img src={this.props.image} />
@@ -77,9 +77,9 @@ class Interview extends Component {
                 </div>
 
             </div>
-
+              </Fade>
       </div>
-</Fade>
+
 
     );
   }

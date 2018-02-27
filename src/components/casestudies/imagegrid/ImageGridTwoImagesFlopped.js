@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
-class ImageGridTwoImages extends Component {
+class ImageGridTwoImagesFlopped extends Component {
 
 
 
@@ -35,7 +35,10 @@ class ImageGridTwoImages extends Component {
          display:'block'
       }
 
-    
+
+
+
+
 
     return (
 
@@ -44,50 +47,43 @@ class ImageGridTwoImages extends Component {
 
 
 
+      <div className="image-grid component-margin row no-gutters">
+
+
+    <Fade bottom>
 
 
 
 
 
-
-    <div class="image-grid component-margin row no-gutters">
-
-
-  <Fade bottom>
+              <div className="col-sm-12 col-md-6">
 
 
+                <div className="image-tile" style={image_height_1}>
+                    <div className="image" style={imageVertical_1}> ></div>
+                </div>
 
 
-
-            <div className="col-sm-12 col-md-6  shift-bottom-200">
-
-
-              <div className="image-tile" style={image_height_1}>
-                  <div className="image" style={imageVertical_1}> </div>
-              </div>
-
-
-          </div>
+            </div>
 
 
 
-            <div className="col-sm-12 col-md-6">
+              <div className="col-sm-12 col-md-6 shift-bottom-200">
 
 
-              <div className="image-tile" style={image_height_2}>
-                  <div className="image" style={imageVertical_2} ></div>
-              </div>
+                <div className="image-tile" style={image_height_2}>
+                    <div className="image" style={imageVertical_2} ></div>
+                </div>
 
 
-          </div>
+            </div>
+        
 </Fade>
-    </div>
-
-
+      </div>
 
 
     );
   }
 }
 
-export default ImageGridTwoImages;
+export default ImageGridTwoImagesFlopped;

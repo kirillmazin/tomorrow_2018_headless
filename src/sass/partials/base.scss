@@ -12,7 +12,8 @@ html{
 
 body{
     font-family: "Akkurat-Light";
-    background-color: #EEEEEC !important;
+
+    background-color: $color-background !important;
     color: $body-color;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

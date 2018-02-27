@@ -10,17 +10,18 @@ class Quote extends Component {
     return (
 
 
+          <Fade bottom>
+          <div className="no-gutters row">
+      <div className="col-md-10 col-lg-8 col-xl-8 component-margin">
 
-      
-      <div className="no-gutters col-md-10 col-lg-8 col-xl-8 component-margin">
-      <Fade bottom>
         <p className="quote">
 
             {this.props.copy}
         </p>
-</Fade>
+
       </div>
-      
+      </div>
+</Fade>
 
     );
   }

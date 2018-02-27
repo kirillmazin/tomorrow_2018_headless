@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Fade from 'react-reveal/Fade';
 class Website extends Component {
   constructor(props){
     super(props);
@@ -29,7 +29,7 @@ class Website extends Component {
           let img_2 = (this.props.image_items[1] != undefined) ? this.props.image_items[1].image.url : "";
           let img_3 = (this.props.image_items[2] != undefined) ? this.props.image_items[2].image.url : "";
           return (
-
+          
             <div class="website-module row no-gutters component-margin">
 
                   <div class="overlap row no-gutters">
