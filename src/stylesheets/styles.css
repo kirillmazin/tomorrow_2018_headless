@@ -6578,9 +6578,9 @@ body {
 .case-study-hero {
   height: 600px;
   transition: all 1s;
+  border: 0px solid red;
   position: relative;
   display: block;
-  border: 0px solid red;
   overflow: hidden; }
   @media (min-width: 768px) {
     .case-study-hero {
@@ -6611,6 +6611,7 @@ body {
 
 .case-study-header {
   position: relative;
+  border: 0px solid red;
   font-family: "Akkurat-Regular";
   background-color: #EEEEEC; }
   @media (min-width: 576px) {
@@ -7020,10 +7021,26 @@ footer {
   margin: 3rem 0 1.6rem 0; }
 .projectTile h2 {
   font-size: 3rem;
-  margin: 0 0 20rem 0; }
+  margin: 0 0 34rem 0; }
 .projectTile a {
   text-decoration: none;
   color: black; }
+.projectTile div {
+  border: 0px solid red; }
+.projectTile .image-tile {
+  border: 0px solid red;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+  .projectTile .image-tile .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; }
 
 .tags {
   border: 0px solid red;

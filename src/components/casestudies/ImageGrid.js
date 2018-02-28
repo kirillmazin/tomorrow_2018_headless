@@ -45,13 +45,20 @@ class ImageGrid extends Component {
           )
       }
 
+      if(numberofimages == 3 && type == "two_squares_b_c"){
 
+      
+          return(
+            <ImageGridThreeImages images={this.props.images}/>
+
+          )
+      }
 
 
       else {
 
         return(
-          <ImageGridThreeImages images={this.props.images}/>
+            <ImageGridTwoImages images={this.props.images}/>
 
         )
       }

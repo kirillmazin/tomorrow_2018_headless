@@ -8,8 +8,8 @@ class ImageGridThreeImages extends Component {
       const aspect_ratio = .9;
       const imageVertical_1 = {backgroundImage: "url(" + this.props.images[0].url + ")"}
       const imageVertical_2 = {backgroundImage: "url(" + this.props.images[1].url + ")"}
-      const imageVertical_3 = {backgroundImage: "url(" + this.props.images[2].url + ")"}
-/*
+  /*    const imageVertical_3 = {backgroundImage: "url(" + this.props.images[2].url + ")"}
+
       const image_height_1 = {
 
         'paddingTop': 100/this.props.images[0].aspect_ratio+'%',
@@ -87,7 +87,7 @@ class ImageGridThreeImages extends Component {
 
 
             <div className="image-tile" style={image_height_2}>
-                <div className="image" style={imageVertical_3} ></div>
+                <div className="image" style={imageVertical_2} ></div>
             </div>
 
 

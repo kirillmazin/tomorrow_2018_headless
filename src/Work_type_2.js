@@ -9,7 +9,7 @@ import Tags from './components/work/Tags';
 import Menu from './components/_globals/Menu.js';
 import Footer from './components/_globals/Footer.js';
 // Declare your component
-export default class Work extends React.Component {
+export default class Work2 extends React.Component {
   constructor(props) {
     super(props);
 
@@ -92,25 +92,10 @@ export default class Work extends React.Component {
             project_data.title = this.state.doc.results[i].data.title[0].text;
             project_data.subtitle =  this.state.doc.results[i].data.subtitle[0] != undefined ? this.state.doc.results[i].data.subtitle[0].text : '';
             project_data.hero_image = this.state.doc.results[i].data.hero_image.url;
-
-            project_data.thumbnail_image = this.state.doc.results[i].data.thumbnail_image.url;
-
-
-
-            console.log("DATA " + this.state.doc.results[i].data);
-
-
-
-            console.log("IMAGE ASPECT RATIO " + this.state.doc.results[i].data);
-
-
-
-            console.log(this.state.doc.results[i].data);
-
             project_data.uid = this.state.doc.results[i].uid;
             project_data.area_of_expertise = [];
 
-
+              console.log("subtitle " + project_data.subtitle);
 
             for(let l=0;l<this.state.doc.results[i].data.area_of_expertise.length;l++){
               let area = this.state.doc.results[i].data.area_of_expertise[l].area;
@@ -130,8 +115,8 @@ export default class Work extends React.Component {
         }
 
             all_areas_of_expertise = $.unique(all_areas_of_expertise);
-            let a = $.unique(all_areas_of_expertise);
-            console.log(a);
+
+
 
 
 
@@ -143,7 +128,7 @@ export default class Work extends React.Component {
               <div className="work">
 
 
-
+                      <h1>zzzzZ</h1>
                     <Tags elements={all_areas_of_expertise} projects={all_projects} />
                     <div className="container">
                       <Footer/>

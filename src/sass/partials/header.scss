@@ -2,13 +2,13 @@
 .case-study-hero{
     height:600px;
     transition: all 1s;
-
+    border: 0px solid red;
     position:relative;
 
       display: block;
 
 
-      border: 0px solid red;
+
       @include media-breakpoint-up(md) {
         display: flex;
         align-items: flex-end;
@@ -57,7 +57,7 @@
 .case-study-header{
     position: relative;
 
-
+      border:0px solid red;
     font-family: "Akkurat-Regular";
     background-color: $color-background;
 

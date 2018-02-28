@@ -8,7 +8,7 @@ class ImageGridTwoImages extends Component {
       const aspect_ratio = .9;
       const imageVertical_1 = {backgroundImage: "url(" + this.props.images[0].url + ")"}
       const imageVertical_2 = {backgroundImage: "url(" + this.props.images[1].url + ")"}
-/*
+
       const image_height_1 = {
 
         'paddingTop': 100/this.props.images[0].aspect_ratio+'%',
@@ -21,7 +21,7 @@ class ImageGridTwoImages extends Component {
         'paddingTop': 100/this.props.images[1].aspect_ratio+'%',
          display:'block'
       }
-*/
+/*
       const image_height_1 = {
 
         'paddingTop': 100/aspect_ratio+'%',
@@ -35,7 +35,7 @@ class ImageGridTwoImages extends Component {
          display:'block'
       }
 
-    
+    */
 
     return (
 
