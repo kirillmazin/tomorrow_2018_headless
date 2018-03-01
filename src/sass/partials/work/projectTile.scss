@@ -1,8 +1,7 @@
 .projectTile{
+  border: 0px solid red;
 
-  img{
-    width: 100%;
-  }
+
 
   h4{
     font-family: "Akkurat-Bold";
@@ -12,7 +11,9 @@
 
   h2{
     font-size: 3rem;
-    margin:0 0 34rem 0;
+    margin:0 0 0 0;
+    padding: 0;
+      border: 0px solid red;
   }
   a{
     text-decoration: none;
@@ -30,8 +31,7 @@ div{
   margin:0;
   padding: 0;
   position: relative;
-
-
+  transition-delay: all 1s;
   .image{
     position: absolute;
     top:0;
@@ -39,7 +39,7 @@ div{
     bottom: 0;
     right: 0;
 
-
+    transition: all 500ms;
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;

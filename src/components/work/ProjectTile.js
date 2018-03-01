@@ -14,7 +14,9 @@ class ProjectTile extends Component {
 
     this.state = {
 
-      show: true
+      show: true,
+      imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red"}
+
     };
 
 
@@ -23,29 +25,82 @@ class ProjectTile extends Component {
 
   }
 
+  handleMouseOver(){
+    /*
+    console.log("handle mouse over ")
+    this.setState(
+      {
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",backgroundSize:"auto 160%"}
+      }
+
+    )*/
+  }
+
+  handleMouseOut(){
+    /*
+    console.log("handle mouse out ")
+    this.setState(
+      {
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red"}
+      }
+
+    )*/
+  }
+  getMargin(alignment, gutter){
+    let margin_right;
+
+
+    margin_right = {
+      marginRight:gutter / 2 + 'rem'
+    }
+
+    if(alignment == 1){
+      margin_right = {
+        marginLeft:gutter / 2 + 'rem'
+      }
+    }
+
+    return margin_right;
+  }
 
   render() {
     //  console.log("selected " +  this.props.show);
     //  console.log(this.props.data.area_of_expertise);
 
+      //console.log(this.props.offset)
 
+     //let offset = (this.props.offset != undefined || this.props.offset != null) ? offset = this.props.offset : offset = 0;
+     let id = this.props.id;
 
-      const imageBg = {backgroundImage: "url(" + this.props.data.thumbnail_image + ")"}
-      const aspect_ratio = 1;
+     let alignment = this.props.alignment;
+     let gutter = 2;
+     let bottom_margin = 10;
+
+    // let offset = (id == 0)? offset = 0 : offset =  Math.floor(Math.random()*250)+50;
+     let offset = 0;
+
+     if(alignment == 1){
+       offset = 200
+     }
+     //offset = 0;
+      const random = (Math.random()*1)+.9
+      let aspect_ratio = random;
+
+      aspect_ratio = 1.3;
       const image_height = {
 
         'paddingTop': 100/aspect_ratio+'%',
-         display:'block'
+         display:'block',
+         border: '0px solid red',
+         'marginTop':offset+'px'
       }
 
       const bottom_padding = {
-          margin:'0 0 20rem 0'
+          margin:'0 0 '+bottom_margin+'rem 0'
 
       }
 
-      const margin_right = {
-        marginRight:'3rem'
-      }
+
 
       let isHide = true;
 
@@ -76,14 +131,14 @@ class ProjectTile extends Component {
  <Fade bottom cascade>
 
       <div className="col-6">
-      <div className="projectTile" style={margin_right}>
+      <div className="projectTile" style={this.getMargin(alignment, gutter)}   onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
           <Link to={this.props.data.uid}>
 
 
 
 
           <div className="image-tile" style={image_height}>
-              <div className="image" style={imageBg}/>
+              <div className="image" style={this.state.imageBg}/>
           </div>
 
 

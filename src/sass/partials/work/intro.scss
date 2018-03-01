@@ -3,10 +3,17 @@
     font-size: 2.7rem;
     font-family: "Tiempos-Bold";
     line-height: 120%;
-    padding: 0 0 25px 0;
+    padding: 0 0 2.5rem 0;
     background-position: bottom left;
     transition: font-size 1s;
 
+    border: 0px solid pink;
+
+    @include clearfix;
+
+    p{
+      border:0px solid white;
+    }
     @include media-breakpoint-up(md) {
           font-size: 4rem;
      }
@@ -15,5 +22,7 @@
 
     }
     @include media-breakpoint-up(xl) { }
+
+
 
 }

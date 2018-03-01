@@ -1,0 +1,30 @@
+.workFilters{
+  border:0px solid white;
+  font-size: 4rem;
+  padding-bottom: 9rem;
+  color:white;
+  div{
+    border:0px solid white;
+    margin:0;
+    padding:0;
+    line-height: 1.1;
+  }
+  .selector{
+    background-image: url('../imgs/ui/work-filter-underline.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-bottom: 1.2rem;
+    display: inline-block;
+    cursor: pointer;
+  }
+    .selector::after{
+      background-image: url('../imgs/ui/arrow-down.svg');
+      background-repeat: no-repeat;
+      display: inline-block;
+      content:"";
+      height:20px;
+      width:22px;
+      margin-left: 2rem;
+      border:0px solid red;
+    }
+}

@@ -226,10 +226,12 @@ export default class Page extends React.Component {
       <div className="case-study">
 
       <Window image={hero_image} title={title} subtitle={subtitle}/>
-          <div className="container" >
-
+          <div className="container-fluid" >
+            <div className="col-10 offset-1">
             {to_render}
-              <Footer/>
+            <Footer/>
+            </div>
+
         </div>
       </div>
       </div>

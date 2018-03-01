@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
-
 /**
  * This is a quote component used on the case study page
  */
-class Tag extends Component {
+class Filters extends Component {
 
 
 
@@ -18,12 +17,12 @@ class Tag extends Component {
 
 
 
-      <div className="intro">
+      <div className="workFilters">
 
 
 
-        <p>{this.props.introtext}</p>
-
+        <div>show me</div>
+        <div className="selector">everything</div>
 
       </div>
 
@@ -32,4 +31,4 @@ class Tag extends Component {
   }
 }
 /** @component */
-export default Tag;
+export default Filters;

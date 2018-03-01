@@ -69,9 +69,9 @@ class Window extends React.Component {
 
       <div className="case-study-hero" ref={el => this.el = el} >
         <div className="case-study-image" ref={el => this.el2 = el} style={style} ></div>
-        <div className="container">
+        <div className="container-fluid">
 
-         <div className="case-study-header">
+         <div className="case-study-header col-10 offset-1">
               <Fade bottom>
                <h4>{this.props.subtitle}</h4>
 
