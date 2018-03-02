@@ -13,9 +13,9 @@ import Work from '../../Work';
 import Work2 from '../../Work_type_2';
 import Interview from '../../Interview';
 import Menu from './Menu.js';
-
+import { ParallaxProvider, Parallax } from 'react-skrollr'
 const Main = (props) => (
-
+  <ParallaxProvider>
   <Router>
 
     <Switch>
@@ -30,6 +30,8 @@ const Main = (props) => (
       <Route component={NotFound} />
     </Switch>
   </Router>
+
+    </ParallaxProvider>
 )
 
 export default Main

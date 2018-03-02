@@ -2,7 +2,6 @@
   border: 0px solid red;
 
 
-
   h4{
     font-family: "Akkurat-Bold";
     font-size: 1.6rem;
@@ -28,10 +27,13 @@ div{
 
 .image-tile{
   border: 0px solid red;
+  transition: all 500ms;
   margin:0;
   padding: 0;
   position: relative;
   transition-delay: all 1s;
+    overflow: hidden;
+
   .image{
     position: absolute;
     top:0;

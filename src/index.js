@@ -4,7 +4,14 @@ import PrismicApp from './PrismicApp';
 import './stylesheets/styles.css';
 import './stylesheets/animate.css';
 import $ from 'jquery'
+
 ReactDOM.render(
-  <PrismicApp />,
+
+  (
+
+      <PrismicApp />
+
+
+  ),
   document.getElementById('root'),
 );

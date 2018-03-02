@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import styles from './ProjectTile.css'
-import { BrowserRouter as Router,Link} from 'react-router-dom'
-
+import { Link} from 'react-router-dom'
+import { ParallaxProvider, Parallax } from 'react-skrollr'
 
 /**
  * This is a quote component used on the case study page
@@ -15,7 +15,8 @@ class ProjectTile extends Component {
     this.state = {
 
       show: true,
-      imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red"}
+      imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red"},
+
 
     };
 
@@ -26,25 +27,23 @@ class ProjectTile extends Component {
   }
 
   handleMouseOver(){
-    /*
-    console.log("handle mouse over ")
+
+
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",backgroundSize:"auto 160%"}
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red", transform:"scale(1.2)"},
       }
 
-    )*/
+    )
   }
 
   handleMouseOut(){
-    /*
-    console.log("handle mouse out ")
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red"}
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red", transform:"scale(1)"},
       }
 
-    )*/
+    )
   }
   getMargin(alignment, gutter){
     let margin_right;
@@ -128,10 +127,21 @@ class ProjectTile extends Component {
 
 
 
+
  <Fade bottom cascade>
 
       <div className="col-6">
+
       <div className="projectTile" style={this.getMargin(alignment, gutter)}   onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
+      <Parallax
+    data={{
+      'data-top-bottom':'transform[sqrt]: translate(0, -140%); opacity:0; ',
+      'data-top-bottom':'transform[sqrt]: translate(0, -50%); opacity:0;',
+      'data-center-bottom': 'transform[sqrt]: translate(0%, 0%); opacity:1;',
+      'data-bottom-top': 'transform[sqrt]:  translate(0%, 0%); opacity:1;transition:all 1s;'
+    }}
+    >
+
           <Link to={this.props.data.uid}>
 
 
@@ -144,7 +154,9 @@ class ProjectTile extends Component {
 
           <h4> {this.props.data.title}</h4>
           <h2 style={bottom_padding}> {this.props.data.subtitle} </h2>
+
       </Link>
+        </Parallax>
       </div>
 
       </div>
