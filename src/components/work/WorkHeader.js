@@ -17,8 +17,8 @@ class WorkHeader extends Component {
     super(props);
 
     this.state = {
-      screen_percentage: .7,
-      selected:'Everything'
+      screen_percentage: .9,
+      selected:"Everything"
     };
   }
 
@@ -122,7 +122,7 @@ class WorkHeader extends Component {
           <Services scope={items} />
         </div>
 
-          <ProjectGrid projects={this.props.projects} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
+          <ProjectGrid projects={this.props.projects} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
       </div>
       </div>
 
@@ -131,13 +131,18 @@ class WorkHeader extends Component {
 
 
   }
+  handleTagClick(value){
+
+    window.location = value;
+
+  }
   render() {
 
 
     let services = [];
     let featured_case_studies = [];
     for(let i=0;i<this.props.work_landing_page_data.length;i++){
-        console.log("WORK HEADER ");
+
 
 
         services.slice_type = this.props.work_landing_page_data[i].slice_type;
@@ -161,14 +166,18 @@ class WorkHeader extends Component {
                     o.slug = this.props.work_landing_page_data[i].items[l].casestudy.slug;
                     o.offset = this.props.work_landing_page_data[i].items[l].px_top_offset;
                     featured_case_studies.push(o);
+
+
                 }
 
 
         }
 
     };
-    console.log(this.props.work_landing_page_data)
-    let mytext = "We cross sectors and merge mindsets to find creative impactful solutions for every kind of client.";
+    console.log("?????????? " + this.props.work_landing_page_data);
+    console.log(this.props.work_landing_page_data);
+    let mytext = this.props.page_intro;
+  
     return (
 
 
@@ -183,7 +192,7 @@ class WorkHeader extends Component {
             <div className="container-fluid">
               <div className="col-7 offset-1">
                 <Intro className="intro" introtext={mytext}/>
-                <Filters   />
+                <Filters filterBy={this.props.filterBy} onClick={(value) => this.handleTagClick(value)}/>
               </div>
             </div>
 
@@ -193,7 +202,7 @@ class WorkHeader extends Component {
 
 
               <div className="col-10 offset-1">
-                <ProjectGridFeatured projects={this.props.projects} show={this.state.selected} numberToShow="4" featured_case_studies={featured_case_studies} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
+                <ProjectGridFeatured projects={this.props.projects} show={this.state.selected} featured_case_studies={featured_case_studies} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
                 </div>
               </div>
 

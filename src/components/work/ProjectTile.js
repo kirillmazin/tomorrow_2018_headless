@@ -142,7 +142,7 @@ class ProjectTile extends Component {
     }}
     >
 
-          <Link to={this.props.data.uid}>
+          <Link to={"../project/"+this.props.data.uid}>
 
 
 

@@ -86,7 +86,9 @@ export default class Work extends React.Component {
 
         let work_landing_page_data = [];
         let global_thumbnail_aspect_ratio;
-
+        let filterBy;
+        let work_uid;
+        let page_intro = "";
 
         this.state.numberOfProjects = this.state.doc.results.length;
 
@@ -98,20 +100,31 @@ export default class Work extends React.Component {
             if(type == "casestudy"){
 
             let project_data = {};
+
+          //  console.log("DATA %%%%%");
+          //  console.log(this.state.doc.results[i]);
+          //  console.log(" slugs " + this.state.doc.results[i].slugs);
+
+
+
+
+
+
+            project_data.slug = this.state.doc.results[i].slugs;
             project_data.title = this.state.doc.results[i].data.title[0].text;
             project_data.subtitle =  this.state.doc.results[i].data.subtitle[0] != undefined ? this.state.doc.results[i].data.subtitle[0].text : '';
             project_data.hero_image = this.state.doc.results[i].data.hero_image.url;
 
             project_data.thumbnail_image = this.state.doc.results[i].data.thumbnail_image.url;
 
-            console.log("PROJECT DATA++++")
-            console.log(this.state.doc.results[i])
+
+
 
             project_data.offset = (this.state.doc.results[i].data.px_top_offset != undefined || this.state.doc.results[i].data.px_top_offset != null)? this.state.doc.results[i].data.px_top_offset : 0 ;
 
 
-            console.log("offset")
-                console.log(project_data.offset)
+        //    console.log("offset")
+        //        console.log(project_data.offset)
             project_data.uid = this.state.doc.results[i].uid;
             project_data.area_of_expertise = [];
 
@@ -139,17 +152,36 @@ export default class Work extends React.Component {
 
 
             if(type == "work_landing_page"){
+                let o = {};
 
-
-                console.log("WORK LANDING PAGE --------- ");
-                console.log(this.state.doc.results[i].data);
+                console.log("this.state.doc");
+                console.log(this.state.doc.results[i]);
+                filterBy = (this.props.match.params.uid == undefined) ? 'everything' : this.props.match.params.uid;
+                console.log(this.state.doc.results[i]);
                 work_landing_page_data.services = [];
 
+                o.work_landing_page  = this.state.doc.results[i].data.body;
+                o.work_uid = this.state.doc.results[i].uid;
 
-                work_landing_page_data = this.state.doc.results[i].data.body;
+
+                //work_landing_page_data = this.state.doc.results[i].data.body;
+
+
+
                 global_thumbnail_aspect_ratio = this.state.doc.results[i].data.global_thumbnail_aspect_ratio;
 
-                console.log("WORK LANDING PAGE --------- " + global_thumbnail_aspect_ratio);
+                console.log("WORK LANDING PAGE --------- " + filterBy  );
+
+                if(filterBy == o.work_uid){
+
+
+                  console.log("////////////////////////");
+                  work_landing_page_data = this.state.doc.results[i].data.body;
+                  page_intro = this.state.doc.results[i].data.page_intro[0].text;
+
+                  console.log(page_intro[0].text);
+                }
+              //    console.log(this.state.doc.results[i]);
             }
 
 
@@ -169,7 +201,7 @@ export default class Work extends React.Component {
 
 
 
-                    <WorkHeader projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
+        <WorkHeader filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
 
 
 

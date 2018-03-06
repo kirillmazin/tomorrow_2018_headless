@@ -21,7 +21,8 @@ const Main = (props) => (
     <Switch>
 
       <Redirect exact from="/" to="/work/"/>
-      <Route exact path="/work/:uid" render={routeProps => <Page {...routeProps} prismicCtx={props.prismicCtx} />} />
+      <Route exact path="/project/:uid" render={routeProps => <Page {...routeProps} prismicCtx={props.prismicCtx} />} />
+      <Route exact path="/work/:uid" render={routeProps => <Work {...routeProps} prismicCtx={props.prismicCtx} />} />
       <Route exact path="/help" component={Help} />
       <Route exact path="/work/" render={routeProps => <Work {...routeProps} prismicCtx={props.prismicCtx} />} />
       <Route exact path="/work2/" render={routeProps => <Work2 {...routeProps} prismicCtx={props.prismicCtx} />} />

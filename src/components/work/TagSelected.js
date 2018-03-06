@@ -9,7 +9,7 @@ class TagSelected extends Component {
 
 
   render() {
-      console.log(this.props.style);
+
 
     return (
 

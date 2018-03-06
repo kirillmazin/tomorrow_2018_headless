@@ -7068,12 +7068,13 @@ footer {
   cursor: pointer; }
 
 .selected {
-  color: white;
-  cursor: auto; }
+  color: black;
+  cursor: default !important;
+  border: 0px solid green; }
 
 .workheader {
   transition: all 1s;
-  border: 1px solid #FC7753;
+  border: 0px solid #FC7753;
   padding-top: 25rem;
   background-color: #FC7753; }
 
@@ -7093,16 +7094,26 @@ footer {
     background-position: left bottom;
     padding-bottom: 1.2rem;
     display: inline-block;
+    border: 0px solid red;
+    margin: 0;
     cursor: pointer; }
-  .workFilters .selector::after {
+  .workFilters .arrow-down {
     background-image: url("../imgs/ui/arrow-down.svg");
     background-repeat: no-repeat;
+    background-position: center;
     display: inline-block;
     content: "";
     height: 20px;
     width: 22px;
-    margin-left: 2rem;
-    border: 0px solid red; }
+    margin-left: 1rem;
+    border: 0px solid red;
+    transform: rotate(180deg);
+    transition: all 500ms;
+    transform-origin: 50% 50%; }
+  .workFilters .tags-open {
+    border: 0px solid red;
+    overflow: hidden;
+    margin-top: 5rem; }
 
 .services {
   padding-bottom: 30px;

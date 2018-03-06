@@ -10,23 +10,31 @@ import ProjectGrid from './ProjectGrid';
  * This is a quote component used on the case study page
  */
 class Tags extends Component {
+
+
   constructor(props) {
     super(props);
 
     this.state = {
       tags: this.props.elements,
       styles: [],
-      selected:'Everything'
+      selected:this.props.selected
     };
     //this.state.tags.push("selected")
 
 
-    this.state.styles.push("selected");
-    for(let i=0;i<this.props.elements.length-1;i++){
 
-      this.state.styles.push("normal")
+
+    for(let i=0;i<this.props.elements.length;i++){
+      if(this.props.selected == this.props.elements[i]){
+        this.state.styles.push("selected");
+      } else {
+        this.state.styles.push("normal");
+      }
     //  this.state.tags.push("normal")
   }
+
+  console.log("styles " + this.state.styles);
 
   }
 
@@ -38,9 +46,12 @@ class Tags extends Component {
     var tags = [];
 
     for(let i=0;i<this.state.tags.length;i++){
+      console.log("--- " + this.state.styles[i]);
       tags.push(this.renderTag(i, this.state.tags[i],this.state.styles[i]));
 
     }
+
+
     return tags;
   }
 
@@ -53,7 +64,8 @@ class Tags extends Component {
       return  <Tag copy={value} style={style} onClick={() => this.handleTagClick(id)} />;
 
     } else {
-      return  <TagSelected copy={value} style={style} onClick={() => this.handleTagClick(value)} />;
+      console.log("SELECTED "+ value);
+      return  <TagSelected copy={value} style={style} />;
 
     }
   }
@@ -72,7 +84,8 @@ class Tags extends Component {
         styles:tagStyles,
         selected: this.state.tags[id]
     })
-    console.log(id)
+
+    this.props.onClick(this.state.tags[id]);
   }
 
   render() {
@@ -101,7 +114,7 @@ class Tags extends Component {
         </div>
 
         <div className="container">
-          
+
             </div>
   </div>
 </Fade>
