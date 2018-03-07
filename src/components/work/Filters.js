@@ -17,6 +17,7 @@ class Filters extends Component {
       },
       isShown: 'false',
       filterBy:this.props.filterBy,
+      filterLabel: this.props.filterLabel,
       arrow_rotation: {
         transform: 'rotate(0deg)'
       }
@@ -25,11 +26,14 @@ class Filters extends Component {
 
   }
 
-  handleTagClick(value){
+  handleTagClick(filter,uid){
+    console.log("TAG HAS BEEN CLCIKED");
+
 
     this.setState(
       {
-        filterBy: value,
+        filterBy: uid,
+        filterLabel: filter,
         isShown: 'false',
 
         arrow_rotation: {
@@ -40,7 +44,9 @@ class Filters extends Component {
       }
     )
     this.handleClick();
-    window.location = value;
+    window.location = uid;
+    
+    
   }
 
   handleClick(){
@@ -70,14 +76,14 @@ class Filters extends Component {
             border: "0px solid pink",
             visibility:'visible',
             transition: "all 500ms",
-            height:150+'px'
+            height:250+'px'
           },
           arrow_rotation: {
             transform: 'rotate(-180deg)'
           }
       });
     }
-    console.log(this.state.isShown);
+  
 
 
 
@@ -105,10 +111,10 @@ class Filters extends Component {
 
     }}>
  <Fade bottom>
-        <div>show me</div>
-        <div><div className="selector" onClick={() => this.handleClick()}>{this.state.filterBy}</div><span className="arrow-down" style={this.state.arrow_rotation}></span></div>
+        <div>Show me</div>
+        <div className="selectorElement" onClick={() => this.handleClick()}><div className="selector">{this.state.filterLabel}</div><span className="arrow-down" style={this.state.arrow_rotation} ></span></div>
         <div  className="tags-open" style={this.state.menuStyle}>
-          <Tags elements={["everything","government","strategy"]} selected={this.state.filterBy} onClick={(value) => this.handleTagClick(value)}/>
+          <Tags elements={this.props.all_filters} selected={this.state.filterBy} onClick={(filter,value) => this.handleTagClick(filter,value)}/>
         </div>
 </Fade>
         </Parallax>

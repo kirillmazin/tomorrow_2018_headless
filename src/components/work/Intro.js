@@ -8,9 +8,12 @@ import { ParallaxProvider, Parallax } from 'react-skrollr'
 class Tag extends Component {
 
 
-
+  
   render() {
-
+    const intro_font_color = {
+      
+      color: this.props.intro_font_color
+    }
 
     return (
 
@@ -29,7 +32,7 @@ class Tag extends Component {
   >
  <Fade bottom>
 
-         <p>{this.props.introtext}</p>
+         <p style={intro_font_color}>{this.props.introtext}</p>
 </Fade>
 </Parallax>
        </div>

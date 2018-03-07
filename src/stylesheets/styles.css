@@ -7087,7 +7087,7 @@ footer {
     border: 0px solid white;
     margin: 0;
     padding: 0;
-    line-height: 1.1; }
+    line-height: 1.2; }
   .workFilters .selector {
     background-image: url("../imgs/ui/work-filter-underline.svg");
     background-repeat: no-repeat;
@@ -7096,6 +7096,8 @@ footer {
     display: inline-block;
     border: 0px solid red;
     margin: 0;
+    cursor: pointer; }
+  .workFilters .selectorElement {
     cursor: pointer; }
   .workFilters .arrow-down {
     background-image: url("../imgs/ui/arrow-down.svg");

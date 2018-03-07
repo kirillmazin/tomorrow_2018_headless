@@ -14,10 +14,20 @@ class Tags extends Component {
 
   constructor(props) {
     super(props);
-
+    let elements = [];
+    let uid = [];
+    for(let i=0;i<this.props.elements.length;i++){
+        elements.push(this.props.elements[i].filter)
+        uid.push(this.props.elements[i].uid);
+      
+    }
+  //  elements.sort();
+    console.log("ELEMENTS " + elements);
+    console.log("UID " + uid);
     this.state = {
-      tags: this.props.elements,
+      tags: elements,
       styles: [],
+      uid: uid,
       selected:this.props.selected
     };
     //this.state.tags.push("selected")
@@ -34,7 +44,7 @@ class Tags extends Component {
     //  this.state.tags.push("normal")
   }
 
-  console.log("styles " + this.state.styles);
+
 
   }
 
@@ -46,7 +56,7 @@ class Tags extends Component {
     var tags = [];
 
     for(let i=0;i<this.state.tags.length;i++){
-      console.log("--- " + this.state.styles[i]);
+  //    console.log("--- " + this.state.styles[i]);
       tags.push(this.renderTag(i, this.state.tags[i],this.state.styles[i]));
 
     }
@@ -64,7 +74,7 @@ class Tags extends Component {
       return  <Tag copy={value} style={style} onClick={() => this.handleTagClick(id)} />;
 
     } else {
-      console.log("SELECTED "+ value);
+    //  console.log("SELECTED "+ value);
       return  <TagSelected copy={value} style={style} />;
 
     }
@@ -84,8 +94,10 @@ class Tags extends Component {
         styles:tagStyles,
         selected: this.state.tags[id]
     })
-
-    this.props.onClick(this.state.tags[id]);
+    
+  //  console.log("ID ");
+  //  console.log(this.state.uid[id]);
+    this.props.onClick(this.props.elements[id].filters, this.props.elements[id].uid);
   }
 
   render() {

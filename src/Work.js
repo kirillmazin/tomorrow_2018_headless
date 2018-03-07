@@ -81,15 +81,20 @@ export default class Work extends React.Component {
 
 
         let cms_data = [];
-        let all_areas_of_expertise = ["Everything"];
+        let all_areas_of_expertise = [];
         let all_projects = []
 
         let work_landing_page_data = [];
         let global_thumbnail_aspect_ratio;
         let filterBy;
+        let filterLabel;
         let work_uid;
         let page_intro = "";
-
+        let background_color;
+        let intro_font_color;
+        let all_filters = [];
+        let areas_of_expertise_to_include = [];
+        
         this.state.numberOfProjects = this.state.doc.results.length;
 
 
@@ -148,11 +153,12 @@ export default class Work extends React.Component {
         }
 
             all_areas_of_expertise = $.unique(all_areas_of_expertise);
+              let o = {};
             let a = $.unique(all_areas_of_expertise);
 
 
             if(type == "work_landing_page"){
-                let o = {};
+              
 
                 console.log("this.state.doc");
                 console.log(this.state.doc.results[i]);
@@ -160,8 +166,8 @@ export default class Work extends React.Component {
                 console.log(this.state.doc.results[i]);
                 work_landing_page_data.services = [];
 
-                o.work_landing_page  = this.state.doc.results[i].data.body;
-                o.work_uid = this.state.doc.results[i].uid;
+              
+              
 
 
                 //work_landing_page_data = this.state.doc.results[i].data.body;
@@ -170,38 +176,56 @@ export default class Work extends React.Component {
 
                 global_thumbnail_aspect_ratio = this.state.doc.results[i].data.global_thumbnail_aspect_ratio;
 
-                console.log("WORK LANDING PAGE --------- " + filterBy  );
+                
+                o.uid = this.state.doc.results[i].uid;
+                o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
+                if(filterBy == o.uid){
 
-                if(filterBy == o.work_uid){
-
-
+                  filterLabel = o.filter;
                   console.log("////////////////////////");
+                  console.log(this.state.doc.results[i].data.areas_of_expertise_to_include);
+                  
+                  
+                  for(let m=0;m<this.state.doc.results[i].data.areas_of_expertise_to_include.length;m++){
+                    //console.log(this.state.doc.results[i].data.areas_of_expertise_to_include[m].area_of_expertise);
+                    areas_of_expertise_to_include.push(this.state.doc.results[i].data.areas_of_expertise_to_include[m].area_of_expertise);
+                    
+                  }
                   work_landing_page_data = this.state.doc.results[i].data.body;
                   page_intro = this.state.doc.results[i].data.page_intro[0].text;
-
-                  console.log(page_intro[0].text);
+                  background_color = this.state.doc.results[i].data.background_color;
+                  intro_font_color = this.state.doc.results[i].data.intro_font_color;
+                  //console.log("AREAS OF EXPERTISE " + this.state.doc.results[i].data.all_areas_of_expertise_to_include);
+              
+                  //console.log("FILTER BY " );
+                  
                 }
+                
+                    //console.log("oooooooooo");
+                
+              //  all_filters.push(this.state.doc.results[i].data.filter_by_tag[0].text);
+                  all_filters.push(o);
               //    console.log(this.state.doc.results[i]);
             }
 
 
-
-
+          
         }
 
+  
 
 
 
 
 
-
+      //  console.log(" to_inclue" + areas_of_expertise_to_include);
           return (
             <div>
 
 
 
 
-        <WorkHeader filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
+        <WorkHeader grid_items_filters={areas_of_expertise_to_include} all_filters={all_filters} intro_font_color={intro_font_color} background_color={background_color} filterLabel={filterLabel} filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
 
 
 

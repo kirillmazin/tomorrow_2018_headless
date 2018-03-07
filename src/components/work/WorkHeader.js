@@ -33,13 +33,17 @@ class WorkHeader extends Component {
 
 
 
-      this.$el.css({"height":window_height*this.state.screen_percentage})
+      this.$el.css(
+        {"height":window_height*this.state.screen_percentage,
+          "backgroundColor":this.props.background_color
+      }
+        )
 
       this.$el_2.css(
         {
           "border": "0px solid #FC7753",
-          "height":this.$el_3.height()+100+'px',
-
+          "height":this.$el_3.height()+100+'px'
+        
 
 
 
@@ -122,7 +126,7 @@ class WorkHeader extends Component {
           <Services scope={items} />
         </div>
 
-          <ProjectGrid projects={this.props.projects} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
+          <ProjectGrid projects={this.props.projects} grid_items_filters={this.props.grid_items_filters} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
       </div>
       </div>
 
@@ -174,8 +178,8 @@ class WorkHeader extends Component {
         }
 
     };
-    console.log("?????????? " + this.props.work_landing_page_data);
-    console.log(this.props.work_landing_page_data);
+  //  console.log("?????????? " + this.props.work_landing_page_data);
+  //  console.log(this.props.work_landing_page_data);
     let mytext = this.props.page_intro;
   
     return (
@@ -191,8 +195,8 @@ class WorkHeader extends Component {
 
             <div className="container-fluid">
               <div className="col-7 offset-1">
-                <Intro className="intro" introtext={mytext}/>
-                <Filters filterBy={this.props.filterBy} onClick={(value) => this.handleTagClick(value)}/>
+                <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color}/>
+                <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onClick={(value) => this.handleTagClick(value)}/>
               </div>
             </div>
 
