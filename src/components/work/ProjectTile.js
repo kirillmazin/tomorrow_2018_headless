@@ -153,7 +153,7 @@ class ProjectTile extends Component {
 
 
           <h4> {this.props.data.title}</h4>
-          <h2 style={bottom_padding}> {this.props.data.subtitle} </h2>
+          <h2 style={bottom_padding}><a href="">{this.props.data.subtitle}</a></h2>
 
       </Link>
         </Parallax>

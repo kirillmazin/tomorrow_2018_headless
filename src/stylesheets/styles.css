@@ -7032,6 +7032,20 @@ footer {
     margin: 0 0 0 0;
     padding: 0;
     border: 0px solid red; }
+    .projectTile h2 a {
+      background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+      background-image: linear-gradient(90deg, #fff, #fff);
+      background-repeat: no-repeat;
+      background-position: 0 19px;
+      background-size: 0% 100%;
+      color: #000;
+      text-decoration: none;
+      border: 0px solid red;
+      transition: background-size 500ms; }
+    .projectTile h2 a:hover {
+      transition: background-size 500ms;
+      transition-timing-function: ease-in;
+      background-size: 100% 100%; }
   .projectTile a {
     text-decoration: none;
     color: black; }
@@ -7063,9 +7077,40 @@ footer {
     font-size: 3rem;
     cursor: pointer; }
 
+@keyframes example {
+  0% {
+    transition: background-size 200ms;
+    transition-timing-function: ease-in;
+    background-size: 0% 100%; }
+  25% {
+    transition: background-size 200ms;
+    transition-timing-function: ease-in;
+    background-size: 100% 100%; }
+  50% {
+    transition: background-size 200ms;
+    transition-timing-function: ease-in;
+    background-size: 0% 100%; }
+  100% {
+    transition: background-size 200ms;
+    transition-timing-function: ease-in;
+    background-size: 200% 100%; } }
 .tag {
   font-size: 4rem;
   cursor: pointer; }
+  .tag a {
+    background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    background-repeat: no-repeat;
+    background-position: 0 19px;
+    background-size: 0% 100%;
+    color: #ffffff;
+    text-decoration: none;
+    border: 0px solid red;
+    transition: background-size 500ms; }
+  .tag a:hover {
+    transition: background-size 200ms;
+    transition-timing-function: ease-in;
+    background-size: 100% 100%; }
 
 .selected {
   color: black;
@@ -7099,6 +7144,8 @@ footer {
     cursor: pointer; }
   .workFilters .selectorElement {
     cursor: pointer; }
+    .workFilters .selectorElement a {
+      color: #ffffff; }
   .workFilters .arrow-down {
     background-image: url("../imgs/ui/arrow-down.svg");
     background-repeat: no-repeat;
@@ -7113,7 +7160,7 @@ footer {
     transition: all 500ms;
     transform-origin: 50% 50%; }
   .workFilters .tags-open {
-    border: 0px solid red;
+    border: 0px solid red !important;
     overflow: hidden;
     margin-top: 5rem; }
 
@@ -7139,5 +7186,19 @@ footer {
       color: #000;
       text-decoration: none;
       border: 0px solid red; }
+
+.work-clients {
+  font-family: "Akkurat-Light";
+  background-color: #FFFFFF;
+  border: 0 solid red;
+  padding: 100px 0 100px 0; }
+  .work-clients i {
+    background-image: linear-gradient(90deg, #EEEEEC, #EEEEEC);
+    background-repeat: no-repeat;
+    background-position: 0 2rem;
+    color: #000;
+    text-decoration: none;
+    border: 0px solid red;
+    font-size: 3rem; }
 
 /*# sourceMappingURL=styles.css.map */

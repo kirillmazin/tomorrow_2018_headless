@@ -22,7 +22,7 @@ class Tag extends Component {
 
 
 
-        {this.props.copy}
+      <a href="#">  {this.props.copy}</a>
 
 
       </div>

@@ -94,7 +94,7 @@ export default class Work extends React.Component {
         let intro_font_color;
         let all_filters = [];
         let areas_of_expertise_to_include = [];
-        
+
         this.state.numberOfProjects = this.state.doc.results.length;
 
 
@@ -158,7 +158,7 @@ export default class Work extends React.Component {
 
 
             if(type == "work_landing_page"){
-              
+
 
                 console.log("this.state.doc");
                 console.log(this.state.doc.results[i]);
@@ -166,8 +166,8 @@ export default class Work extends React.Component {
                 console.log(this.state.doc.results[i]);
                 work_landing_page_data.services = [];
 
-              
-              
+
+
 
 
                 //work_landing_page_data = this.state.doc.results[i].data.body;
@@ -176,43 +176,44 @@ export default class Work extends React.Component {
 
                 global_thumbnail_aspect_ratio = this.state.doc.results[i].data.global_thumbnail_aspect_ratio;
 
-                
+
                 o.uid = this.state.doc.results[i].uid;
                 o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
                 if(filterBy == o.uid){
 
                   filterLabel = o.filter;
                   console.log("////////////////////////");
-                  console.log(this.state.doc.results[i].data.areas_of_expertise_to_include);
+
                   
-                  
+
+
                   for(let m=0;m<this.state.doc.results[i].data.areas_of_expertise_to_include.length;m++){
                     //console.log(this.state.doc.results[i].data.areas_of_expertise_to_include[m].area_of_expertise);
                     areas_of_expertise_to_include.push(this.state.doc.results[i].data.areas_of_expertise_to_include[m].area_of_expertise);
-                    
+
                   }
                   work_landing_page_data = this.state.doc.results[i].data.body;
                   page_intro = this.state.doc.results[i].data.page_intro[0].text;
                   background_color = this.state.doc.results[i].data.background_color;
                   intro_font_color = this.state.doc.results[i].data.intro_font_color;
                   //console.log("AREAS OF EXPERTISE " + this.state.doc.results[i].data.all_areas_of_expertise_to_include);
-              
+
                   //console.log("FILTER BY " );
-                  
+
                 }
-                
+
                     //console.log("oooooooooo");
-                
+
               //  all_filters.push(this.state.doc.results[i].data.filter_by_tag[0].text);
                   all_filters.push(o);
               //    console.log(this.state.doc.results[i]);
             }
 
 
-          
+
         }
 
-  
+
 
 
 
@@ -232,6 +233,7 @@ export default class Work extends React.Component {
 
 
             </div>
+
           )
      } else {
        return (

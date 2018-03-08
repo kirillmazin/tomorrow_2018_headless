@@ -45,16 +45,16 @@ class Whatwedid extends Component {
 
 
 
-            
+
                 <h2 className="section-title"><a href="">What we did</a></h2>
-            
+
 
         </div>
-</Fade>  
+</Fade>
 
 <Fade bottom cascade>
           <div className="col-lg-3">
-            
+
             <ul>
                 {
 
@@ -67,13 +67,13 @@ class Whatwedid extends Component {
                 }
 
             </ul>
-        
+
           </div>
-          
+
           </Fade>
           <Fade bottom cascade>
           <div className="col-lg-5">
-            
+
             <ul>
               {
 
@@ -86,7 +86,7 @@ class Whatwedid extends Component {
               }
 
               </ul>
-              
+
           </div>
 </Fade>
 

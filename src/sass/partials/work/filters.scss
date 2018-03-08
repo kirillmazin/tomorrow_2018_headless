@@ -22,6 +22,9 @@
 
   .selectorElement{
     cursor: pointer;
+    a{
+      color: #ffffff;
+    }
 
   }
     .arrow-down{
@@ -40,7 +43,7 @@
     }
 
     .tags-open{
-      border: 0px solid red;
+      border: 0px solid red !important;
       overflow: hidden;
       margin-top: 5rem;
     }

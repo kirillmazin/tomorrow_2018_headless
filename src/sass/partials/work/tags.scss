@@ -8,10 +8,65 @@
   }
 }
 
+@keyframes example {
+    0%   {
+      transition: background-size 200ms;
+      transition-timing-function: ease-in;
+      background-size: 0% 100%;
+
+
+    }
+    25%  {
+      transition: background-size 200ms;
+      transition-timing-function: ease-in;
+      background-size: 100% 100%;
+
+    }
+    50%  {
+      transition: background-size 200ms;
+      transition-timing-function: ease-in;
+      background-size: 0% 100%;
+
+
+    }
+    100% {
+
+      transition: background-size 200ms;
+      transition-timing-function: ease-in;
+      background-size: 200% 100%;
+
+
+    }
+}
 
 .tag{
   font-size: 4rem;
   cursor: pointer;
+  a{
+
+    background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+    background-image: linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.3));
+
+
+    background-repeat: no-repeat;
+    background-position: 0 19px;
+    background-size: 0% 100%;
+    color:#ffffff;
+    text-decoration: none;
+    border:0px solid red;
+    transition: background-size 500ms;
+
+
+
+  }
+
+  a:hover{
+    transition: background-size 200ms;
+    transition-timing-function: ease-in;
+    background-size: 100% 100%;
+
+
+  }
 
 
 }

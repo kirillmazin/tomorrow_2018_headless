@@ -27,7 +27,7 @@ class Filters extends Component {
   }
 
   handleTagClick(filter,uid){
-    console.log("TAG HAS BEEN CLCIKED");
+
 
 
     this.setState(
@@ -112,7 +112,7 @@ class Filters extends Component {
     }}>
  <Fade bottom>
         <div>Show me</div>
-        <div className="selectorElement" onClick={() => this.handleClick()}><div className="selector">{this.state.filterLabel}</div><span className="arrow-down" style={this.state.arrow_rotation} ></span></div>
+        <div className="selectorElement" onClick={() => this.handleClick()}><a href="#"><div className="selector">{this.state.filterLabel}</div><span className="arrow-down" style={this.state.arrow_rotation} ></span></a></div>
         <div  className="tags-open" style={this.state.menuStyle}>
           <Tags elements={this.props.all_filters} selected={this.state.filterBy} onClick={(filter,value) => this.handleTagClick(filter,value)}/>
         </div>

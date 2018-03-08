@@ -13,6 +13,26 @@
     margin:0 0 0 0;
     padding: 0;
       border: 0px solid red;
+      a{
+
+        background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+        background-image: linear-gradient(90deg, #fff, #fff);
+        background-repeat: no-repeat;
+        background-position: 0 19px;
+        background-size: 0% 100%;
+        color:$body-color;
+        text-decoration: none;
+        border:0px solid red;
+        transition: background-size 500ms;
+
+      }
+
+      a:hover{
+        transition: background-size 500ms;
+        transition-timing-function: ease-in;
+            background-size: 100% 100%;
+
+      }
   }
   a{
     text-decoration: none;
