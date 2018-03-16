@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
 
 class Window extends React.Component {
   constructor(props) {
@@ -27,11 +27,27 @@ class Window extends React.Component {
 
     let window_height = $( window ).height();
 
+    let window_width = $( window ).width();
+
+      /** if not mobile */
 
 
+      if(window_width > 768){
+          this.$el.css({"height":window_height})
+          this.$el2.css({"height":window_height})
 
-    console.log('height ' + this.determineBGResizing());
-      this.$el.css({"height":window_height})
+    }
+
+    /** mobile */
+
+    if(window_width <= 768){
+        window_height = 600;
+        this.$el.css({"height":'auto'})
+        this.$el2.css({"height":window_height})
+
+    }
+
+
       this.$el2.css({"background-size":this.determineBGResizing()})
   }
 
@@ -41,15 +57,17 @@ class Window extends React.Component {
 
     this.$el = $(this.el);
     this.$el2 = $(this.el2);
-    this.$el.css({"border": "0px solid green","height":$( window ).height()})
-    this.$el2.css({"background-size":this.determineBGResizing()})
+    this.$el2.css({"border": "0px solid green"})
+    this.$el2.css({"background-size":this.determineBGResizing(),opacity:1,transform: 'scale(' + 1 + ')'})
 
 
 
     $( window ).resize(
       ()=>this.handleResize()
     );
-  /*  this.$el.somePlugin();*/
+
+
+  this.handleResize();
   }
 
   componentWillUnmount() {
@@ -60,7 +78,13 @@ class Window extends React.Component {
       const effect = "slideInUpCustom";
       const style = {
 
-        backgroundImage: "url(" + this.props.image + ")"
+        backgroundImage: "url(" + this.props.image + ")",
+        border:"0px solid red",
+        backgroundSize:"50% 50%",
+        opacity:0,
+        transform: 'scale(' + 1.2 + ')'
+
+
     }
 
 
@@ -69,14 +93,15 @@ class Window extends React.Component {
 
       <div className="case-study-hero" ref={el => this.el = el} >
         <div className="case-study-image" ref={el => this.el2 = el} style={style} ></div>
-        <div className="container-fluid">
+        <div className="container-fluid no-gutters">
 
-         <div className="case-study-header col-10 offset-1">
-              <Fade bottom>
+         <div className="case-study-header col-sm-12 col-md-10 offset-md-1">
+              <Reveal effect="fadeInUpCustom">
+              <div className="header-type">
                <h4>{this.props.subtitle}</h4>
-
                <h1>{this.props.title}</h1>
-               </Fade>
+               </div>
+               </Reveal>
            </div>
 
        </div>

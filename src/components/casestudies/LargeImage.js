@@ -33,14 +33,14 @@ class LargeImage extends Component {
       <div className="component-margin">
 
 
-            <Fade bottom cascade>
+              <Reveal effect="fadeInUpCustom">
             <div className="large-image" style={image_height}>
 
               <div class="image" style={style}></div>
 
 
             </div>
-            </Fade>
+              </Reveal>
 
     </div>
 

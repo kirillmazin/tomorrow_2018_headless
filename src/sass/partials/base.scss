@@ -23,6 +23,12 @@ body{
 }
 
 
+.large-copy{
+  font-size: 4rem;
+  color:black;
+  font-family:$font-serif-bold
+}
+
 .component-margin{
   border: 0px solid red;
   margin: $component-margin-sm;
@@ -39,6 +45,34 @@ body{
 
   @include media-breakpoint-up(lg) {
       margin: $component-margin-lg;
+
+   }
+  @include media-breakpoint-up(xl) {
+   }
+
+}
+
+.component-margin-bottom{
+  border: 0px solid red;
+  margin: $component-margin-sm;
+    margin-top: 0;
+  @include media-breakpoint-up(sm) {
+      margin: $component-margin-sm;
+      margin-top: 0;
+   }
+
+  @include media-breakpoint-up(md) {
+      margin: $component-margin-md;
+      margin-top: 0;
+    }
+
+
+
+
+  @include media-breakpoint-up(lg) {
+      margin: $component-margin-lg;
+      margin-top: 0;
+
 
    }
   @include media-breakpoint-up(xl) {

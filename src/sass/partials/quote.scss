@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     padding: 0 0 4rem 0;
     background-position: bottom left;
-    transition: font-size 1s;
+  
 
     @include media-breakpoint-up(md) {
           font-size: 4rem;

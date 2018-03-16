@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal'
 class ImageGridTwoImagesFlopped extends Component {
 
 
@@ -50,7 +50,7 @@ class ImageGridTwoImagesFlopped extends Component {
       <div className="image-grid component-margin row no-gutters">
 
 
-    <Fade bottom>
+    <Reveal effect="fadeInUpCustom">
 
 
 
@@ -77,8 +77,8 @@ class ImageGridTwoImagesFlopped extends Component {
 
 
             </div>
-        
-</Fade>
+
+</Reveal>
       </div>
 
 

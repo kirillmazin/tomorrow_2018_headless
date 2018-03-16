@@ -4,16 +4,41 @@
 
   h4{
     font-family: "Akkurat-Bold";
-    font-size: 1.6rem;
-    margin: 3rem 0 1.6rem 0;
+    font-size: 1.2rem;
+    margin: 2.4rem 0 1.4rem 0;
+
+
+        @include media-breakpoint-up(md) {
+              margin: 3rem 0 1.6rem 0;
+              font-size: 1.6rem;
+
+         }
+        @include media-breakpoint-up(lg) {
+              margin: 3rem 0 2rem 0;
+
+        }
   }
 
   h2{
-    font-size: 3rem;
+
     margin:0 0 0 0;
-    padding: 0;
-      border: 0px solid red;
-      a{
+
+    border: 0px solid green;
+    font-size: 2.4rem;
+      width:90%;
+      padding: 0 0 4rem 0;
+    @include media-breakpoint-up(md) {
+          width:80%;
+
+     }
+    @include media-breakpoint-up(lg) {
+        font-size: 3rem;
+          padding: 0 0 6rem 0;
+
+    }
+
+
+      i{
 
         background-image: linear-gradient(90deg, #ff5e62, #F9D423);
         background-image: linear-gradient(90deg, #fff, #fff);
@@ -22,7 +47,7 @@
         background-size: 0% 100%;
         color:$body-color;
         text-decoration: none;
-        border:0px solid red;
+      
         transition: background-size 500ms;
 
       }
@@ -46,13 +71,29 @@ div{
 }
 
 .image-tile{
-  border: 0px solid red;
+
   transition: all 500ms;
   margin:0;
   padding: 0;
   position: relative;
   transition-delay: all 1s;
-    overflow: hidden;
+  overflow: hidden;
+
+  margin-right: 0;
+
+  border: 0px solid red;
+  @include media-breakpoint-up(md) {
+      margin-right: 1rem;
+
+   }
+  @include media-breakpoint-up(lg) {
+
+
+  }
+  @include media-breakpoint-up(xl) {
+
+
+  }
 
   .image{
     position: absolute;
@@ -69,6 +110,25 @@ div{
   }
 }
 
+.image-tile-right{
+      border: 0px solid blue !important;
+      margin-left: 0;
+
+      @include media-breakpoint-up(md) {
+          margin-left: 1rem;
+              margin-top: 70px;
+       }
+      @include media-breakpoint-up(lg) {
+
+
+      }
+      @include media-breakpoint-up(xl) {
+            margin-top: 200px;
+
+      }
+
+
+}
 
 
 }

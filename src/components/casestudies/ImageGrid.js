@@ -19,7 +19,6 @@ class ImageGrid extends Component {
 
       if(numberofimages == 2 && type == "two_squares_b_c"){
 
-        console.log("+++++++++++++++++++++++++++++++ TWO SQUARES B C");
           return(
             <ImageGridTwoImages images={this.props.images}/>
 
@@ -47,7 +46,7 @@ class ImageGrid extends Component {
 
       if(numberofimages == 3 && type == "two_squares_b_c"){
 
-      
+
           return(
             <ImageGridThreeImages images={this.props.images}/>
 

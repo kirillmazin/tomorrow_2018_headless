@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll'
 import styles from '../../stylesheets/styles.css'
-import Fade from 'react-reveal/Fade';
-
-
+import Reveal from 'react-reveal/Reveal'
+import { ParallaxProvider, Parallax } from 'react-skrollr'
 class LargeParagraph extends Component {
 
 
@@ -18,15 +17,16 @@ class LargeParagraph extends Component {
       <div className="row no-gutters comp component-margin">
 
 
-        <Fade bottom cascade>
+        <Reveal effect="fadeInUpCustom">
           <div className="large-paragraph col-lg-7 offset-lg-4">
-            
+
               <p>
                   {this.props.copy}
               </p>
-              
+
               </div>
-        </Fade>
+        </Reveal>
+        
       </div>
 
 

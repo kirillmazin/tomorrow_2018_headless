@@ -33,7 +33,7 @@ export default class Page extends React.Component {
   }
 
   componentDidUpdate() {
-    this.props.prismicCtx.toolbar();
+  //  this.props.prismicCtx.toolbar();
     window.scrollTo(0, 0);
   }
 
@@ -226,12 +226,13 @@ export default class Page extends React.Component {
       <div className="case-study">
 
       <Window image={hero_image} title={title} subtitle={subtitle}/>
-          <div className="container-fluid" >
-            <div className="col-10 offset-1">
+          <div className="container-fluid no-gutters" >
+            <div className="col-sm-12 col-md-10 offset-md-1">
+            <div className="case-study-margin-wrapper">
             {to_render}
             <Footer/>
             </div>
-
+            </div>
         </div>
       </div>
       </div>

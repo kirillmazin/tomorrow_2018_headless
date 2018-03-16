@@ -1,8 +1,18 @@
-.workFilters{
-  border:0px solid white;
-  font-size: 4rem;
-  padding-bottom: 9rem;
+.work-filters{
+  border:0 solid white;
+  font-size: 2.6rem;
+  padding-bottom: 5rem;
   color:white;
+  border: 0px solid red;
+  @include media-breakpoint-up(md) {
+        font-size: 4rem;
+        padding-bottom: 9rem;
+   }
+  @include media-breakpoint-up(lg) {
+        margin: 3rem 0 0rem 0;
+
+  }
+
   div{
     border:0px solid white;
     margin:0;
@@ -20,8 +30,10 @@
     cursor: pointer;
   }
 
-  .selectorElement{
+  .selector-element{
     cursor: pointer;
+    border: 0px solid red;
+
     a{
       color: #ffffff;
     }
@@ -31,20 +43,42 @@
       background-image: url('../imgs/ui/arrow-down.svg');
       background-repeat: no-repeat;
       background-position: center;
+      background-size: 100%;
       display: inline-block;
       content:"";
-      height:20px;
-      width:22px;
+
+      height:15px;
+      width:18px;
       margin-left: 1rem;
       border:0px solid red;
       transform: rotate(180deg);
       transition: all 500ms;
       transform-origin:50% 50%;
+
+      @include media-breakpoint-up(md) {
+        height:20px;
+        width:22px;
+       }
+      @include media-breakpoint-up(lg) {
+
+
+      }
     }
 
     .tags-open{
       border: 0px solid red !important;
       overflow: hidden;
-      margin-top: 5rem;
+
+      margin-top: 3rem;
+      @include media-breakpoint-up(md) {
+            margin-top: 5rem;
+       }
+      @include media-breakpoint-up(lg) {
+
+
+      }
+
+
+
     }
 }

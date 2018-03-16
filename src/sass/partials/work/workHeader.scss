@@ -1,7 +1,60 @@
 .workheader{
-  transition: all 1s;
-  border:0px solid #FC7753;
-  padding-top: 25rem;
-  background-color:#FC7753
 
+
+  @include media-breakpoint-up(md) {
+
+
+   }
+  @include media-breakpoint-up(lg) {
+
+
+
+  }
+
+  .header-color{
+      background-color: #FC7753;
+      padding-top: 25rem;
+  }
+
+  .content-block{
+    @include clearfix;
+    border:0px solid red;
+  }
+
+
+
+}
+.border{
+  border: 1px solid green !important;
+}
+
+.color-band{
+
+  border: 0px solid red;
+
+  position: absolute;
+  top:0;
+
+  background-color: #fff;
+  width:100%;
+
+}
+
+
+
+.featured-projects{
+      background: linear-gradient(#FC7753, #FC7753);
+      background-size: 1px 100px;
+      background-repeat: repeat-x;
+      transition: background-size 500ms;
+
+      @include media-breakpoint-up(md) {
+        background-size: 1px 120px;
+
+       }
+      @include media-breakpoint-up(lg) {
+        background-size: 1px 170px;
+
+
+      }
 }

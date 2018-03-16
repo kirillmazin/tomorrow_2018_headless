@@ -1,0 +1,175 @@
+
+
+.government{
+
+  border: 0px solid red;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  @include clearfix;
+  height:1000px;
+  overflow: hidden;
+  display: block;
+  margin: 0 20rem 0 30rem;
+  margin: 0 10rem 0 10rem;
+
+  overflow: hidden;
+
+
+
+
+
+
+
+
+
+      .copy-block,.copy-block-text{
+        border: 0px solid pink;
+
+
+        padding:10rem;
+        width:690px;
+        position: absolute;
+        float: right;
+        right:0;
+
+        mix-blend-mode: multiply;
+        background-color: #FFD955;
+        z-index: 2;
+
+
+
+
+
+
+        p{
+
+          opacity: .99;
+          font-size: 1.7rem;
+          margin: 0;
+          padding: 0;
+          font-family: "Tiempos-Bold";
+          line-height: 130%;
+          color:white;
+
+          a{
+
+            background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+            background-image: linear-gradient(90deg, #61CEC9, #61CEC9);
+            background-repeat: no-repeat;
+            background-position: 0 19px;
+            background-size: 0% 100%;
+
+            text-decoration: none;
+
+            transition: background-size 500ms;
+
+          }
+
+          a:hover{
+            text-decoration: none;
+            background-size: 100% 100%;
+          }
+
+
+
+        }
+        @include media-breakpoint-up(sm) {
+          p{
+            font-size: 2.4rem;
+
+          }
+
+
+
+         }
+
+        @include media-breakpoint-up(md) {
+          p{
+            font-size: 2.4rem;
+
+          }
+
+
+
+         }
+        @include media-breakpoint-up(lg) {
+
+                      p{
+                        font-size: 4.6rem;
+                        opacity: .99;
+                      }
+
+         }
+        @include media-breakpoint-up(xl) {
+
+
+         }
+
+      }
+
+
+
+.copy-block-text{
+  background-color: transparent;
+  mix-blend-mode: normal;
+
+}
+
+      .government-image-wrapper{
+
+        border: 0px solid red;
+        transform-origin: 0 0;
+        position: relative;
+
+      }
+      .government-image{
+        border: 0px solid pink;
+        position: absolute;
+        top:100px;
+        width: 100%;
+          z-index: 1;
+          mix-blend-mode: multiply;
+          filter: grayscale(.5);
+          @include clearfix;
+      .large-image{
+          border: 0px solid red;
+          margin:0;
+          padding: 0;
+          position: relative;
+          @include clearfix;
+        .image{
+          position: absolute;
+          top:0;
+            border: 0px solid red;
+          left:0;
+          bottom: 0;
+          right: 0;
+          background-size:100% auto;
+          background-position:"center center";
+          background-repeat:no-repeat;
+          @include clearfix;
+
+
+        }
+
+      }
+    }
+
+
+}
+
+
+.box{
+  width: 30px;
+ height: 30px;
+ background: red;
+ border-radius: 50%;
+ cursor: pointer;
+
+}
+
+
+.highlight-margin{
+  padding:10rem 0 10rem 0;
+}

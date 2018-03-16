@@ -1,0 +1,29 @@
+
+
+
+
+
+.contact-band{
+
+
+      background-repeat: repeat-x;
+      transition: background-size 500ms;
+
+      @include media-breakpoint-up(md) {
+
+
+       }
+      @include media-breakpoint-up(lg) {
+
+
+
+      }
+}
+
+
+.google-map{
+
+  border:0;
+  width:100%;
+
+}

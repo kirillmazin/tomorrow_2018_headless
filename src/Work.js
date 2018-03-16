@@ -30,7 +30,9 @@ export default class Work extends React.Component {
 
     this.fetchPage(props);
   }
+  componentDidMount(){
 
+  }
   componentDidUpdate() {
   //  this.props.prismicCtx.toolbar();
   }
@@ -160,10 +162,9 @@ export default class Work extends React.Component {
             if(type == "work_landing_page"){
 
 
-                console.log("this.state.doc");
-                console.log(this.state.doc.results[i]);
+
                 filterBy = (this.props.match.params.uid == undefined) ? 'everything' : this.props.match.params.uid;
-                console.log(this.state.doc.results[i]);
+
                 work_landing_page_data.services = [];
 
 
@@ -179,12 +180,14 @@ export default class Work extends React.Component {
 
                 o.uid = this.state.doc.results[i].uid;
                 o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
+
+
+
                 if(filterBy == o.uid){
 
                   filterLabel = o.filter;
-                  console.log("////////////////////////");
 
-                  
+
 
 
                   for(let m=0;m<this.state.doc.results[i].data.areas_of_expertise_to_include.length;m++){
@@ -205,7 +208,9 @@ export default class Work extends React.Component {
                     //console.log("oooooooooo");
 
               //  all_filters.push(this.state.doc.results[i].data.filter_by_tag[0].text);
-                  all_filters.push(o);
+
+                all_filters.push(o);
+
               //    console.log(this.state.doc.results[i]);
             }
 
@@ -213,11 +218,34 @@ export default class Work extends React.Component {
 
         }
 
+        console.log(all_filters)
+
+        function compare(a,b){
+          const filterA = a.uid.toUpperCase();
+          const filterB = b.uid.toUpperCase();
+
+          let comparison = 0;
+          if(filterA > filterB){
+              comparison = 1;
+          } else if (filterA < filterB) {
+              comparison = -1;
+            }
+            console.log(comparison);
+            return comparison;
+        }
+
+        all_filters.sort(compare);
+        console.log(all_filters)
+        let o = {};
+        for(let i=0; i<all_filters.length;i++){
+            if(all_filters[i].filter == "Everything"){
+               o = all_filters.splice(i, 1);
+            }
+        }
 
 
-
-
-
+        all_filters.splice(0,0,o[0])
+        console.log(all_filters)
 
       //  console.log(" to_inclue" + areas_of_expertise_to_include);
           return (

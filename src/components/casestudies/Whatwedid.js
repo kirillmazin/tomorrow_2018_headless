@@ -46,7 +46,7 @@ class Whatwedid extends Component {
 
 
 
-                <h2 className="section-title"><a href="">What we did</a></h2>
+                <h2 className="section-title"><i>What we did</i></h2>
 
 
         </div>

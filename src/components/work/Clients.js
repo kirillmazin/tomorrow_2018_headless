@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
 import Img_logo from '../../imgs/ui/tomorrow-logo.svg';
 import { ParallaxProvider, Parallax } from 'react-skrollr'
 /**
@@ -17,13 +17,12 @@ class Tag extends Component {
 
       background_image = {
           backgroundImage: "url(" + images[i].client_logo + ")",
-          border:"0px solid red",
-          height:260+'px',
-          backgroundPosition: 'center'
+
+
 
       }
 
-    all_images.push(<div className="col-2 mr-auto" style={background_image}></div>);
+    all_images.push(<div className="client-logo col-xs-6 col-sm-6 col-lg-3 mr-auto" style={background_image}></div>);
   }
   return all_images;
   }
@@ -50,20 +49,25 @@ class Tag extends Component {
 
     }}
   >
- <Fade bottom>
-      <div className="work-clients">
+<Reveal effect="fadeInUpCustom">
+      <div className="work-clients component-margin">
       <div className="row no-gutters">
-        <div className="col-4 offset-1">
+        <div className="col-sm-10 col-lg-4 offset-1">
            <h2><i>{this.props.title}</i></h2>
         </div>
       </div>
       <div >
-        <div className="row no-gutters offset-1">
+
+        <div className="row no-gutters">
+          <div className="col-10 offset-1">
+          <div className="row no-gutters client-logos">
             {this.getImages(this.props.images)}
+            </div>
+            </div>
         </div>
       </div>
          </div>
-</Fade>
+</Reveal>
 </Parallax>
        </div>
 

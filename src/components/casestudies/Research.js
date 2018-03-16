@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Researchnumber from './Researchnumber'
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal'
 
 
 class Research extends Component {
@@ -31,10 +31,10 @@ class Research extends Component {
       <div className="research component-margin">
 
 
-      <Fade bottom cascade>
+        <Reveal effect="fadeInUpCustom">
         <div className="row  no-gutters">
         <div  className="col-lg-3 offset-lg-1">
-          <h2 className="section-title"><a href="">{this.props.title}</a></h2 >
+          <h2 className="section-title"><i>{this.props.title}</i></h2 >
         </div>
 
         <div className="col-lg-8 stats row no-gutters">
@@ -47,7 +47,7 @@ class Research extends Component {
         </div>
 
        </div>
-       </Fade>
+       </Reveal>
         </div>
 
 

@@ -5,23 +5,31 @@
     line-height: 120%;
     padding: 0 0 2.5rem 0;
     background-position: bottom left;
-    transition: font-size 1s;
+    transition: all 500ms;
 
-    border: 0px solid pink;
 
-    @include clearfix;
+
+
+
 
     p{
-      border:0px solid white;
+      width: 90%;
+      border: 0px solid red;
     }
+
+    
     @include media-breakpoint-up(md) {
           font-size: 4rem;
+          width: 100%;
      }
     @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+
+    }
+    @include media-breakpoint-up(xl) {
         font-size: 5rem;
 
     }
-    @include media-breakpoint-up(xl) { }
 
 
 

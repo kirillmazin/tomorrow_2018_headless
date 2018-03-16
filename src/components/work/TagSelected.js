@@ -22,7 +22,7 @@ class TagSelected extends Component {
 
 
 
-            {this.props.copy}
+            <i>{this.props.copy}</i>
 
 
       </div>

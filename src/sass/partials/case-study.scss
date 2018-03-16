@@ -5,9 +5,9 @@
 
         background-position: 0 15px;
         display: inline-block;
-        margin: 0 0 30px 0;
-        padding: 0 0 20px 0;
-
+        margin: 0 0 0 0;
+        padding: 0 0 3rem 0;
+        border: 0px solid red;
         @include media-breakpoint-up(md) {
             font-size: 3rem;
             background-position: 0 22px;
@@ -17,7 +17,7 @@
 
 
 
-          a{
+          i{
 
             background-image: linear-gradient(90deg, #FFFFFF, #FFFFFF);
             background-repeat: no-repeat;
@@ -37,4 +37,22 @@
   border: 0px solid red;
 
   top:0;
+}
+
+
+.case-study-margin-wrapper{
+  border: 0px solid red;
+      padding:0;
+  @include media-breakpoint-up(sm) {
+
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 0 3rem 0 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+   }
+
 }

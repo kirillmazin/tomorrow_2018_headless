@@ -20,7 +20,10 @@ class WorkHeader extends Component {
 
     this.state = {
       screen_percentage: .9,
-      selected:"Everything"
+      selected:"Everything",
+      headerHeight:{
+        "height":0
+      }
     };
   }
 
@@ -30,20 +33,27 @@ class WorkHeader extends Component {
 
 
     let window_height = $( window ).height();
+    let padding_top = parseInt(this.$el.css("paddingTop"));
+    let height = this.$content_container.height();
+    //height = this.$el.height();
+
+    let t = height+padding_top;
 
 
 
 
 
-      this.$el.css(
-        {"height":window_height*this.state.screen_percentage,
-          "backgroundColor":this.props.background_color
-      }
-        )
+    let top_margin = 0;
+
+
+
+
+/* services */
+
 
       this.$el_2.css(
         {
-          "border": "0px solid #FC7753",
+
           "height":this.$el_3.height()+100+'px'
 
 
@@ -64,9 +74,48 @@ class WorkHeader extends Component {
     this.$el = $(this.el);
     this.$el_2 = $(this.el_2);
     this.$el_3 = $(this.el_3);
-    this.$el.css(
+
+    this.$content_container = $(this.content_container);
+    this.$color_header = $(this.color_header);
+
+    this.$fc = $(this.featured_projects_container);
+
+    this.$header_color = $(this.header_color );
+
+
+
+
+    this.$header_color.css({
+
+
+      "backgroundColor":this.props.background_color,
+
+
+    })
+
+    this.$fc.css({
+
+
+      "background": `linear-gradient(${this.props.background_color}, ${this.props.background_color})`,
+      "backgroundSize":"1px 100px",
+      "backgroundRepeat":"repeat-x"
+
+
+    })
+
+  /*  this.$color_band = $(this.color_band);*/
+
+    /*
+    this.$color_band.css({
+      height: this.$fc.position().top,
+
+      "backgroundColor":this.props.background_color
+
+    })*/
+
+  /*  this.$el.css(
       {
-        "border": "0px solid #FC7753",
+
         "height":0+'px'
 
 
@@ -78,14 +127,14 @@ class WorkHeader extends Component {
 
 
 
-  )
+  )*/
 
 
 
 
   this.$el_2.css(
     {
-      "border": "0px solid #FC7753",
+
       "height":this.$el_3.height()+100+'px',
       "position": "absolute",
       "backgroundColor":"#ffffff",
@@ -99,7 +148,7 @@ class WorkHeader extends Component {
 
     this.$el_3.css(
       {
-        "border": "0px solid #FC7753"
+
 
 
 
@@ -111,45 +160,69 @@ class WorkHeader extends Component {
 
 
 
-    $( window ).resize(
+    $( window).resize(
       ()=>this.handleResize()
-    );
+    )
 
-      this.handleResize();
+    this.handleResize();
+
+
   }
-  renderServices(items, featured_case_studies){
+  getServicesModule(services_visible, items, featured_case_studies){
+
+    if(services_visible){
       return (
         <div>
+
         <div ref={el => this.el_2 = el}>
 
         </div>
-        <div className="col-10 offset-1">
+        <div className="no-gutters col-md-12 col-lg-10 offset-lg-1">
         <div ref={el => this.el_3 = el}>
           <Services scope={items} />
         </div>
 
           <ProjectGrid projects={this.props.projects} grid_items_filters={this.props.grid_items_filters} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
       </div>
+
       </div>
 
     )
+  } else {
+    return "";
+  }
 
-
-
+  setTimeout(this.handleResize(),1000);
   }
   handleTagClick(value){
 
     window.location = value;
 
+
+
+
   }
 
   getClientsModule(state, title, images){
+
+
     if(state){
       return <Clients title={title} images={images}/>
     }
     else {
       return "";
     }
+  }
+  onMenuExpand(value){
+
+
+    let padding_top = parseInt(this.$el.css("paddingTop"));
+    let height = this.$content_container.height();
+
+
+
+
+
   }
   render() {
 
@@ -159,9 +232,15 @@ class WorkHeader extends Component {
 
 
     let items = [];
-    let clients = false;
+
+    let clients_visible = false;
     let clients_data = [];
     let clients_title;
+
+    // Services
+
+    let services_visible = false;
+
 
     for(let i=0;i<this.props.work_landing_page_data.length;i++){
 
@@ -171,7 +250,7 @@ class WorkHeader extends Component {
 
         if(services.slice_type == "services"){
 
-
+          services_visible = true;
 
             for(let l=0;l<this.props.work_landing_page_data[i].items.length;l++){
 
@@ -197,18 +276,17 @@ class WorkHeader extends Component {
 
         if(services.slice_type == "clients"){
 
-          clients = true;
+          clients_visible = true;
 
         //  console.log(" +++++ WE HAVE CLIENTS ");
         //  console.log();
           clients_title =  this.props.work_landing_page_data[i].primary.clients_title[0].text;
           for(let l=0;l<this.props.work_landing_page_data[i].items.length;l++){
             let o = {};
-              o.client_name  = this.props.work_landing_page_data[i].items[l].client_name[0].text;
+              o.client_name  = (this.props.work_landing_page_data[i].items[l].client_name[0]!= undefined) ? this.props.work_landing_page_data[i].items[l].client_name[0].text : "";
               o.client_logo  = this.props.work_landing_page_data[i].items[l].client_logo.url;
 
-              //console.log(this.props.work_landing_page_data[i].items[l].client_logo.url);
-            //  console.log(this.props.work_landing_page_data[i].items[l].client_name[0].text);
+
 
               clients_data.push(o);
           }
@@ -221,7 +299,7 @@ class WorkHeader extends Component {
   //  console.log("?????????? " + this.props.work_landing_page_data);
   //  console.log(this.props.work_landing_page_data);
     let mytext = this.props.page_intro;
-
+        this.setState();
     return (
 
 
@@ -229,34 +307,43 @@ class WorkHeader extends Component {
 
       <div>
         <Menu/>
+
         <div className="workheader" ref={el => this.el = el}>
 
 
 
-            <div className="container-fluid">
-              <div className="col-7 offset-1">
-                <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color}/>
-                <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onClick={(value) => this.handleTagClick(value)}/>
+            <div className="container-fluid no-gutters header-color" ref={el => this.header_color = el}>
+
+              <div className="col-md-12 col-lg-10 offset-lg-1">
+
+                  <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color} />
+                  <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onMenuExpand={(value) => this.onMenuExpand(value)} onClick={(value) => this.handleTagClick(value)}/>
 
               </div>
             </div>
 
 
 
-            <div className="container-fluid">
 
 
-              <div className="col-10 offset-1">
+            <div className="container-fluid no-gutters featured-projects" ref={el => this.featured_projects_container = el}>
+
+
+              <div className="col-md-12 col-lg-10 offset-lg-1" >
+
                 <ProjectGridFeatured projects={this.props.projects} show={this.state.selected} featured_case_studies={featured_case_studies} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
                 </div>
               </div>
 
 
-            {this.renderServices(services, featured_case_studies)}
-            <div className="container-fluid col-10  offset-1">
+            {this.getServicesModule(services_visible, services, featured_case_studies)}
 
-            {this.getClientsModule(clients, clients_title, clients_data)}
-            <Footer/>
+
+            <div className="container-fluid no-gutters">
+              <div className="col-md-12 col-lg-10 offset-lg-1" >
+                {this.getClientsModule(clients_visible, clients_title, clients_data)}
+                <Footer/>
+              </div>
             </div>
 
 

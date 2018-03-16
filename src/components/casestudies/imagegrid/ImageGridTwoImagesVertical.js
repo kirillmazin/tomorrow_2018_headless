@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll'
 import styles from '../../../stylesheets/styles.css'
+import Reveal from 'react-reveal/Reveal'
 class ImageGridTwoImagesVertical extends Component {
 
 
@@ -28,7 +28,7 @@ class ImageGridTwoImagesVertical extends Component {
 
 
       <div className="image-grid component-margin">
-      
+
           <div className="row no-gutters col-lg-10 offset-lg-2">
 
 
@@ -39,8 +39,8 @@ class ImageGridTwoImagesVertical extends Component {
 
 
         </div>
-  
-      
+
+
           <div className="row no-gutters col-lg-6">
 
 
@@ -50,7 +50,7 @@ class ImageGridTwoImagesVertical extends Component {
 
 
         </div>
-      
+
       </div>
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal'
+import { ParallaxProvider, Parallax } from 'react-skrollr'
 class ImageGridTwoImages extends Component {
 
 
@@ -53,34 +54,49 @@ class ImageGridTwoImages extends Component {
     <div class="image-grid component-margin row no-gutters">
 
 
-  <Fade bottom>
+  <Reveal effect="fadeInUpCustom">
 
 
 
 
 
             <div className="col-sm-12 col-md-6  shift-bottom-200">
+            <Parallax
+          data={{
+            'data-top-bottom':'transform: translate(0, -40%); opacity: 1;',
+            'data-top-center':'transform: translate(0, 0px); opacity: 1;',
+            'data-center-bottom':'transform: translate(0, 0px); opacity: 1; transition: all 500ms'
 
+          }}
+          >
 
               <div className="image-tile" style={image_height_1}>
                   <div className="image" style={imageVertical_1}> </div>
               </div>
 
-
+</Parallax>
           </div>
 
 
 
             <div className="col-sm-12 col-md-6">
 
+            <Parallax
+          data={{
+            'data-top-bottom':'transform: translate(0, -20%); opacity: 1;',
+            'data-top-center':'transform: translate(0, 0px); opacity: 1;',
+            'data-center-bottom':'transform: translate(0, 0px); opacity: 1; transition: all 500ms'
 
+          }}
+          >
               <div className="image-tile" style={image_height_2}>
                   <div className="image" style={imageVertical_2} ></div>
               </div>
 
-
+            </Parallax>
           </div>
-</Fade>
+</Reveal>
+
     </div>
 
 

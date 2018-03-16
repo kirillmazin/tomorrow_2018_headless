@@ -1,40 +1,45 @@
 
 .case-study-hero{
-    height:600px;
-    transition: all 1s;
-    border: 0px solid red;
+
+
+
     position:relative;
 
       display: block;
-
-
+      /*display: flex;
+      align-items: flex-end;
+*/
 
       @include media-breakpoint-up(md) {
         display: flex;
         align-items: flex-end;
-        height:600px
+
       }
 
-      @include media-breakpoint-up(lg) { height:800px}
+      @include media-breakpoint-up(lg) { }
 
 
-      @include media-breakpoint-up(xl) { height:900px}
+      @include media-breakpoint-up(xl) { }
         overflow: hidden;
 
 }
 
 
 .case-study-image{
-  height:100%;
+  border: 0px solid red;
+  height:600px;
   position: relative;
+  /*position: absolute;
+  top:0;*/
   width: 100%;
   background-size:100% auto;
   background-repeat: no-repeat;
   background-position: center center;
-  border:0px solid red;
+  border:1px solid red;
   transition: all 1s;
-    @include media-breakpoint-up(md) {
 
+
+    @include media-breakpoint-up(md) {
         height: 100%;
         position: absolute;
         top:0;
@@ -57,13 +62,14 @@
 .case-study-header{
     position: relative;
 
-      border:0px solid red;
+      border:0px solid pink;
     font-family: "Akkurat-Regular";
     background-color: $color-background;
+    padding:1rem 3rem 2rem 3rem;
 
 
     @include media-breakpoint-up(sm) {
-        padding:0;
+
      }
 
     @include media-breakpoint-up(md) {
@@ -71,15 +77,32 @@
 
      }
     @include media-breakpoint-up(lg) {
-        padding:6rem 6.5rem 0 6.5rem;
+        padding:6.5rem 6.5rem 0 6.5rem;
      }
     @include media-breakpoint-up(xl) {
 
 
      }
 
+     /* wrapper around the type */
+
+
+    .header-type{
+      border: 0px solid red;
+      padding: 0;
+      margin:2rem 0 0 0;
+      @include media-breakpoint-up(md) {
+          margin:2rem 0 0 3rem;
+       }
+
+       @include media-breakpoint-up(lg) {
+           margin:0 0 0 6.5rem;
+        }
+
+    }
+        /* large type */
     h1{
-        transition: all 1s;
+
         font-size: 3.4rem;
         font-family: "Tiempos-Bold";
         background-image: url("../imgs/ui/line-black-60-9.svg");
@@ -89,6 +112,7 @@
         padding: 0 0 30px 0;
         margin: 0;
 
+        width:90%;
         @include media-breakpoint-up(md) {
             font-size: 4rem;
             padding: 0 0 60px 0;
@@ -104,16 +128,18 @@
         }
     }
 
+    /* all caps type */
     h4{
 
         letter-spacing: 1px;
         text-transform: uppercase;
-        font-size: 1rem;
-        margin: 3.4rem 0 1.3rem 0;
+        font-size: 1.2rem;
+        border: 0px solid red;
+        margin: 0 0 1.3rem 0;
         @include media-breakpoint-up(md) {
-            margin: 0 0 20px 0;
+
             font-size: 1.3rem;
-            margin: 2rem 0 2rem 0;
+            margin: 0 0 2rem 0;
          }
         @include media-breakpoint-up(lg) {
             font-size: 1.7rem;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
 import styles from './ProjectTile.css'
 import { Link} from 'react-router-dom'
 import { ParallaxProvider, Parallax } from 'react-skrollr'
-
+import $ from 'jquery';
 /**
  * This is a quote component used on the case study page
  */
@@ -15,8 +16,15 @@ class ProjectTile extends Component {
     this.state = {
 
       show: true,
-      imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red"},
+      imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")"},
+      tile_size : {border:"0px solid red",transform: 'scale(1)', transition: 'all 500ms'},
+      link_underline:{
 
+
+            backgroundSize: "0% 100%"
+
+
+      }
 
     };
 
@@ -31,7 +39,22 @@ class ProjectTile extends Component {
 
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red", transform:"scale(1.2)"},
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"1px solid red",transform: 'scale(1.2)'},
+        tile_size : {border:"0px solid red",transform: 'scale(.97)', transition: 'all 500ms'},
+        image_height :{
+
+
+           transform: 'scale(1.2)'
+
+
+        },
+        link_underline:{
+
+              backgroundSize: "100% 100%"
+
+
+
+        }
       }
 
     )
@@ -40,11 +63,43 @@ class ProjectTile extends Component {
   handleMouseOut(){
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red", transform:"scale(1)"},
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")"},
+          tile_size : {border:"0px solid red",transform: 'scale(1)', transition: 'all 500ms'},
+          link_underline:{
+
+                backgroundSize: "0% 100%",
+                animationDirection: "reverse"
+
+
+          }
       }
 
     )
   }
+
+  getTile(image_height, bottom_padding, alignment ){
+    let style_to_add = "image-tile"
+    let type_style = "";
+
+    if(alignment == 1){
+
+      type_style = "image-tile-right";
+    }
+
+
+    return (
+    <div className={type_style}  style={this.state.tile_size} ref={el => this.el = el}>
+      <div className={style_to_add} style={this.state.image_height} >
+          <div className="image" style={this.state.imageBg}/>
+      </div>
+
+
+      <h4> {this.props.data.title}</h4>
+      <h2><i style={this.state.link_underline} ref={el => this.project_name_underline = el}>{this.props.data.subtitle}</i></h2>
+    </div>
+    )
+  }
+
   getMargin(alignment, gutter){
     let margin_right;
 
@@ -61,7 +116,15 @@ class ProjectTile extends Component {
 
     return margin_right;
   }
+  componentDidMount(){
+      this.$el = $(this.el);
+      this.$project_name_underline = $(this.project_name_underline);
 
+
+      this.$el.css("border":"1px solid red")
+
+
+  }
   render() {
     //  console.log("selected " +  this.props.show);
     //  console.log(this.props.data.area_of_expertise);
@@ -76,22 +139,19 @@ class ProjectTile extends Component {
      let bottom_margin = 10;
 
     // let offset = (id == 0)? offset = 0 : offset =  Math.floor(Math.random()*250)+50;
-     let offset = 0;
 
-     if(alignment == 1){
-       offset = 200
-     }
      //offset = 0;
       const random = (Math.random()*1)+.9
       let aspect_ratio = random;
 
       aspect_ratio = 1.3;
-      const image_height = {
+      this.state.image_height = {
 
         'paddingTop': 100/aspect_ratio+'%',
          display:'block',
-         border: '0px solid red',
-         'marginTop':offset+'px'
+         transform: 'scale(1)'
+
+
       }
 
       const bottom_padding = {
@@ -128,15 +188,15 @@ class ProjectTile extends Component {
 
 
 
- <Fade bottom cascade>
+<Reveal effect="fadeInUpCustom">
 
-      <div className="col-6">
+      <div className="col-sm-12 col-md-6">
 
-      <div className="projectTile" style={this.getMargin(alignment, gutter)}   onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
+      <div className="projectTile"  onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
       <Parallax
     data={{
-      'data-top-bottom':'transform[sqrt]: translate(0, -140%); opacity:0; ',
-      'data-top-bottom':'transform[sqrt]: translate(0, -50%); opacity:0;',
+
+      'data-top-bottom':'transform: translate(0, -20%); opacity:1;',
       'data-center-bottom': 'transform[sqrt]: translate(0%, 0%); opacity:1;',
       'data-bottom-top': 'transform[sqrt]:  translate(0%, 0%); opacity:1;transition:all 1s;'
     }}
@@ -145,22 +205,15 @@ class ProjectTile extends Component {
           <Link to={"../project/"+this.props.data.uid}>
 
 
+            {this.getTile(this.state.image_height, bottom_padding, alignment)}
 
 
-          <div className="image-tile" style={image_height}>
-              <div className="image" style={this.state.imageBg}/>
-          </div>
-
-
-          <h4> {this.props.data.title}</h4>
-          <h2 style={bottom_padding}><a href="">{this.props.data.subtitle}</a></h2>
-
-      </Link>
+          </Link>
         </Parallax>
       </div>
 
       </div>
-  </Fade>
+  </Reveal>
     );
 
   } else{

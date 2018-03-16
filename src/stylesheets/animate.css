@@ -1466,9 +1466,33 @@
   }
 }
 
+@keyframes fadeInUpCustom {
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
+
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+
+.fadeInUpCustom {
+  -webkit-animation-name: fadeInUpCustom;
+  animation-name: fadeInUpCustom;
+
+  animation-duration: 3s;
+  animation-delay: 2s;
 }
 
 @-webkit-keyframes fadeInUpBig {

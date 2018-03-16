@@ -1,79 +1,66 @@
 .tags{
-  border: 0px solid red;
+  border: 1px solid red;
   margin:0 0 6rem 0;
-
   .tag{
-    font-size: 3rem;
+    font-size: 2.4rem;
+    border: 0px solid red;
+    line-height: 1.3;
     cursor: pointer;
-  }
-}
 
-@keyframes example {
-    0%   {
-      transition: background-size 200ms;
-      transition-timing-function: ease-in;
-      background-size: 0% 100%;
+    @include media-breakpoint-up(md) {
+          font-size: 3rem;
+
+     }
+    @include media-breakpoint-up(lg) {
 
 
     }
-    25%  {
+    cursor: pointer;
+    a{
+      background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+      background-image: linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.3));
+      background-repeat: no-repeat;
+      background-position: 0 19px;
+      background-size: 0% 100%;
+      color:#ffffff;
+      text-decoration: none;
+      border:0px solid red;
+      transition: background-size 500ms;
+    }
+
+    a:hover{
       transition: background-size 200ms;
       transition-timing-function: ease-in;
       background-size: 100% 100%;
 
-    }
-    50%  {
-      transition: background-size 200ms;
-      transition-timing-function: ease-in;
-      background-size: 0% 100%;
-
 
     }
-    100% {
-
-      transition: background-size 200ms;
-      transition-timing-function: ease-in;
-      background-size: 200% 100%;
-
-
-    }
-}
-
-.tag{
-  font-size: 4rem;
-  cursor: pointer;
-  a{
-
-    background-image: linear-gradient(90deg, #ff5e62, #F9D423);
-    background-image: linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.3));
-
-
-    background-repeat: no-repeat;
-    background-position: 0 19px;
-    background-size: 0% 100%;
-    color:#ffffff;
-    text-decoration: none;
-    border:0px solid red;
-    transition: background-size 500ms;
-
 
 
   }
 
-  a:hover{
-    transition: background-size 200ms;
-    transition-timing-function: ease-in;
-    background-size: 100% 100%;
-
-
-  }
-
-
 }
+
+
+
 
 
 .selected {
   color: black;
   cursor: default !important;
   border: 0px solid green;
+
+  i{
+    background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+    background-image: linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.3));
+    background-image: linear-gradient(90deg, rgba(0,0,0,.1), rgba(0,0,0,.1));
+    background-repeat: no-repeat;
+    background-position: 0 19px;
+    background-size: 100% 100%;
+    color:#ffffff;
+    text-decoration: none;
+    border:0px solid red;
+  
+
+  }
 }

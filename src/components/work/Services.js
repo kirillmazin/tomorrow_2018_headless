@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
+import Reveal from 'react-reveal/Reveal';
+import { ParallaxProvider, Parallax } from 'react-skrollr'
 
 
 class Services extends Component {
@@ -39,21 +41,38 @@ class Services extends Component {
 
       <div className="services row no-gutters">
 
-<Fade bottom cascade>
+
           <div className="col-lg-3 offset-lg-1">
 
+<Reveal effect="fadeInUpCustom">
+          <Parallax
+        data={{
+          'data-top-bottom':'transform: translate(0, -100%); opacity: 0;',
+          'data-top-center':'transform: translate(0, 0px); opacity: 1;',
+          'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
 
+        }}
+        >
 
+                <h2 className="section-title"><i>Services</i></h2>
 
-                <h2 className="section-title"><a href="">Services</a></h2>
-
-
+                </Parallax>
+                </Reveal>
         </div>
-</Fade>
 
-<Fade bottom cascade>
-          <div className="col-lg-3">
 
+<Reveal effect="fadeInUpCustom">
+          <div className="col-md-6 col-lg-4">
+
+
+          <Parallax
+        data={{
+          'data-top-bottom':'transform: translate(0, -40%); opacity: 0;',
+          'data-top-center':'transform: translate(0, 0px); opacity: 1;',
+          'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
+
+        }}
+        >
             <ul>
                 {
 
@@ -66,13 +85,24 @@ class Services extends Component {
                 }
 
             </ul>
-
+            </Parallax>
           </div>
 
-          </Fade>
-          <Fade bottom cascade>
-          <div className="col-lg-5">
+          </Reveal>
+          <Reveal effect="fadeInUpCustom">
 
+
+
+
+          <div className="col-md-6 col-lg-4">
+          <Parallax
+        data={{
+          'data-top-bottom':'transform: translate(0, -70%); opacity: 0;',
+          'data-top-center':'transform: translate(0, 0px); opacity: 1;',
+          'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
+
+        }}
+        >
             <ul>
               {
 
@@ -85,9 +115,12 @@ class Services extends Component {
               }
 
               </ul>
-
+              </Parallax>
           </div>
-</Fade>
+
+
+
+</Reveal>
 
 
 
