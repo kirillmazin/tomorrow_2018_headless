@@ -18,6 +18,8 @@ class LargeImage extends Component {
 
     }
 
+
+
     const image_height = {
       border:'0px solid red',
       'paddingTop': 100/this.props.aspect_ratio+'%',
@@ -36,7 +38,10 @@ class LargeImage extends Component {
               <Reveal effect="fadeInUpCustom">
             <div className="large-image" style={image_height}>
 
-              <div class="image" style={style}></div>
+              <div class="image" style={style}>
+
+                  <img src={this.props.image} />
+              </div>
 
 
             </div>

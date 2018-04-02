@@ -4,6 +4,7 @@ import PrismicReact from 'prismic-reactjs';
 import {RichText, Date} from 'prismic-reactjs';
 import LargeParagraph from './components/casestudies/LargeParagraph';
 import Quote from './components/casestudies/Quote';
+import Video from './components/casestudies/Video';
 import Header from './components/casestudies/Header';
 import LargeImage from './components/casestudies/LargeImage';
 import Whatwedid from './components/casestudies/Whatwedid';
@@ -14,7 +15,7 @@ import ImageGrid from './components/casestudies/ImageGrid';
 import Menu from './components/_globals/Menu.js';
 import Research from './components/casestudies/Research';
 import Website from './components/casestudies/Website';
-
+import Loading from './components/_globals/Loading';
 // Declare your component
 export default class Page extends React.Component {
 
@@ -79,7 +80,8 @@ export default class Page extends React.Component {
 
         o.slice_type = slice_type;
 
-
+      //  console.log(o.slice_type);
+      //  console.log(this.state.doc.data.body[i])
 
         if(o.slice_type == "research"){
 
@@ -125,6 +127,8 @@ export default class Page extends React.Component {
                 img_obj.url  =  this.state.doc.data.body[i].items[l].image.url;
                 img_obj.aspect_ratio = o.image_width / o.image_height;
 
+
+
                 o.images.push(img_obj);
 
 
@@ -132,12 +136,25 @@ export default class Page extends React.Component {
         }
         if(  o.slice_type == "large_paragraph"){
 
-
-          o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
+            o.copy  = PrismicReact.RichText.render(this.state.doc.data.body[i].primary.paragraph, this.props.prismicCtx.linkResolver);
+        //  o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
         }
 
           if( o.slice_type == "quote"){
-                o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
+
+
+
+
+
+                o.copy = this.state.doc.data.body[i].primary;
+          }
+
+          if( o.slice_type == "video"){
+            //    o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
+                console.log("++++ VIDEO ");
+                console.log(this.state.doc.data.body[i].primary.video.html);
+
+                o.video = this.state.doc.data.body[i].primary.video;
           }
 
 
@@ -184,6 +201,11 @@ export default class Page extends React.Component {
 
           if(cs_modules[i].slice_type  == "quote"){
             to_render.push(<Quote copy={cs_modules[i].copy}/>)
+
+          }
+
+          if(cs_modules[i].slice_type  == "video"){
+            to_render.push(<Video video={cs_modules[i].video}/>)
 
           }
 
@@ -248,7 +270,9 @@ export default class Page extends React.Component {
  } else if (this.state.notFound) {
    return <NotFound />;
  }
- return <h1>Loading</h1>;
+ return (
+
+ <Loading />);
 
   }
 }

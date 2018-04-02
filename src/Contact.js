@@ -16,6 +16,7 @@ import Footer from './components/_globals/Footer';
 import Interview from './components/casestudies/Interview';
 import ImageGrid from './components/casestudies/ImageGrid';
 import Menu from './components/_globals/Menu.js';
+import Loading from './components/_globals/Loading.js';
 import Research from './components/casestudies/Research';
 import Website from './components/casestudies/Website';
 import $ from 'jquery';
@@ -115,12 +116,12 @@ export default class Contact extends React.Component {
       let my_text = root.hero_title[0].text;
       let hero_color = root.hero_color;
 
-      console.log("-----");
+
       console.log(this.state.doc.results[0].data.hero_description);
 
       let hero_copy = PrismicReact.RichText.render(this.state.doc.results[0].data.hero_description, this.props.prismicCtx.linkResolver);
       //PrismicReact.RichText.render(this.state.doc.data.your_description_field_id, this.props.prismicCtx.linkResolver)
-  console.log("-----");
+
 
 
       //let desc =
@@ -305,7 +306,7 @@ export default class Contact extends React.Component {
  } else if (this.state.notFound) {
    return <NotFound />;
  }
- return <h1>Loading</h1>;
+ return (    <Loading />)
 
   }
 }

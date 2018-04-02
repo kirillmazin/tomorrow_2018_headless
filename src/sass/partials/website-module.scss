@@ -52,13 +52,317 @@ $margin-md: 40px;
         margin-top:25px;
         transition: margin 1s;
         @include media-breakpoint-up(md) { margin:$margin-md 0 0 0; }
-        @include media-breakpoint-up(lg) { margin:200px 0 0 0;}
+        @include media-breakpoint-up(lg) { margin:100px 0 0 0;}
         @include media-breakpoint-up(xl) { margin:200px 0 0 0;}
         img{
             width:100%;
         }
 
     }
+
+
+
+}
+
+.two-desktop{
+
+
+  .layered-1{
+
+      position: absolute;
+      border:1px solid red !important;
+    margin-top:300px;
+
+    zIndex:3;
+    width:100%;
+    height:auto;
+  }
+
+
+      .browser{
+          transition: all 300ms;
+        }
+
+        .browser-overlap{
+          margin-top:25px;
+          transition: margin 1s;
+          margin-top:25px;
+          @include media-breakpoint-up(md) { margin-top:$margin-md; }
+          @include media-breakpoint-up(lg) { margin-top: 100px;}
+          @include media-breakpoint-up(xl) { margin-top: 200px;}
+
+
+            img{
+                width:100%;
+
+            }
+
+        }
+}
+
+
+
+.desktop-mobile{
+  position: relative;
+  .large-image{
+      border: 1px solid red;
+      margin:0;
+      padding: 0;
+      position: relative;
+      padding-top: 100%;
+
+    .image{
+      position: absolute;
+      top:0;
+      left:0;
+      bottom: 0;
+      right: 0;
+      background-size:100% auto;
+      background-position:"center center";
+      background-repeat:no-repeat;
+    }
+
+  }
+
+
+
+      .browser{
+          transition: all 300ms;
+          border:0px solid pink;
+
+
+
+
+        }
+
+        .mobile-overlap{
+            position: absolute;
+            right: 0;
+          margin-top:25px;
+          transition: margin 1s;
+          margin-left:0px;
+          @include media-breakpoint-up(md) { margin-top:$margin-md; }
+          @include media-breakpoint-up(lg) { margin-top: 100px;}
+          @include media-breakpoint-up(xl) { margin-top: 200px;}
+
+
+
+
+        }
+}
+
+
+
+.four-desktops{
+  position: relative;
+    border: 0px solid red;
+    overflow:hidden;
+
+    .all-images-wrapper{
+
+        margin:0;
+        padding: 0;
+        position: relative;
+        padding-top: 100%;
+
+      .all-images{
+
+        position: absolute;
+        top:0;
+        left:0;
+        bottom: 0;
+        right: 0;
+        background-size:100% auto;
+        background-position:"center center";
+        background-repeat:no-repeat;
+
+
+      }
+
+    }
+
+
+
+  .large-image{
+    border: 0px solid red !important;
+    background-color: white !important;
+      margin:0;
+      padding: 0;
+      position: relative;
+      padding-top: 100%;
+
+    .image{
+
+      position: absolute;
+      top:0;
+      left:0;
+      bottom: 0;
+      right: 0;
+      background-size:100% auto;
+      background-position:"center center";
+      background-repeat:no-repeat;
+    }
+
+  }
+
+  .cover {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,.9);
+        transition: all 1s;
+    }
+  .layered-0{
+    border: 0px solid pink;
+    position: absolute;
+
+    margin-top:0;
+
+
+    width:100%;
+    height:auto;
+  }
+
+  .layered-1{
+
+      position: absolute;
+
+    margin-top:300px;
+
+    zIndex:3;
+    width:100%;
+    height:auto;
+  }
+
+  .layered-2{
+      position: absolute;
+
+    margin-top:150px;
+    right:0;
+    width:100%;
+    height:auto;
+  }
+
+
+
+
+
+
+      .browser{
+          transition: all 300ms;
+          border:0px solid pink;
+
+
+
+
+        }
+
+        .browser-2{
+            position: absolute;
+            right: 0;
+          margin-top:25px;
+          transition: margin 1s;
+          margin-left:-400px;
+          @include media-breakpoint-up(md) { margin-top:$margin-md; }
+          @include media-breakpoint-up(lg) { margin-top: 100px;}
+          @include media-breakpoint-up(xl) { margin-top: 200px;}
+
+
+
+
+        }
+
+        .browser-3{
+          display: none;
+          position: absolute;
+          right: 0;
+        margin-top:25px;
+        transition: margin 1s;
+        margin-left:-400px;
+        @include media-breakpoint-up(md) { margin-top:$margin-md; }
+        @include media-breakpoint-up(lg) { margin-top: 100px;}
+        @include media-breakpoint-up(xl) { margin-top: 200px;}
+        }
+}
+
+.two-desktops-new{
+  position: relative;
+    border: 0px solid red;
+    overflow:hidden;
+
+    .all-images-wrapper{
+
+        margin:0;
+        padding: 0;
+        position: relative;
+        padding-top: 100%;
+
+      .all-images{
+
+        position: absolute;
+        top:0;
+        left:0;
+        bottom: 0;
+        right: 0;
+        background-size:100% auto;
+        background-position:"center center";
+        background-repeat:no-repeat;
+
+
+      }
+
+    }
+
+
+
+  .large-image{
+    border: 0px solid red !important;
+    background-color: white !important;
+      margin:0;
+      padding: 0;
+      position: relative;
+      padding-top: 100%;
+
+    .image{
+
+      position: absolute;
+      top:0;
+      left:0;
+      bottom: 0;
+      right: 0;
+      background-size:100% auto;
+      background-position:"center center";
+      background-repeat:no-repeat;
+    }
+
+  }
+
+  .cover {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,.9);
+        transition: all 1s;
+    }
+
+  .layered-1{
+
+    position: absolute;
+    margin-top:200px;
+
+    zIndex:3;
+    width:100%;
+    height:auto;
+  }
+
 
 
 

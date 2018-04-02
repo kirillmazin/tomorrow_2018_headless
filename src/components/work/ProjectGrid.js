@@ -21,7 +21,7 @@ class ProjectGrid extends Component {
     let featured_projects = [];
     let projects_to_include = [];
 
-
+    if(featured_case_studies.length > 0){
     for(let i=0;i<featured_case_studies.length;i++){
       let featured_projects;
       let slug = featured_case_studies[i].slug;
@@ -45,7 +45,7 @@ class ProjectGrid extends Component {
 
     }
 
-
+}
 
 
 
@@ -58,7 +58,7 @@ class ProjectGrid extends Component {
                 for(let l=0;l<all_projects.length;l++){
                       for(let m=0; m<all_projects[l].area_of_expertise.length;m++){
                           if(categories[i] == all_projects[l].area_of_expertise[m]){
-                            
+
                               projects_to_include.push(all_projects[l]);
                               break;
                           }

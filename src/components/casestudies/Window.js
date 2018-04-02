@@ -98,8 +98,8 @@ class Window extends React.Component {
          <div className="case-study-header col-sm-12 col-md-10 offset-md-1">
               <Reveal effect="fadeInUpCustom">
               <div className="header-type">
-               <h4>{this.props.subtitle}</h4>
-               <h1>{this.props.title}</h1>
+               <h4>{this.props.title}</h4>
+               <h1>{this.props.subtitle}</h1>
                </div>
                </Reveal>
            </div>

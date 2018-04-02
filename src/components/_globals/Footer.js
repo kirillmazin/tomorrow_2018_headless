@@ -44,13 +44,13 @@ class Footer extends Component {
       <footer className="component-margin">
 
         <Reveal effect="fadeInUpCustom">
-          <h4 className="row no-gutters ">
+          <h4 className="row no-gutters">
 
             Let’s imagine tomorrow together.
 
             </h4>
         </Reveal>
-        <div className="row no-gutters ">
+        <div className="row no-gutters">
           <Reveal effect="fadeInUpCustom">
         <address className="col-md-4 col-lg-3">
 

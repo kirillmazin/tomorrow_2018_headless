@@ -42,7 +42,7 @@ class Services extends Component {
       <div className="services row no-gutters">
 
 
-          <div className="col-lg-3 offset-lg-1">
+          <div className="col-lg-3 ">
 
 <Reveal effect="fadeInUpCustom">
           <Parallax
@@ -54,15 +54,14 @@ class Services extends Component {
         }}
         >
 
-                <h2 className="section-title"><i>Services</i></h2>
-
+                <h2 className="section-title"><i>Our services</i></h2>
                 </Parallax>
                 </Reveal>
         </div>
 
 
 <Reveal effect="fadeInUpCustom">
-          <div className="col-md-6 col-lg-4">
+          <div className="col-md-5 col-lg-3">
 
 
           <Parallax

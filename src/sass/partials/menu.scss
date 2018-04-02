@@ -8,9 +8,8 @@
     position: absolute;
     width: 100%;
     top:0;
-    border: 0px solid red;
-
-
+    border: 0px solid green;
+    margin:0;
     @include media-breakpoint-up(sm) {
 
      }

@@ -40,7 +40,10 @@ class ImageGridTwoImagesHorizontal extends Component {
       <div className="row">
             <div className="col-sm-12 col-md-10">
               <div className="image-tile"  style={image_height_1}>
-                <div className="image" style={imageVertical_1}></div>
+                <div className="image" style={imageVertical_1}>
+                      <img src={this.props.images[0].url} />
+
+                </div>
             </div>
             </div>
       </div>
@@ -48,7 +51,9 @@ class ImageGridTwoImagesHorizontal extends Component {
           <div className="row justify-content-end">
               <div className="col-sm-12 col-md-10">
                 <div className="image-tile" style={image_height_2}>
-                  <div className="image" style={imageVertical_2}></div>
+                  <div className="image" style={imageVertical_2}>
+                      <img src={this.props.images[1].url} />
+                  </div>
                 </div>
              </div>
         </div>

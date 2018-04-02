@@ -61,17 +61,8 @@ class Menu extends Component {
 
             <div className="case-study-logo">
 
-
-
-
-
-
             <Link to="/">
-
-
                   <Parallax
-
-
                    data={{
                      'data--100-top':'transform: translate(0, -40%); opacity: 1;',
 

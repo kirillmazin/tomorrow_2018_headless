@@ -57,7 +57,7 @@ class Filters extends Component {
 
   handleClick(){
 
-    console.log("Handle click");
+
     let expand_by = 0;
     if(this.state.isShown == true){
 
@@ -145,7 +145,7 @@ class Filters extends Component {
 
 
 
-      console.log(" isShown " + this.state.isShown );
+
         if(this.state.isShown == true){
             height = this.$el.css("height");
 

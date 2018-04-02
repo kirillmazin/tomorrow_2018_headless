@@ -26,7 +26,9 @@ class Hamburger extends Component {
         },
         nav_style:{
           visibility: this.props.visibility,
-        }
+        },
+        top_bar:{transform:'rotate(0)',top:'10px'},
+        bottom_bar:{transform:'rotate(0)',top:'20px'}
 
 
     }
@@ -73,6 +75,8 @@ class Hamburger extends Component {
 
   componentDidMount(){
     this.$container = $(this.container);
+    this.$top_bar = $(this.top_bar);
+    this.$bottom_bar = $(this.top_bar);
 
     $( window ).resize(
       ()=>this.handleResize()
@@ -92,23 +96,36 @@ class Hamburger extends Component {
     let window_height = $(window).height();
 
 
+
+
     if(this.state.visibility  == 'hidden'){
       // show
+
+      this.setState({
+
+
+      })
+
         new_state = 'visible';
         this.setState({
 
           menu_style: {backgroundColor:'rgba(0,0,0,0.8)',height: $( window ).height()+'px'},
           nav_style:{
             visibility: new_state
-          }
+          },
+          top_bar:{transform:"rotate(45deg)", top: "20px"},
+          bottom_bar:{transform:"rotate(-225deg)", top: "20px"}
         })
     } else {
+
       this.setState({
         // hide
         menu_style: {backgroundColor:'rgba(0,0,0,0)',height: '100px'},
         nav_style:{
           visibility: new_state
-        }
+        },
+        top_bar:{transform:"rotate(0)", top: "10px"},
+        bottom_bar:{transform:"rotate(0)", top: "20px"}
       })
 
     }
@@ -134,7 +151,7 @@ class Hamburger extends Component {
 
 
 
-            <div className="hamburger-menu-module" ref={el => this.container = el} style={this.state.menu_style}>
+            <div className="hamburger-menu-module " ref={el => this.container = el} style={this.state.menu_style}>
 
               <div className="hamburger-menu" onClick={()=>this.hamburgerClick()}>
 
@@ -146,11 +163,11 @@ class Hamburger extends Component {
                'data-top-bottom':'transform: translate(0, 0%); opacity: 1; transition:all 500ms;'
              }}>
 
-             
-              <div className="top-bar bar"></div>
-              <div className="bottom-bar bar"></div>
 
-                </Parallax>
+                  <div className="top-bar bar" style={this.state.top_bar}></div>
+                  <div className="bottom-bar bar" style={this.state.bottom_bar}></div>
+
+              </Parallax>
 
 
 
@@ -158,17 +175,24 @@ class Hamburger extends Component {
             </div>
 
 
-          <div className="container-fluid no-gutters row">
-          <div className="col-md-2 offset-1">
-              <ul style={this.state.nav_style}>
-              <li><Link to={"../about/"}>About</Link></li>
+
+
+
+            <div className="col-8 offset-1 no-gutters">
+              <ul class="main-nav" style={this.state.nav_style}>
+
+
+              <li>  <Link to={"../about/"}>About</Link></li>
               <li><Link to={"../work/"}>Work</Link></li>
               <li><Link to={"../contact/"}>Contact</Link></li>
+
+
               </ul>
 
-              </div>
+            </div>
+
       </div>
-      </div>
+
 
 </Reveal>
 

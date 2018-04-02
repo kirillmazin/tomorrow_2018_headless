@@ -2,7 +2,7 @@
 
 .government{
 
-  border: 0px solid red;
+  border: 0 solid red;
   padding: 0;
   margin: 0;
   position: relative;
@@ -44,7 +44,7 @@
 
         p{
 
-          opacity: .99;
+          opacity: 0 !important;
           font-size: 1.7rem;
           margin: 0;
           padding: 0;
@@ -53,22 +53,24 @@
           color:white;
 
           a{
+            color:white;
 
-            background-image: linear-gradient(90deg, #ff5e62, #F9D423);
-            background-image: linear-gradient(90deg, #61CEC9, #61CEC9);
+            background-image: linear-gradient(90deg, white, white, 0.2);
+            background-image: linear-gradient(90deg, rgba(0,0,0,.2), rgba(0,0,0,.2));
             background-repeat: no-repeat;
             background-position: 0 19px;
-            background-size: 0% 100%;
+            background-size: 100% 100%;
 
             text-decoration: none;
 
-            transition: background-size 500ms;
+            transition: background-size 500ms, color 500ms;
 
           }
 
           a:hover{
             text-decoration: none;
-            background-size: 100% 100%;
+            background-size: 0 100%;
+            color: rgba(0,0,0,.8);
           }
 
 
@@ -113,14 +115,19 @@
 .copy-block-text{
   background-color: transparent;
   mix-blend-mode: normal;
+  p{
+    opacity: 1 !important;
+  }
 
 }
 
       .government-image-wrapper{
 
-        border: 0px solid red;
-        transform-origin: 0 0;
+        border: 1px solid red !important;
+        transform-origin: center;
         position: relative;
+        @include clearfix;
+
 
       }
       .government-image{
@@ -146,7 +153,8 @@
           bottom: 0;
           right: 0;
           background-size:100% auto;
-          background-position:"center center";
+          background-size: cover;
+          background-position:center center;
           background-repeat:no-repeat;
           @include clearfix;
 
@@ -172,4 +180,9 @@
 
 .highlight-margin{
   padding:10rem 0 10rem 0;
+}
+
+.government-spacer{
+  border: 0px solid red;
+  height:200px;
 }

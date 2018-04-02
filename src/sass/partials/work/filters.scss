@@ -1,5 +1,5 @@
 .work-filters{
-  border:0 solid white;
+
   font-size: 2.6rem;
   padding-bottom: 5rem;
   color:white;
@@ -21,7 +21,7 @@
   }
   .selector{
     background-image: url('../imgs/ui/work-filter-underline.svg');
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-position: left bottom;
     padding-bottom: 1.2rem;
     display: inline-block;
@@ -70,8 +70,11 @@
       overflow: hidden;
 
       margin-top: 3rem;
+      margin-bottom: 3rem;
+
       @include media-breakpoint-up(md) {
             margin-top: 5rem;
+              margin-bottom:8rem;
        }
       @include media-breakpoint-up(lg) {
 

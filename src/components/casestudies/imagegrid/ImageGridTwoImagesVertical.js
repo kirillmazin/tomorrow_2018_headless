@@ -33,7 +33,9 @@ class ImageGridTwoImagesVertical extends Component {
 
 
             <div className="image-horizontal">
-                <div className="image-source" style={imageHorizontal}></div>
+                <div className="image-source" style={imageHorizontal}>
+                    <img src="this.props.images[1]" />
+                </div>
             </div>
 
 
@@ -45,7 +47,9 @@ class ImageGridTwoImagesVertical extends Component {
 
 
             <div className="image-vertical">
-                <div className="image-source" style={imageVertical}></div>
+                <div className="image-source" style={imageVertical}>
+                      <img src="this.props.images[0]" />
+                </div>
             </div>
 
 

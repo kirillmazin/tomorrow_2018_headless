@@ -1,33 +1,43 @@
 
 
 .highlight{
-  background-color: white;
+  a{
+    text-decoration: none;
+    color:black;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color:black;
+  }
 
 
       p{
         border: 0px solid red;
-        font-size: 1.7rem;
+        font-size: 4.8rem;
         margin: 0;
         padding: 0;
-        font-family: "Tiempos-Bold";
+        font-family: "Akkurat-Light";
         line-height: 130%;
         a{
 
-          background-image: linear-gradient(90deg, #ff5e62, #F9D423);
-          background-image: linear-gradient(90deg, #61CEC9, #61CEC9);
+
+          background-image: linear-gradient(90deg, white, white);
           background-repeat: no-repeat;
           background-position: 0 19px;
-          background-size: 0% 100%;
+          background-size: 100% 100%;
+          background-position: right 3.7rem;
           color:$body-color;
           text-decoration: none;
 
-          transition: background-size 500ms;
+          transition: background-size 500ms, color 500ms;
 
         }
 
         a:hover{
           text-decoration: none;
-          background-size: 100% 100%;
+          background-size: 0% 100%;
+          color: $color-blue;
         }
 
 
@@ -66,8 +76,57 @@
        }
 
 
+
+
+
+}
+.image-height{
+  border: 0px solid red;
+  margin:0;
+  padding: 0;
+  position: relative;
+
+  .image{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background-size:100% auto;
+    background-position:"center center";
+    background-repeat:no-repeat;
+  }
+}
+.highlight-margin{
+  margin:25rem 0 25rem 0;
+  padding: 0 !important;
+  border: 1px solid red;
+
+  .copy{
+    img{
+      margin-top:7rem;
+    }
+
+
+
+  }
 }
 
-.highlight-margin{
-  padding:10rem 0 10rem 0;
+.intro-tag{
+
+  font-size: 4rem;
+  background-image: url('../imgs/ui/work-filter-underline.svg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding-bottom: 1.2rem;
+  display: inline-block;
+  border:0px solid red;
+  margin: 0;
+
+  cursor: pointer;
+  a{
+    text-decoration: none;
+    color: black;
+
+  }
 }

@@ -31,38 +31,134 @@ class Government extends Component {
   }
 
   render() {
-    let styleSheet = document.styleSheets[0]
+    let styleSheet = document.styleSheets[0];
     let animationName = 'yo';
 
     let keyframes = `@keyframes ${animationName}{
     0% {
       background: #FFD955;
-      border:0px solid #FFD955
+
     }
-    50% {
+    33% {
       background: #61CEC9;
-      border:0px solid #61CEC9;
+
     }
-    100%{
-        background: #FFD955;
+    66%{
+        background: #FC7753;
     }
 
   }
 
 
     `
+    let animationSpeed = '20s';
+    let max_scale = 1.1;
+    let small_scale = .98;
+    let small_margin = 30;
+    let large_margin = 300;
 
     let keyframes2 = `@keyframes yo2{
     0% {
-      transform:scale(1)
+
+      background-image: url(${this.props.images[0]});
+      transform: scale(1);
+      margin: 0 300rem 0 0rem;
+    }
+
+
+
+  4% {
+
+      background-image: url(${this.props.images[0]});
+      transform: scale(1);
+      margin: 0;
+      filter: grayscale(1);
+    }
+
+
+    29% {
+      background-image: url(${this.props.images[0]});
+      transform: scale(${max_scale});
+      opacity:1;
+      margin: 0 0 0 ${small_margin}rem;
+      filter: grayscale(0)
+    }
+    33% {
+      background-image: url(${this.props.images[0]});
+      transform: scale(${small_scale}                     );
+      margin: 0 0 0 ${large_margin}rem;
 
     }
-    50% {
-      transform:scale(1.1)
+
+
+
+    34% {
+      background-image: url(${this.props.images[1]});
+      transform: scale(1);
+      margin: 0 0 0 ${large_margin}rem;
+      filter: grayscale(1);
+
     }
-    100%{
-        transform:scale(1)
+    38% {
+      background-image: url(${this.props.images[1]});
+      transform: scale(1);
+      margin: 0;
+
+
     }
+    62% {
+      background-image: url(${this.props.images[1]});
+      transform: scale(${max_scale});
+      margin: 0 ${small_margin}rem 0 0;
+      filter: grayscale(0);
+    }
+    66% {
+      background-image: url(${this.props.images[1]});
+      transform: scale(${small_scale});
+      margin: 0 ${large_margin}rem 0 0;
+
+    }
+
+
+    67% {
+      background-image: url(${this.props.images[2]});
+      transform:scale(1);
+      margin: 0 0 0 300rem;
+
+    }
+
+
+
+    71% {
+
+
+      background-image: url(${this.props.images[2]});
+      transform: scale(1);
+      margin: 0;
+      filter: grayscale(1);
+
+    }
+
+        94% {
+
+
+          background-image: url(${this.props.images[2]});
+          transform: scale(${max_scale});
+          margin: 0;
+          filter: grayscale(0);
+
+        }
+
+
+
+        100% {
+          background-image: url(${this.props.images[2]});
+          transform: scale(${small_scale});
+          margin: 0 0 0 300rem;
+
+        }
+
+
 
   }
 
@@ -78,13 +174,14 @@ class Government extends Component {
     console.log(this.props.alignment);
 
     console.log("PROPS " + this.props.images[0])
-    const style = {
+    const image_style = {
 
-        backgroundImage: `url(${this.props.images[0]})`,
+
         animationName:'yo2',
         animationIterationCount:'infinite',
-        animationDuration: '10s'
+        animationDuration: animationSpeed,
 
+        animationTimingFunction: 'ease-out'
 
 
 
@@ -94,7 +191,7 @@ class Government extends Component {
     let box_style = {
 
         animationName:animationName,
-        animationDuration: '10s',
+        animationDuration: animationSpeed ,
         animationIterationCount:'infinite',
 
 
@@ -122,7 +219,7 @@ class Government extends Component {
 <div className="government component-margin">
 
 
-    <div className="copy-block" style={box_style}>
+    <div className="copy-block"  style={box_style}>
 
         <Parallax
       data={{
@@ -133,7 +230,7 @@ class Government extends Component {
       }}
       >
 
-    <div className="copy" >
+    <div className="copy">
 
       <p>{this.props.copy}</p>
 
@@ -142,15 +239,17 @@ class Government extends Component {
 
     </Parallax>
     </div>
+
+    <Reveal effect="fadeInUpCustom">
     <div className="copy-block-text">
       <p>{this.props.copy}</p>
     </div>
-
+    </Reveal>
 
     <Parallax
   data={{
 
-    'data-top':'transform: scale(1);  filter: grayscale(.7); opacity: 1;',
+    'data-top':'transform: scale(1);  filter: grayscale(0); opacity: 1;',
     'data-bottom-top':'transform: scale(1.5); filter: grayscale(1); opacity: .1; transform-origin: center; '
 
   }}
@@ -161,7 +260,7 @@ class Government extends Component {
               <div className="government-image">
 
                   <div className="large-image" style={image_height}>
-                    <div class="image" style={style}></div>
+                    <div class="image" style={image_style}></div>
                   </div>
 
              </div>

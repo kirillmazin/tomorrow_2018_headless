@@ -1,0 +1,91 @@
+.loading{
+    $circle-size: 200px;
+  $multiplier: 1.1;
+  height:100px;
+  width: 100px;
+
+  height:1000px;
+  width: 100%;
+  margin-top:60px;
+    margin-left:80px;
+    margin:0;
+  border:0px solid red;
+  display: flex;
+   justify-content: center;
+   align-items: center;
+  .white-circle{
+    height:$circle-size - 20;
+    width:$circle-size - 20;
+    background-color: white;
+    border-radius: $circle-size/2;
+    position: absolute;
+    opacity:1;
+
+  }
+
+  .gradient-circle-red{
+    height:$circle-size*(1 );;
+    width:$circle-size*$multiplier;
+    background: linear-gradient(rgba(145,5,117,1) , rgba(255,228,0,0));
+    border-radius: $circle-size/2;
+    position: absolute;
+    filter: blur(15px);
+
+    animation-name: breathing_gradient_2;
+    animation-duration: 8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    opacity: 1;
+  }
+  .gradient-circle-pink{
+    height:$circle-size*($multiplier - 0.2);
+    width:$circle-size*($multiplier+0.3);
+    background: linear-gradient(45deg, rgba(247,228,0,1) , rgba(240,102,144,1));
+    border-radius: $circle-size/2;
+    position: absolute;
+    filter: blur(40px);
+    animation-name: breathing_gradient_1;
+    animation-duration: 8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    transition: all 5;
+    opacity: 1;
+
+
+  }
+
+
+}
+@keyframes breathing_gradient_1{
+
+
+  0%{
+    transform: rotate(0);
+    opacity:1;
+    filter: blur(30px);
+      transition: all 1s;
+  }
+
+
+  100%{
+    transform: rotate(360deg); opacity: 1;
+    filter: blur(50px);
+
+
+  }
+}
+
+@keyframes breathing_gradient_2{
+  0%{
+    transform: rotate(0);
+    opacity: 1;
+        filter: blur(10px);
+
+  }
+
+  100%{
+    transform: rotate(360deg); opacity: 1;
+        filter: blur(30px);
+
+  }
+}

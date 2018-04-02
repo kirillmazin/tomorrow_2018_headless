@@ -1,5 +1,150 @@
 .video{
-  border:0px solid red;
   color:white;
-  padding-top: 40em;
+  position: relative;
+  top:0;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+
+  video{
+    /*position: fixed;
+    right:0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;*/
+
+
+
+  }
+  @keyframes glowanimation{
+    0%{
+        background-color: rgba(255,76,186,0.6);
+                filter: blur(150px);
+              width:100%;
+    }
+    50%{
+      background-color: rgba(255,217,85,1);
+          filter: blur(150px);
+        width:50%;
+
+
+    }
+    100%{
+        background-color: rgba(107,154,219,0.8);
+              filter: blur(150px);
+          width:100%;
+    }
+
+  }
+
+  .video-glow{
+    position: absolute;
+    width:100%;
+    height:250px;
+    border-radius: 100px;
+    bottom:-100px;
+    left: 0;
+    background-color: rgba(255,255,255,0.8);
+    filter: blur(100px);
+
+    animation-name: glowanimation;
+    animation-duration: 6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    background-blend-mode: multiply;
+
+
+  }
+
+  .home-hero-copy{
+    position: absolute;
+    border: 1px;
+    bottom:15rem;
+
+    font-weight: bold;
+    font-size: 2.7rem;
+    font-family: "Tiempos-Bold";
+    line-height: 120%;
+
+    @include media-breakpoint-up(md) {
+          font-size: 4rem;
+          width: 100%;
+     }
+    @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 6.4rem;
+
+    }
+
+
+  }
+
+  .video-home{
+
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 0;
+    height: 0;
+    width: auto;
+    overflow: hidden;
+
+
+  }
+
+  .embedded-video{
+
+    width:100%;
+    overflow: hidden;
+  }
+
+
+}
+
+
+.intro-video{
+    font-weight: bold;
+    font-size: 2.7rem;
+    font-family: "Tiempos-Bold";
+    line-height: 120%;
+    padding: 0 0 2.5rem 0;
+    background-position: bottom left;
+    transition: all 500ms;
+    border:10px solid red;
+    color: white;
+    padding-top: 55rem;
+      border:0px solid red;
+    position: relative;
+
+
+
+
+    p{
+
+      border: 0px solid red;
+
+    }
+
+
+    @include media-breakpoint-up(md) {
+          font-size: 4rem;
+          width: 100%;
+     }
+    @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 6.4rem;
+
+    }
+
+
+
+
+
+
+
 }

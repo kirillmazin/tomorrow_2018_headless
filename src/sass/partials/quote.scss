@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
     padding: 0 0 4rem 0;
     background-position: bottom left;
-  
+
 
     @include media-breakpoint-up(md) {
           font-size: 4rem;
@@ -18,5 +18,62 @@
 
     }
     @include media-breakpoint-up(xl) { }
+
+}
+.quote::before{
+content: '“';
+
+  margin-left: -1.3rem;
+@include media-breakpoint-up(md) {
+    margin-left: -2rem;
+ }
+@include media-breakpoint-up(lg) {
+    margin-left: -2.7rem;
+
+}
+}
+.quote::after{
+content: '”';
+}
+
+
+
+.name{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+  font-family: "Akkurat-Bold";
+
+  margin:2.2rem 0 .4rem 0;
+
+
+  @include media-breakpoint-up(md) {
+      font-size: 1.4rem;
+   }
+  @include media-breakpoint-up(lg) {
+      font-size: 1.7rem;
+      margin:4rem 0 1rem 0;
+
+  }
+
+}
+
+.title{
+  font-size: 1.6rem;
+
+  margin:0;
+  padding: 0;
+  border: 0px solid red;
+
+  @include media-breakpoint-up(md) {
+      font-size: 2rem;
+   }
+  @include media-breakpoint-up(lg) {
+      font-size: 2.4rem;
+
+  }
+
+
 
 }

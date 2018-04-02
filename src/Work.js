@@ -5,7 +5,7 @@ import Prismic from 'prismic-javascript';
 
 import styles from './work.css'
 import Tag from './components/work/Tag';
-
+import Loading from './components/_globals/Loading.js';
 import Footer from './components/_globals/Footer.js';
 import WorkHeader from './components/work/WorkHeader';
 // Declare your component
@@ -31,7 +31,7 @@ export default class Work extends React.Component {
     this.fetchPage(props);
   }
   componentDidMount(){
-
+      window.scrollTo(0, 0);
   }
   componentDidUpdate() {
   //  this.props.prismicCtx.toolbar();
@@ -44,7 +44,7 @@ export default class Work extends React.Component {
       return props.prismicCtx.api.query(
 
 
-          Prismic.Predicates.any('document.type', ['casestudy','work_landing_page'])
+          Prismic.Predicates.any('document.type', ['casestudy','work_landing_page']),{ pageSize : 100}
 
 
 ).then((doc) =>
@@ -78,8 +78,7 @@ export default class Work extends React.Component {
       if (this.state.doc) {
 
 
-        console.log("----")
-        console.log(this.state.doc)
+
 
 
         let cms_data = [];
@@ -99,7 +98,7 @@ export default class Work extends React.Component {
 
         this.state.numberOfProjects = this.state.doc.results.length;
 
-
+        console.log(this.state.doc)
         for(let i=0;i<this.state.doc.results.length;i++){
           let type = this.state.doc.results[i].type;
 
@@ -156,6 +155,8 @@ export default class Work extends React.Component {
 
             all_areas_of_expertise = $.unique(all_areas_of_expertise);
               let o = {};
+
+
             let a = $.unique(all_areas_of_expertise);
 
 
@@ -180,7 +181,7 @@ export default class Work extends React.Component {
 
                 o.uid = this.state.doc.results[i].uid;
                 o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
-
+                console.log(this.state.doc.results[i].data.filter_by_tag[0].text)
 
 
                 if(filterBy == o.uid){
@@ -217,7 +218,7 @@ export default class Work extends React.Component {
 
 
         }
-
+          console.log("ALL FILTERS IN ")
         console.log(all_filters)
 
         function compare(a,b){
@@ -245,6 +246,7 @@ export default class Work extends React.Component {
 
 
         all_filters.splice(0,0,o[0])
+        console.log("ALL FILTERS OUT ")
         console.log(all_filters)
 
       //  console.log(" to_inclue" + areas_of_expertise_to_include);
@@ -265,7 +267,7 @@ export default class Work extends React.Component {
           )
      } else {
        return (
-         <h1>loading</h1>
+          <Loading />
        )
 
      }

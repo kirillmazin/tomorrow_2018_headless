@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Intro from './Intro';
 import Menu from '../_globals/Menu';
+import Loading from '../_globals/Loading';
 import Filters from './Filters';
 import ProjectGrid from './ProjectGrid';
 import ProjectGridFeatured from './ProjectGridFeatured';
@@ -92,7 +93,7 @@ class WorkHeader extends Component {
 
 
     })
-
+/*
     this.$fc.css({
 
 
@@ -101,7 +102,7 @@ class WorkHeader extends Component {
       "backgroundRepeat":"repeat-x"
 
 
-    })
+    })*/
 
   /*  this.$color_band = $(this.color_band);*/
 
@@ -172,20 +173,9 @@ class WorkHeader extends Component {
 
     if(services_visible){
       return (
-        <div>
 
-        <div ref={el => this.el_2 = el}>
+              <div ref={el => this.el_3 = el}> <Services scope={items} /> </div>
 
-        </div>
-        <div className="no-gutters col-md-12 col-lg-10 offset-lg-1">
-        <div ref={el => this.el_3 = el}>
-          <Services scope={items} />
-        </div>
-
-          <ProjectGrid projects={this.props.projects} grid_items_filters={this.props.grid_items_filters} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
-      </div>
-
-      </div>
 
     )
   } else {
@@ -315,7 +305,7 @@ class WorkHeader extends Component {
             <div className="container-fluid no-gutters header-color" ref={el => this.header_color = el}>
 
               <div className="col-md-12 col-lg-10 offset-lg-1">
-
+                  
                   <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color} />
                   <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onMenuExpand={(value) => this.onMenuExpand(value)} onClick={(value) => this.handleTagClick(value)}/>
 
@@ -326,7 +316,7 @@ class WorkHeader extends Component {
 
 
 
-            <div className="container-fluid no-gutters featured-projects" ref={el => this.featured_projects_container = el}>
+            <div className="container-fluid no-gutters featured-projects work-casestudies" ref={el => this.featured_projects_container = el}>
 
 
               <div className="col-md-12 col-lg-10 offset-lg-1" >
@@ -336,8 +326,19 @@ class WorkHeader extends Component {
               </div>
 
 
-            {this.getServicesModule(services_visible, services, featured_case_studies)}
 
+            <div>
+
+              <div ref={el => this.el_2 = el}> </div>
+                  <div className="no-gutters col-md-12 col-lg-10 offset-lg-1 work-casestudies">
+                  {this.getServicesModule(services_visible, services, featured_case_studies)}
+
+
+
+                            <ProjectGrid projects={this.props.projects} grid_items_filters={this.props.grid_items_filters} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
+                  </div>
+
+                  </div>
 
             <div className="container-fluid no-gutters">
               <div className="col-md-12 col-lg-10 offset-lg-1" >

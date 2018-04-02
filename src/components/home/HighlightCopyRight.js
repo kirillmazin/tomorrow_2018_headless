@@ -16,7 +16,7 @@ class HighlightCopyLeft extends Component {
 
 
 
-          <div className="col-lg-6 offset-lg-1">
+          <div className="col-lg-6 offset-lg-5">
 
             <div className="highlight-margin">
               {this.props.copy}
