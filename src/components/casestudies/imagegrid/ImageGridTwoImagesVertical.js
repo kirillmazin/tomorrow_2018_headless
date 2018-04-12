@@ -27,7 +27,7 @@ class ImageGridTwoImagesVertical extends Component {
 
 
 
-      <div className="image-grid component-margin">
+      <div className="image-grid component-margin ">
 
           <div className="row no-gutters col-lg-10 offset-lg-2">
 

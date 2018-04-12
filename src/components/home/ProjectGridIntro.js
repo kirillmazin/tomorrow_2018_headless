@@ -19,7 +19,7 @@ class ProjectGridHome extends Component {
 
   buildProjects(type){
       let case_studies = [];
-      console.log(type)
+
       for(let l=0;l<this.props.to_display.length;l++){
       for(let i=0;i<this.props.projects.length;i++){
           if(this.props.projects[i].uid == this.props.to_display[l]){
@@ -28,11 +28,9 @@ class ProjectGridHome extends Component {
           let alignment = l%2;
 
             if(type == "full-width"){
-                case_studies.push(<ProjectLargeTile alignment={alignment} id={alignment} data={this.props.projects[i]} type={type}/>);
-              } else {
-
-                  case_studies.push(<ProjectTile alignment={alignment} id={alignment} data={this.props.projects[i]} type={type}/>);
+                case_studies.push(<ProjectLargeTile alignment={alignment} id={alignment} key_service={this.props.key_service[l]} data={this.props.projects[i]} type={type}/>);
               }
+
 
         }
       }
@@ -48,7 +46,7 @@ class ProjectGridHome extends Component {
 
 
       <div className="container-fluid intro-grid no-gutters">
-          <div className="row no-gutters col-10 offset-1">
+          <div className="row no-gutters col-lg-10 offset-lg-1">
 
               {this.buildProjects(this.props.type)}
 
@@ -56,22 +54,7 @@ class ProjectGridHome extends Component {
       </div>
     )
   }
-  if(this.props.type == "government"){
 
-    return (
-
-
-      <div className="container-fluid home-grid-government no-gutters">
-          <div className="row no-gutters col-10 offset-1">
-
-              {this.buildProjects(this.props.type)}
-
-            </div>
-      </div>
-    )
-
-
-  }
 
   }
 }

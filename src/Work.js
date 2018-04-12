@@ -95,10 +95,11 @@ export default class Work extends React.Component {
         let intro_font_color;
         let all_filters = [];
         let areas_of_expertise_to_include = [];
+        let ui_color;
 
         this.state.numberOfProjects = this.state.doc.results.length;
 
-        console.log(this.state.doc)
+
         for(let i=0;i<this.state.doc.results.length;i++){
           let type = this.state.doc.results[i].type;
 
@@ -181,7 +182,7 @@ export default class Work extends React.Component {
 
                 o.uid = this.state.doc.results[i].uid;
                 o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
-                console.log(this.state.doc.results[i].data.filter_by_tag[0].text)
+
 
 
                 if(filterBy == o.uid){
@@ -200,26 +201,27 @@ export default class Work extends React.Component {
                   page_intro = this.state.doc.results[i].data.page_intro[0].text;
                   background_color = this.state.doc.results[i].data.background_color;
                   intro_font_color = this.state.doc.results[i].data.intro_font_color;
-                  //console.log("AREAS OF EXPERTISE " + this.state.doc.results[i].data.all_areas_of_expertise_to_include);
 
-                  //console.log("FILTER BY " );
+                  ui_color = this.state.doc.results[i].data.tomorrow_logo_color != null ? this.state.doc.results[i].data.tomorrow_logo_color : "#ffffff";
+
+
+
 
                 }
 
-                    //console.log("oooooooooo");
 
-              //  all_filters.push(this.state.doc.results[i].data.filter_by_tag[0].text);
+
+
 
                 all_filters.push(o);
 
-              //    console.log(this.state.doc.results[i]);
+
             }
 
 
 
         }
-          console.log("ALL FILTERS IN ")
-        console.log(all_filters)
+
 
         function compare(a,b){
           const filterA = a.uid.toUpperCase();
@@ -231,32 +233,47 @@ export default class Work extends React.Component {
           } else if (filterA < filterB) {
               comparison = -1;
             }
-            console.log(comparison);
+
             return comparison;
         }
 
         all_filters.sort(compare);
-        console.log(all_filters)
+        let all_o = [];
         let o = {};
         for(let i=0; i<all_filters.length;i++){
             if(all_filters[i].filter == "Everything"){
-               o = all_filters.splice(i, 1);
+               o = all_filters.splice(i, 1)[0];
+              all_o[0] = o;
+            }
+            if(all_filters[i].filter == "Strategy"){
+                o =  all_filters.splice(i, 1)[0];
+                all_o[1] = o;
+            }
+
+            if(all_filters[i].filter == "Digital"){
+                o =  all_filters.splice(i, 1)[0];
+                  all_o[2] = o;
+
+            }
+            if(all_filters[i].filter == "Brand"){
+                o =  all_filters.splice(i, 1)[0];
+                all_o[3] = o;
+
             }
         }
 
 
-        all_filters.splice(0,0,o[0])
-        console.log("ALL FILTERS OUT ")
-        console.log(all_filters)
 
-      //  console.log(" to_inclue" + areas_of_expertise_to_include);
+        all_o = all_o.concat(all_filters);
+
+
           return (
             <div>
 
 
 
 
-        <WorkHeader grid_items_filters={areas_of_expertise_to_include} all_filters={all_filters} intro_font_color={intro_font_color} background_color={background_color} filterLabel={filterLabel} filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
+        <WorkHeader ui_color={ui_color} grid_items_filters={areas_of_expertise_to_include} all_filters={all_o} intro_font_color={intro_font_color} background_color={background_color} filterLabel={filterLabel} filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
 
 
 
@@ -267,7 +284,7 @@ export default class Work extends React.Component {
           )
      } else {
        return (
-          <Loading />
+             <div/>
        )
 
      }

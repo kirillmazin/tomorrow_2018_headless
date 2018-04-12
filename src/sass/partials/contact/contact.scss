@@ -19,11 +19,19 @@
 
       }
 }
+.contact-map{
+
+  margin:5rem 0 5rem 0;
+
+  @include media-breakpoint-up(md) {
 
 
-.google-map{
+   }
+  @include media-breakpoint-up(lg) {
 
-  border:0;
-  width:100%;
+        margin:10rem 0 10rem 0;
+
+  }
+  padding: 0;
 
 }

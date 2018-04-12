@@ -5,7 +5,7 @@ import Reveal from 'react-reveal/Reveal'
 import { ParallaxProvider, Parallax } from 'react-skrollr'
 import HighlightCopyLeft from './HighlightCopyLeft'
 import HighlightCopyRight from './HighlightCopyRight'
-import Arrow from '../../imgs/ui/arrow-blue.svg';
+import Arrow from '../../imgs/ui/arrow-simple.svg';
 import { Link} from 'react-router-dom'
 class Highlight extends Component {
 
@@ -84,27 +84,31 @@ class Highlight extends Component {
 
 
 
-      <div className="row no-gutters highlight">
+      <div className="highlight">
 
 
         <Reveal effect="fadeInUpCustom">
-          <div className="container-fluid no-margin">
+          <div className="container-fluid">
+            <div className="row no-gutters" >
             <div className="col-lg-8 offset-lg-1">
+
               <Link to={"../" +this.props.section_link.uid}>
-              <div className="highlight-margin">
-                <div className="copy">
-                {this.props.copy}
+                  <div className="highlight-margin">
+                      <div className="copy">
+                          {this.props.copy}
 
-                <img src={Arrow} />
-                </div>
+                            </div>
 
-              </div>
-                </Link>
+                            <div className="arrow">{this.props.section_label}</div>
+                        </div>
+              </Link>
+
+
               <div>
 
               </div>
             </div>
-
+            </div>
         </div>
         </Reveal>
 

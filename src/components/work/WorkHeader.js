@@ -286,8 +286,7 @@ class WorkHeader extends Component {
         }
 
     };
-  //  console.log("?????????? " + this.props.work_landing_page_data);
-  //  console.log(this.props.work_landing_page_data);
+
     let mytext = this.props.page_intro;
         this.setState();
     return (
@@ -296,7 +295,7 @@ class WorkHeader extends Component {
 
 
       <div>
-        <Menu/>
+        <Menu ui_color={this.props.ui_color}/>
 
         <div className="workheader" ref={el => this.el = el}>
 
@@ -304,8 +303,8 @@ class WorkHeader extends Component {
 
             <div className="container-fluid no-gutters header-color" ref={el => this.header_color = el}>
 
-              <div className="col-md-12 col-lg-10 offset-lg-1">
-                  
+              <div className="col-md-12 col-lg-11 offset-lg-1">
+
                   <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color} />
                   <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onMenuExpand={(value) => this.onMenuExpand(value)} onClick={(value) => this.handleTagClick(value)}/>
 

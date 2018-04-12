@@ -5,8 +5,8 @@ import $ from 'jquery';
 import { ParallaxProvider, Parallax } from 'react-skrollr';
 import VideoCopy from './VideoCopy';
 import { Player } from 'video-react';
-import hero_video from './gaby_brink_final_1.mp4';
-
+import hero_video_mp4 from './gaby_brink_final_4.mp4';
+import hero_video_ogv from './gaby_brink_final_3_1.ogv';
 /**
  * This is a quote component used on the case study page
  */
@@ -33,6 +33,10 @@ class Video extends Component {
 
 
           filter: 'grayscale(0) brightness(.8)  contrast(1)',
+           marginRight: 'auto',
+           marginLeft: 'auto',
+           margin: "0 auto",
+
 
 
         }
@@ -47,10 +51,19 @@ class Video extends Component {
   handleResize(){
 
 
+
+      let height = $(window).height()-100;
+
+
+
       this.$el.css({
-        height:($(window).width()/this.state.aspect_ratio),
-        border:"0px solid red"
-      })
+        height:height
+      });
+
+
+
+      let aspect_ratio = $(window).width()/ $(window).height();
+
 
 
 
@@ -69,6 +82,8 @@ class Video extends Component {
 
 
   this.handleResize();
+
+
   }
 
 
@@ -77,22 +92,31 @@ class Video extends Component {
 
     let styleSheet = document.styleSheets[0];
 
-    let line_1_animation = `@keyframes line_1_animation{
+    let welcome_animation = `@keyframes welcome_animation{
     0% {
       opacity: 0;
       transform:translateY(200px);
+
 
     }
 
     50%{
           opacity: 1;
-          transform:translateY(0px);
+          transform:translateY(100px);
     }
-    100%{
 
-          opacity: 0;
-          transform:translateY(-200px);
+    75%{
+          opacity: 1;
+          transform:translateY(100px);
     }
+
+    100%{
+          opacity: 0;
+          transform:translateY(0);
+
+          border:0px solid red;
+    }
+
 
   }
     `
@@ -114,26 +138,29 @@ class Video extends Component {
 
   }
     `
-    styleSheet.insertRule(line_1_animation, styleSheet.cssRules.length);
+    styleSheet.insertRule(welcome_animation, styleSheet.cssRules.length);
     styleSheet.insertRule(line_2_animation, styleSheet.cssRules.length);
 
       let line_1 = {
 
 
 
-        animationName: "line_1_animation",
+        animationName: "welcome_animation",
         animationDuration: '5s',
         animationIterationCount:'1',
         transform:'translateY(-200px)',
-        opacity:0
+        opacity:0,
+          animationFillMode: 'forwards',
+
+
 
       }
 
       let line_2 =  {
-          border:"0px solid green",
+
 
           animationName: "line_2_animation",
-          animationDuration: '5s',
+          animationDuration: '4s',
           animationDelay:'4s',
           display:"inline-block",
           border:"0px solid red",
@@ -147,12 +174,6 @@ class Video extends Component {
 
       }
 
-      let p_style= {
-        marginLeft:'auto',
-        marginRight:'auto',
-        border:'0px solid red'
-
-      }
 
 
 
@@ -164,51 +185,30 @@ class Video extends Component {
       color: this.props.intro_font_color
     }
 
-    let a = this.props.video.html;
-    let width =  this.props.video.width;
-    let height =  this.props.video.height;
-    this.state.aspect_ratio = width/height;
 
 
-    let i_frame_height = {
-
-      paddingBottom:100/this.state.aspect_ratio+'%',
 
 
-    }
-    const video_html = '<iframe src="https://player.vimeo.com/video/262473206?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0"  frameborder="0"></iframe>';
 
-    console.log("COPY " + this.props.video_overlay_copy)
-      console.log(this.props.video_overlay_copy[0])
     return (
 
 
 
       <div ref={el => this.el = el} className="video">
 
-      <div  style={this.state.video_style} >
-
-
-
+            <div style={this.state.video_style} className="video-container">
                   <video autoPlay muted loop className="embedded-video">
-                            <source src={hero_video} type="video/mp4"/>
-                    </video>
+                          <source src={hero_video_mp4} type="video/mp4"/>
+                          <source src={hero_video_ogv} type="video/ogv"/>
+                  </video>
+                </div>
 
-
-
-
-
-
-
-
-      </div>
-
-      <div className="video-glow">dd</div>
+      <div className="video-glow"></div>
 
       <div className="home-hero-copy">
         <div className="container-fluid no-gutters">
 
-          <div className="col-8 offset-1 ">
+          <div className="col-sm-10 col-md-8 offset-md-1 col-lg-8 col-xl-6">
 
             <p style={line_1}>
               {this.props.video_overlay_copy[0]}

@@ -38,11 +38,11 @@ class Instagram extends Component {
 
 
 
-      <div className="component-margin-bottom">
+      <div className="component-margin-bottom instagram">
         <div className="container-fluid no-gutters">
         <div className="large-paragraph col-lg-7 offset-lg-4 no-gutters">
           <div className="row no-gutters">
-                <h3>{this.props.title}</h3>
+                <h3 className="title">{this.props.title}</h3>
                 </div>
               </div>
 

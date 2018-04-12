@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InterviewQuestion from './interview/InterviewQuestion'
 import Fade from 'react-reveal/Fade';
-
+import Reveal from 'react-reveal/Reveal'
 
 class Interview extends Component {
 
@@ -43,18 +43,18 @@ class Interview extends Component {
 
 
       <div className="interview component-margin">
-            <Fade bottom>
+              <Reveal effect="fadeInUpCustom">
             <div className="interview-work col-lg-10 offset-lg-1">
-              <Fade bottom>
+                <Reveal effect="fadeInUpCustom">
                 <img src={this.props.image} />
-              </Fade>
+              </Reveal>
             </div>
 
 
             <div className="row no-gutters col-lg-10 offset-lg-1">
-                <Fade bottom>
+                  <Reveal effect="fadeInUpCustom">
                     <h2 className="section-title"><a href="">{this.props.interview_title}</a></h2>
-                </Fade>
+                </Reveal>
             </div>
 
 
@@ -63,21 +63,21 @@ class Interview extends Component {
 
 
                 <div className="col-sm-4 col-md-4 interview-photo">
-                    <Fade bottom>
+                    <Reveal bottom>
                       <img src={this.props.staff_photo} />
-                    </Fade>
+                    </Reveal>
                 </div>
 
 
                 <div className="col-sm-7 col-md-7">
-                  <Fade bottom>
+                  <Reveal bottom>
                   {this.buildQuestions(all_questions)}
 
-                    </Fade>
+                </Reveal>
                 </div>
 
             </div>
-              </Fade>
+          </Reveal>
       </div>
 
 

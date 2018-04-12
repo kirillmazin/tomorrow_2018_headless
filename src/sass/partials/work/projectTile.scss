@@ -40,14 +40,14 @@
 
       i{
 
-        background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+
         background-image: linear-gradient(90deg, #fff, #fff);
         background-repeat: no-repeat;
         background-position: 0 19px;
         background-size: 0% 100%;
         color:$body-color;
         text-decoration: none;
-      
+
         transition: background-size 500ms;
 
       }
@@ -65,10 +65,7 @@
   }
 
 
-div{
-  border: 0px solid red;
 
-}
 
 .image-tile{
 
@@ -81,9 +78,9 @@ div{
 
   margin-right: 0;
 
-  border: 0px solid red;
+  border:0px solid red;
   @include media-breakpoint-up(md) {
-      margin-right: 1rem;
+      margin-right: 0rem;
 
    }
   @include media-breakpoint-up(lg) {
@@ -112,10 +109,11 @@ div{
 
 .image-tile-right{
       border: 0px solid blue !important;
-      margin-left: 0;
+
 
       @include media-breakpoint-up(md) {
-          margin-left: 1rem;
+
+              margin-left: 1.4rem;
               margin-top: 70px;
        }
       @include media-breakpoint-up(lg) {
@@ -124,6 +122,68 @@ div{
       }
       @include media-breakpoint-up(xl) {
             margin-top: 200px;
+
+      }
+
+
+}
+.image-tile-large{
+
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+
+      margin-bottom: 3rem;
+
+
+   }
+  @include media-breakpoint-up(lg) {
+
+        margin-bottom: 15rem;
+  }
+  @include media-breakpoint-up(xl) {
+
+
+  }
+
+}
+.image-tile-government-left{
+      border: 0 solid blue !important;
+      margin-top: -10rem;
+
+      @include media-breakpoint-up(md) {
+
+
+          margin-right: 1.4rem;
+
+       }
+      @include media-breakpoint-up(lg) {
+
+
+      }
+      @include media-breakpoint-up(xl) {
+
+
+      }
+
+
+}
+
+.image-tile-government-right{
+      border: 0 solid red !important;
+      margin-left: 0;
+      margin-right: 0;
+      @include media-breakpoint-up(md) {
+
+              margin-left: 1.4rem;
+                margin-top: -20rem;
+       }
+      @include media-breakpoint-up(lg) {
+          margin-top: -40rem;
+
+      }
+      @include media-breakpoint-up(xl) {
+
 
       }
 

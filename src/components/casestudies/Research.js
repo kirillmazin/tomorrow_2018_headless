@@ -33,11 +33,11 @@ class Research extends Component {
 
         <Reveal effect="fadeInUpCustom">
         <div className="row  no-gutters">
-        <div  className="col-lg-3 offset-lg-1">
+        <div  className="col-lg-3">
           <h2 className="section-title"><i>{this.props.title}</i></h2 >
         </div>
 
-        <div className="col-lg-8 stats row no-gutters">
+        <div className="col-lg-9 stats row no-gutters">
 
             {this.generateResearchModules(this.props.research_items)}
 

@@ -30,7 +30,7 @@ body{
 }
 
 .component-margin{
-  border: 0px solid red;
+
   margin: $component-margin-sm;
   @include media-breakpoint-up(sm) {
       margin: $component-margin-sm;

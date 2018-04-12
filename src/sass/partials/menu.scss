@@ -8,8 +8,9 @@
     position: absolute;
     width: 100%;
     top:0;
-    border: 0px solid green;
+    
     margin:0;
+    border: 1px solid red;
     @include media-breakpoint-up(sm) {
 
      }
@@ -26,22 +27,5 @@
      }
     @include media-breakpoint-up(xl) {
      }
-
-}
-.case-study-logo{
-  border: 0px solid red;
-    float: left;
-    width:140px;
-    transition: width 500ms;
-    padding-top: 0px;
-    img{
-      border: 0px solid red;
-      width:100%;
-    }
-
-    @include media-breakpoint-up(md) {
-          width: 160px;
-      }
-
 
 }

@@ -39,8 +39,8 @@ class ProjectLargeTile extends Component {
 
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"1px solid red",transform: 'scale(1.2)'},
-        tile_size : {border:"0px solid red",transform: 'scale(.97)', transition: 'all 500ms'},
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",transform: 'scale(1.05)'},
+        tile_size : {border:"0px solid red", transition: 'all 500ms'},
         image_height :{
 
 
@@ -79,45 +79,26 @@ class ProjectLargeTile extends Component {
 
   getTile(image_height, type, bottom_padding, alignment ){
     let style_to_add = "image-tile"
-    let type_style = "";
+    let type_style = "image-tile-large";
 
-    if(alignment == 1){
-
-      type_style = "image-tile-right";
-    }
 
 
     return (
-    
+
     <div className={type_style}  style={this.state.tile_size} ref={el => this.el = el}>
       <div className={style_to_add} style={this.state.image_height} >
           <div className="image" style={this.state.imageBg}/>
       </div>
 
 
-      <h4> {this.props.data.title}</h4>
-      <h2><i style={this.state.link_underline} ref={el => this.project_name_underline = el}>{this.props.data.subtitle}</i></h2>
+      <h4> {this.props.key_service}</h4>
+      <h2><i style={this.state.link_underline} ref={el => this.project_name_underline = el}>{this.props.data.title}</i></h2>
     </div>
 
     )
   }
 
-  getMargin(alignment, gutter){
-    let margin_right;
 
-
-    margin_right = {
-      marginRight:gutter / 2 + 'rem'
-    }
-
-    if(alignment == 1){
-      margin_right = {
-        marginLeft:gutter / 2 + 'rem'
-      }
-    }
-
-    return margin_right;
-  }
   componentDidMount(){
       this.$el = $(this.el);
       this.$project_name_underline = $(this.project_name_underline);
@@ -177,14 +158,7 @@ class ProjectLargeTile extends Component {
       <div className="col-sm-12 col-md-12">
 
       <div className="projectTile"  onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
-      <Parallax
-    data={{
 
-      'data-top-bottom':'transform: translate(0, -20%); opacity:1;',
-      'data-center-bottom': 'transform[sqrt]: translate(0%, 0%); opacity:1;',
-      'data-bottom-top': 'transform[sqrt]:  translate(0%, 0%); opacity:1;transition:all 1s;'
-    }}
-    >
 
           <Link to={"../project/"+this.props.data.uid}>
 
@@ -193,7 +167,7 @@ class ProjectLargeTile extends Component {
 
 
           </Link>
-        </Parallax>
+
       </div>
 
       </div>

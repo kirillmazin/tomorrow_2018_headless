@@ -16,11 +16,12 @@ class IntroCopy extends Component {
 
 
 
-          <div>
-
+          <div className="row">
+            <div className="col-sm-10 col-md-8 offset-lg-1 col-lg-7 col-xl-6">
             <div className="intro-copy-margin">
-              {this.props.copy}
+              <p>{this.props.copy}</p>
 
+            </div>
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 @import "bootstrap/scss/bootstrap";
-@import "partials/menu";
+@import "partials/_globals/menu";
 @import "partials/fonts";
 @import "partials/variables";
 @import "partials/base";
@@ -11,7 +11,6 @@
 @import "partials/image-grid";
 @import "partials/website-module";
 @import "partials/whatwedid";
-@import "partials/largeParagraph";
 @import "partials/quote";
 @import "partials/large-image";
 @import "partials/work/intro";
@@ -21,15 +20,19 @@
 @import "partials/work/filters";
 @import "partials/work/services";
 @import "partials/work/clients";
-@import "partials/_globals/hamburger";
 @import "partials/contact/largeTitle";
 @import "partials/contact/intro-paragraph";
 @import "partials/contact/contact";
 @import "partials/home/video";
 @import "partials/home/highlight";
 @import "partials/home/highlightGovernment";
-@import "partials/home/government";
-@import "partials/home/governmentNew";
+
 @import "partials/home/homeIntro";
 @import "partials/case-study/video";
 @import "partials/_globals/loading";
+@import "partials/about/PersonTile";
+@import "partials/about/Instagram";
+@import "partials/contact/address";
+@import "partials/_globals/buttons";
+@import "partials/_globals/heroImage";
+@import "partials/text/LargeParagraph";

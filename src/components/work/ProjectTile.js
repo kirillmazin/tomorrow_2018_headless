@@ -39,8 +39,8 @@ class ProjectTile extends Component {
 
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"1px solid red",transform: 'scale(1.2)'},
-        tile_size : {border:"0px solid red",transform: 'scale(.97)', transition: 'all 500ms'},
+        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",border:"0px solid red",transform: 'scale(1.05)'},
+        tile_size : {border:"0px solid red", transition: 'all 500ms'},
         image_height :{
 
 
@@ -193,14 +193,7 @@ class ProjectTile extends Component {
       <div className="col-sm-12 col-md-6">
 
       <div className="projectTile"  onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
-      <Parallax
-    data={{
 
-      'data-top-bottom':'transform: translate(0, -20%); opacity:1;',
-      'data-center-bottom': 'transform[sqrt]: translate(0%, 0%); opacity:1;',
-      'data-bottom-top': 'transform[sqrt]:  translate(0%, 0%); opacity:1;transition:all 1s;'
-    }}
-    >
 
           <Link to={"../project/"+this.props.data.uid}>
 
@@ -209,7 +202,7 @@ class ProjectTile extends Component {
 
 
           </Link>
-        </Parallax>
+
       </div>
 
       </div>

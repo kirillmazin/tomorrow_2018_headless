@@ -18,7 +18,7 @@ class LargeParagraph extends Component {
 
 
         <Reveal effect="fadeInUpCustom">
-          <div className="large-paragraph col-lg-7 offset-lg-4">
+          <div className="large-paragraph col-lg-8 offset-lg-3">
 
               <p>
                   {this.props.copy}
@@ -26,7 +26,7 @@ class LargeParagraph extends Component {
 
               </div>
         </Reveal>
-        
+
       </div>
 
 

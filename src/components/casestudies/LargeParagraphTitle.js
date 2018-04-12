@@ -18,7 +18,7 @@ class LargeParagraphTitle extends Component {
 
         <div className="row no-gutters ">
         <Reveal effect="fadeInUpCustom">
-          <div className="large-paragraph col-lg-7 offset-lg-4">
+          <div className="large-paragraph col-lg-7 offset-lg-4">dd
               <h3>{this.props.title}</h3>
               <p>
                   {this.props.copy}

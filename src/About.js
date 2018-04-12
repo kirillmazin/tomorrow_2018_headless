@@ -3,29 +3,27 @@ import NotFound from './NotFound';
 import PrismicReact from 'prismic-reactjs';
 import Prismic from 'prismic-javascript';
 import {RichText, Date} from 'prismic-reactjs';
-import LargeParagraphTitle from './components/casestudies/LargeParagraphTitle';
-import Quote from './components/casestudies/Quote';
+import LargeParagraphTitle from './components/text/LargeParagraphTitle';
+
 import LargeTitle from './components/contact/LargeTitle';
 import Header from './components/casestudies/Header';
-import Map from './components/contact/Map';
-import Whatwedid from './components/casestudies/Whatwedid';
-import Window from './components/casestudies/Window';
+import Map from './components/casestudies/LargeImage';
+
+
 
 import IntroParagraph from './components/contact/IntroParagraph';
 import Footer from './components/_globals/Footer';
-import Interview from './components/casestudies/Interview';
+
 import ImageGrid from './components/casestudies/ImageGrid';
 import Menu from './components/_globals/Menu.js';
-import Loading from './components/_globals/Loading.js';
-import Research from './components/casestudies/Research';
-import Website from './components/casestudies/Website';
-import HeroPhoto from './components/about/HeroPhoto';
+
+
+
+import HeroPhoto from './components/_globals/HeroPhoto';
 import People from './components/about/People';
 import Instagram from './components/about/Instagram';
-import Highlight from './components/home/Highlight';
-import HighlightGovernment from './components/home/HighlightGovernment';
-import Government from './components/home/Government';
-import GovernmentNew from './components/home/GovernmentNew';
+
+
 import Intro from './components/home/Intro';
 import ProjectGridIntro from './components/home/ProjectGridIntro';
 import $ from 'jquery';
@@ -128,10 +126,8 @@ export default class About extends React.Component {
         let root;
         let slice_type;
         let hero_video;
+        let ui_color;
 
-
-        console.log("DOC " + this.state.doc);
-        console.log(this.state.doc)
       for(let i=0;i<this.state.doc.results.length;i++){
 
 
@@ -151,9 +147,7 @@ export default class About extends React.Component {
 
       }
 
-        console.log("ROOT")
 
-      console.log(root)
 
       let hero_copy = root.hero_copy[0].text;
       let hero_image = root.hero_image.url
@@ -162,7 +156,7 @@ export default class About extends React.Component {
       let hero_width  =  root.hero_image.dimensions.width;
       let hero_height = root.hero_image.dimensions.height;
 
-
+      ui_color = root.tomorrow_logo_color != null ? root.tomorrow_logo_color : "#ffffff";
 
 
       let hero_aspect_ratio = hero_width / hero_height;
@@ -171,10 +165,10 @@ export default class About extends React.Component {
 
 
 
-      console.log("hero_image")
-      console.log(hero_image)
 
-      console.log(hero_aspect_ratio);
+
+
+
 
       for(var i=0; i<root.body.length;i++){
 
@@ -184,9 +178,7 @@ export default class About extends React.Component {
         o.slice_type = slice_type;
 
 
-        console.log(hero_copy);
-        console.log("SLICE >>>>>>> " + root.body[i])
-        console.log(root.body[i])
+
         if(o.slice_type == "intro"){
 
 
@@ -219,64 +211,8 @@ export default class About extends React.Component {
 
     }
 
-        if(o.slice_type == "case_study_highlight"){
-
-            o.copy = PrismicReact.RichText.render(root.body[i].primary.copy, this.props.prismicCtx.linkResolver);
-            o.alignment = root.body[i].primary.alignment;
 
 
-            o.section_link = root.body[i].primary.section_link;
-
-
-
-
-
-            o.images = []
-        for(let l=0;l<root.body[i].items.length;l++){
-
-                let img_obj = {};
-
-
-
-
-              o.image_width =  root.body[i].items[l].image.dimensions.width;
-              o.image_height = root.body[i].items[l].image.dimensions.height;
-
-
-              img_obj.url  =  root.body[i].items[l].image.url;
-              img_obj.aspect_ratio = o.image_width / o.image_height;
-
-
-
-              o.images.push(img_obj);
-
-        }
-
-        }
-
-        if(o.slice_type == "government"){
-
-            o.copy = PrismicReact.RichText.render(root.body[i].primary.copy, this.props.prismicCtx.linkResolver);
-            o.alignment = root.body[i].primary.alignment;
-            o.section_link = root.body[i].primary.section_link;
-
-
-            console.log(root.body[i].items);
-
-
-                o.images = []
-            for(let l=0;l<root.body[i].items.length;l++){
-              let img_obj = {};
-
-
-
-
-
-
-            }
-
-
-        }
 
 
 
@@ -307,8 +243,7 @@ export default class About extends React.Component {
                 o.title = root.body[i].primary.title[0].text;
 
 
-                console.log("INSTAGRAM TITLE " + o.title)
-                console.log(o.title)
+
                 o.image =root.body[i].primary.image.url;
 
 
@@ -326,12 +261,26 @@ export default class About extends React.Component {
 
 
 
-                o.image =root.body[i].primary.image.url;
 
 
-                o.image_width =  root.body[i].primary.image.dimensions.width;
-                o.image_height = root.body[i].primary.image.dimensions.height;
-                o.aspect_ratio = o.image_width / o.image_height ;
+                o.people = []
+
+
+
+                for(let k=0;k<root.body[i].items.length;k++){
+                  let person = {}
+                    console.log(root.body[i].items[k]);
+                    person.name = root.body[i].items[k].name[0].text;
+                    person.title = root.body[i].items[k].title[0].text;
+
+                    person.img = root.body[i].items[k].staff;
+
+                      o.people.push(person);
+
+                }
+
+
+
 
 
 
@@ -343,8 +292,7 @@ export default class About extends React.Component {
 
               o.copy  = PrismicReact.RichText.render(root.body[i].primary.copy, this.props.prismicCtx.linkResolver);
               o.title = root.body[i].primary.section_title[0].text;
-              console.log("==== " + root.body[i].primary);
-                console.log(o.title)
+
           }
 
 
@@ -388,7 +336,6 @@ export default class About extends React.Component {
 
 
         if(cs_modules[i].slice_type  == "our_process"){
-        //  to_render.push(<HighlightGovernment section_link={cs_modules[i].section_link} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
 
         to_render.push(<Map image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
 
@@ -396,11 +343,11 @@ export default class About extends React.Component {
         }
 
         if(cs_modules[i].slice_type  == "people"){
-        //  to_render.push(<HighlightGovernment section_link={cs_modules[i].section_link} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
 
-        to_render.push(<div className="container-fluid">
-
-        <People image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>
+        to_render.push(<div className="container-fluid no-gutters">
+        <div className="col-md-10 offset-md-1">
+        <People people={cs_modules[i].people}  />
+        </div>
 
         </div>
       )
@@ -409,7 +356,6 @@ export default class About extends React.Component {
         }
 
         if(cs_modules[i].slice_type  == "instagram"){
-        //  to_render.push(<HighlightGovernment section_link={cs_modules[i].section_link} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
 
         to_render.push(<Instagram title={cs_modules[i].title} image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
 
@@ -418,8 +364,8 @@ export default class About extends React.Component {
 
         if(cs_modules[i].slice_type  == "grid_of_images"){
           to_render.push(
-            <div className="container-fluid">
-              <div className="col-10 offset-1">
+            <div className="container-fluid no-gutters">
+              <div className="col-md-10 offset-md-1">
               <ImageGrid images={cs_modules[i].images} grid_type={cs_modules[i].grid_type}/>
             </div>
               </div>
@@ -432,7 +378,6 @@ export default class About extends React.Component {
 
         if(cs_modules[i].slice_type  == "content_section"){
 
-        //  to_render.push(<HighlightGovernment section_link={cs_modules[i].section_link} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
 
             to_render.push(
 
@@ -447,8 +392,7 @@ export default class About extends React.Component {
 
 
     )
-          console.log("content_section");
-          //to_render.push(<HighlightGovernment section_link={cs_modules[i].section_link} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
+
 
 
 
@@ -471,7 +415,7 @@ export default class About extends React.Component {
 
     return(
       <div>
-          <Menu/>
+          <Menu ui_color={ui_color}/>
 
           <div>
 
@@ -481,7 +425,7 @@ export default class About extends React.Component {
 
           </div>
           <div className="container-fluid no-gutters">
-            <div className="col-10 offset-1">
+            <div className="col-md-10 offset-md-1">
               <Footer/>
               </div>
           </div>
@@ -498,7 +442,7 @@ export default class About extends React.Component {
  } else if (this.state.notFound) {
    return <NotFound />;
  }
- return   (<Loading />)
+ return   (    <div/>)
 
   }
 }

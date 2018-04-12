@@ -1,0 +1,35 @@
+.person_tile{
+  border: 0px solid red;
+  .staff_name{
+    font-size: 3rem;
+    margin-top: 2.3rem;
+    @include media-breakpoint-up(md) {
+          border:0px solid red;
+
+     }
+    @include media-breakpoint-up(lg) {
+        border:0px solid green;
+
+
+    }
+  }
+  .staff_title{
+    font-family: "Akkurat-Regular";
+    font-size: 1.7rem;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+  }
+  margin-bottom: 5rem;
+
+  @include media-breakpoint-up(md) {
+        margin-bottom: 10rem;
+
+   }
+  @include media-breakpoint-up(lg) {
+
+
+
+  }
+
+
+}

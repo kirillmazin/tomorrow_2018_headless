@@ -3,8 +3,25 @@ import React, { Component } from 'react';
 
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
+
+import PersonTile from './PersonTile';
 class People extends Component {
 
+  getPersonTiles(people){
+      let allPeople = [];
+    for(let i=0;i<people.length;i++){
+
+        allPeople.push(<PersonTile data={people[i]}/>)
+
+    }
+
+    return allPeople;
+
+
+
+
+
+  }
   render(props) {
 
 
@@ -25,8 +42,8 @@ class People extends Component {
       'paddingTop': 100/this.props.aspect_ratio+'%',
        display:'block'
     }
-
-
+      console.log(">>>> PEOPLE");
+    console.log(this.props.people);
     return (
 
 
@@ -37,16 +54,11 @@ class People extends Component {
 
               <Reveal effect="fadeInUpCustom">
 
-            <div className="large-image" style={image_height}>
-
-              <div class="image" style={style}>
-
-                  <img src={this.props.image} />
-              </div>
+          
 
 
-        
-              </div>
+              <div className="row no-gutters">{this.getPersonTiles(this.props.people)}</div>
+
               </Reveal>
 
     </div>

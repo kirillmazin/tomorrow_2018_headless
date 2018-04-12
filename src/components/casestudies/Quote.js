@@ -17,8 +17,8 @@ class Quote extends Component {
 
 
             <Reveal effect="fadeInUpCustom">
-          <div className="no-gutters row">
-      <div className="col-md-10 col-lg-8 col-xl-8 component-margin">
+          <div className="no-gutters row component-margin">
+      <div className="col-md-12 col-lg-8 col-xl-8 quote-component">
 
         <p className="quote">
 

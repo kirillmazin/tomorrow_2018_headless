@@ -1,0 +1,237 @@
+.hamburger-menu-module{
+
+  position: absolute;
+  top:0;
+  left:0;
+
+  z-index: 1000;
+
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+
+
+
+
+
+
+  a{
+    text-decoration: none;
+    color:$white;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+
+  ul.main-nav{
+
+
+
+    font-size: 6rem;
+    margin: 0;
+    padding: 0;
+
+
+
+
+
+    @include media-breakpoint-up(md) {
+
+
+        font-size: 12rem;
+
+    }
+
+    @include media-breakpoint-up(lg) {
+
+
+      font-size: 16rem;
+
+     }
+
+
+    @include media-breakpoint-up(xl) {
+
+          font-size: 17rem;
+    }
+
+    li{
+
+
+      line-height: 1.2;
+        font-family: "Akkurat-Light";
+
+        @include media-breakpoint-up(md) {
+
+
+
+
+        }
+
+        @include media-breakpoint-up(lg) {
+              line-height: 1.02;
+            letter-spacing: -5px;
+
+
+         }
+
+
+        @include media-breakpoint-up(xl) {
+
+
+        }
+
+
+
+    }
+
+    li a{
+
+
+
+
+      text-decoration: none;
+      transition:background-size 500ms;
+        background-size: 0% 100%;
+        background-position: 0 40px;
+        height: auto;
+        color:black;
+
+      @include media-breakpoint-up(md) {
+
+
+
+      }
+
+      @include media-breakpoint-up(lg) {
+
+          background-position: 0 120px;
+
+
+       }
+
+
+      @include media-breakpoint-up(xl) {
+        background-position: 0 140px;
+
+
+      }
+
+
+    }
+
+      li a:hover{
+        color: #FC7753;
+        transition: color 500ms;
+
+      }
+  }
+}
+
+
+
+.case-study-logo{
+    position: absolute;
+    align-self:flex-start;
+    left: 0;
+    top:0;
+    margin:30px 25px 0 25px;
+    align-self: flex-start;
+    width:140px;
+    transition: margin 500ms;
+    padding-top: 0px;
+
+    @include media-breakpoint-up(md) {
+
+
+
+    }
+
+    @include media-breakpoint-up(lg) {
+
+
+        margin:50px;
+
+     }
+
+
+    @include media-breakpoint-up(xl) {
+
+
+
+    }
+
+    img{
+      border: 0px solid red;
+      width:100%;
+    }
+    svg * {
+    transition: all 500ms;
+  }
+    @include media-breakpoint-up(md) {
+          width: 160px;
+      }
+
+
+}
+
+.hamburger-menu{
+  position: absolute;
+  right:0;
+  top:0;
+  margin:30px 25px 0 0;
+  width:35px;
+  height:35px;
+
+  cursor: pointer;
+      align-self: center;
+
+  transition: all 500ms;
+
+  @include media-breakpoint-up(md) {
+
+
+
+  }
+
+  @include media-breakpoint-up(lg) {
+
+
+      margin:50px;
+
+   }
+
+
+  @include media-breakpoint-up(xl) {
+
+  }
+
+  img{
+          border: 0px solid red;
+          width:100%;
+
+  }
+
+  .bottom-bar{
+    top:10px;
+    margin-bottom: 0;
+
+
+  }
+  .bar{
+    top:10px;
+    position: absolute;
+    height:2px;
+    background-color:white;
+    width: 100%;
+    transition: all 500ms;
+
+
+  }
+}

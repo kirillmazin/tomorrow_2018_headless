@@ -20,20 +20,12 @@ class Tag extends Component {
 
 
 
-      <div className="intro col-sm-12 col-md-10 col-xl-8">
+      <div className="intro col-sm-12 col-md-10 ">
 
-      <Parallax
-    data={{
-      'data-top-bottom':'transform: translate(0, -40%); opacity: 1;',
-      'data-top-center':'transform: translate(0, 0px); opacity: 1;',
-      'data-center-bottom':'transform: translate(0, 0px); opacity: 1; transition: all 500ms'
-
-    }}
-  >
       <Reveal effect="fadeInUpCustom">
           <p style={intro_font_color}>{this.props.introtext}</p>
          </Reveal>
-</Parallax>
+
        </div>
 
 

@@ -1,0 +1,55 @@
+a.button{
+  margin:4.5rem 0 0 0;
+
+  background-color: transparent;
+  padding:1.7rem 8rem 1.7rem 8rem;
+
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Akkurat-Bold";
+  transition: all 500ms;
+  display: inline-block;
+
+  width:100%;
+  @include media-breakpoint-up(md) {
+      width:auto
+
+   }
+  @include media-breakpoint-up(lg) {
+
+
+
+  }
+}
+
+a:hover.button{
+
+
+
+  text-decoration:none;
+}
+
+
+.white{
+    border:2px solid  white;
+    color: white;
+}
+
+.white:hover{
+
+  background-color: white;
+  color: black !important;
+
+}
+
+.blue{
+  border:2px solid #6B9ADB !important;
+  color: #6B9ADB;
+}
+
+.blue:hover{
+  background-color: #6B9ADB !important;
+
+  color: white;
+
+}

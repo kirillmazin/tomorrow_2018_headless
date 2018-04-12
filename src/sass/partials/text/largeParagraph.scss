@@ -1,0 +1,111 @@
+
+
+.large-paragraph{
+  border: 0px solid red;
+  h3{
+
+    border: 0px solid pink;
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem;
+
+
+
+    @include media-breakpoint-up(md) {
+          font-size: 3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+          font-size: 4.8rem;
+    }
+    i{
+
+
+      background-image: linear-gradient(90deg, #fff, #fff);
+      background-repeat: repeat-x;
+      background-position: 0 18px;
+      background-size:1px 19px;
+      color:$body-color;
+      text-decoration: none;
+
+      transition: background-size 500ms;
+
+
+
+      @include media-breakpoint-up(md) {
+                background-position: 0 22px;
+      }
+
+      @include media-breakpoint-up(lg) {
+            background-position: 0 37px;
+      }
+
+
+
+    }
+  }
+      p{
+        border: 0px solid red;
+        font-size: 1.8rem;
+
+        font-family: "Akkurat-Light";
+        line-height: 130%;
+        padding:0;
+        margin:0 0 1rem 0;
+        a{
+
+          border-bottom: 1px solid $body-color;
+
+          background-repeat: no-repeat;
+          background-position: 0 19px;
+          background-size: 0% 100%;
+          color:$body-color;
+          text-decoration: none;
+
+
+          transition: all 500ms;
+        }
+
+        a:hover{
+          text-decoration: none;
+            border-bottom: 1px solid $color-link;
+            color: $color-link;
+        }
+
+
+
+      }
+      @include media-breakpoint-up(sm) {
+        p{
+          font-size: 2.4rem;
+
+        }
+
+
+
+       }
+
+      @include media-breakpoint-up(md) {
+        p{
+          font-size: 2.4rem;
+          margin:0 0 2.5rem 0;
+
+        }
+
+
+
+       }
+      @include media-breakpoint-up(lg) {
+
+                    p{
+                      font-size: 2.6rem;
+
+                    }
+
+       }
+      @include media-breakpoint-up(xl) {
+
+
+       }
+
+
+}

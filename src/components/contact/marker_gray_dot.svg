@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="37px" viewBox="0 0 30 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>marker_gray_dot</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.787 30 0.787 30 37 0 37"></polygon>
+    </defs>
+    <g id="Contact" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Contact-|-R6V3" transform="translate(-464.000000, -3596.000000)">
+            <g id="Group-4" transform="translate(54.000000, 3508.000000)">
+                <g id="marker_gray_dot" transform="translate(410.000000, 87.000000)">
+                    <g id="Group-3" transform="translate(0.000000, 0.213200)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M25.6065,5.1804 C19.7485,-0.6776 10.2515,-0.6776 4.3935,5.1804 C-1.4645,11.0374 -1.4645,20.5354 4.3935,26.3934 L15.0005,37.0004 L25.6065,26.3934 C31.4645,20.5354 31.4645,11.0374 25.6065,5.1804" id="Fill-1" fill="#6B9ADB" mask="url(#mask-2)"></path>
+                    </g>
+                    <path d="M20,16 C20,18.761 17.761,21 15,21 C12.239,21 10,18.761 10,16 C10,13.239 12.239,11 15,11 C17.761,11 20,13.239 20,16" id="Fill-4" fill="#E0E0DF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

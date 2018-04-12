@@ -1,10 +1,9 @@
 .case-study-video{
 
   position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
 
+	height: 0;
+    border: 0px solid red;
   iframe{
     position: absolute;
   	top: 0;

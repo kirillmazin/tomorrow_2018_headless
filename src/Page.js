@@ -67,8 +67,7 @@ export default class Page extends React.Component {
       const subtitle = this.state.doc.data.subtitle[0].text;
       const title = this.state.doc.data.title[0].text;
       const hero_image = this.state.doc.data.hero_image.url;
-
-
+      const ui_color = this.state.doc.data.tomorrow_logo_color != null ? this.state.doc.data.tomorrow_logo_color : "#ffffff";
 
 
 
@@ -151,8 +150,7 @@ export default class Page extends React.Component {
 
           if( o.slice_type == "video"){
             //    o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
-                console.log("++++ VIDEO ");
-                console.log(this.state.doc.data.body[i].primary.video.html);
+                
 
                 o.video = this.state.doc.data.body[i].primary.video;
           }
@@ -168,7 +166,7 @@ export default class Page extends React.Component {
 
             if( o.slice_type == "interview"){
 
-              console.log(this.state.doc.data.body[i].items);
+
 
               o.questions = this.state.doc.data.body[i].items;
 
@@ -244,7 +242,7 @@ export default class Page extends React.Component {
 
     return(
       <div>
-          <Menu/>
+          <Menu ui_color={ui_color}/>
       <div className="case-study">
 
       <Window image={hero_image} title={title} subtitle={subtitle}/>
@@ -271,8 +269,8 @@ export default class Page extends React.Component {
    return <NotFound />;
  }
  return (
-
- <Loading />);
+    <div/>
+ );
 
   }
 }

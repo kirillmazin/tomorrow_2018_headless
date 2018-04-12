@@ -33,12 +33,12 @@ class ImageGridTwoImagesHorizontal extends Component {
 
 
 
-      <div class="image-grid component-margin no-gutters">
+      <div class="image-grid component-margin">
         <Reveal effect="fadeInUpCustom">
 
 
-      <div className="row">
-            <div className="col-sm-12 col-md-10">
+      <div className="row no-gutters">
+            <div className="col-sm-12 col-md-9">
               <div className="image-tile"  style={image_height_1}>
                 <div className="image" style={imageVertical_1}>
                       <img src={this.props.images[0].url} />
@@ -48,8 +48,8 @@ class ImageGridTwoImagesHorizontal extends Component {
             </div>
       </div>
 
-          <div className="row justify-content-end">
-              <div className="col-sm-12 col-md-10">
+          <div className="row justify-content-end no-gutters">
+              <div className="col-sm-12 col-md-9">
                 <div className="image-tile" style={image_height_2}>
                   <div className="image" style={imageVertical_2}>
                       <img src={this.props.images[1].url} />

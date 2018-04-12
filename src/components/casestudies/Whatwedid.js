@@ -41,7 +41,7 @@ class Whatwedid extends Component {
       <div className="what-we-did row no-gutters component-margin">
 
 <Fade bottom cascade>
-          <div className="col-lg-3 offset-lg-1">
+          <div className="col-lg-3">
 
 
 

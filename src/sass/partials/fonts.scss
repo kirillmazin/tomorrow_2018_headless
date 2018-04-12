@@ -27,8 +27,12 @@
 
 
 @font-face {
+
+
     font-family: "Tiempos-Bold";
-    src:url("../fonts/tiempos/TiemposHeadline-Bold.otf");
+    src:url("../fonts/tiempos/TiemposHeadlineWeb-Bold.eot");
+    src:url("../fonts/tiempos/TiemposHeadlineWeb-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/tiempos/TiemposHeadlineWeb-Bold.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
