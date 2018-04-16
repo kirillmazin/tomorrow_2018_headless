@@ -18,7 +18,7 @@ body{
     background-color: $color-background !important;
     color: $body-color;
     text-rendering:geometricPrecision !important;
-  
+
 
 
 
@@ -32,7 +32,7 @@ body{
 }
 
 .component-margin{
-
+    border: 0px solid red;
   margin: $component-margin-sm;
   @include media-breakpoint-up(sm) {
       margin: $component-margin-sm;
@@ -55,7 +55,7 @@ body{
 }
 
 .component-margin-bottom{
-  border: 0px solid red;
+
   margin: $component-margin-sm;
     margin-top: 0;
   @include media-breakpoint-up(sm) {

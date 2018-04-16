@@ -7,7 +7,7 @@ import Filters from './Filters';
 import ProjectGrid from './ProjectGrid';
 import ProjectGridFeatured from './ProjectGridFeatured';
 import Services from './Services';
-import Clients from './Clients';
+import Clients from './Clients_carousel';
 import Footer from '../_globals/Footer.js';
 import $ from 'jquery';
 /**

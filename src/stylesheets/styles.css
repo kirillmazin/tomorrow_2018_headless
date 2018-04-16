@@ -6638,6 +6638,7 @@ body {
   font-family: "Tiempos-Bold"; }
 
 .component-margin {
+  border: 0px solid red;
   margin: 2.5rem 0 2.5rem 0; }
   @media (min-width: 576px) {
     .component-margin {
@@ -6650,7 +6651,6 @@ body {
       margin: 100px 0 100px 0; } }
 
 .component-margin-bottom {
-  border: 0px solid red;
   margin: 2.5rem 0 2.5rem 0;
   margin-top: 0; }
   @media (min-width: 576px) {
@@ -7656,22 +7656,30 @@ footer {
       border: 0px solid red; }
 
 .work-clients {
-  font-family: "Akkurat-Light";
-  background-color: #FFFFFF;
-  border: 0 solid red;
-  padding: 50px 0 50px 0;
-  border: 0px solid red; }
-  @media (min-width: 1200px) {
-    .work-clients {
-      padding: 100px 0 100px 0; } }
+  font-family: "Akkurat-Light"; }
+  .work-clients h2 {
+    border: 0px solid red; }
+  .work-clients .white-block {
+    font-family: "Akkurat-Light";
+    background-color: #FFFFFF;
+    border: 0 solid red;
+    padding: 0;
+    border: 0px solid red;
+    margin: 50px 0 0 0; }
+    @media (min-width: 992px) {
+      .work-clients .white-block {
+        margin: 70px 0 0 0; } }
   .work-clients i {
-    background-image: linear-gradient(90deg, #EEEEEC, #EEEEEC);
+    background-image: linear-gradient(90deg, #fff, #fff);
     background-repeat: no-repeat;
     background-position: 0 2rem;
     color: #000;
     text-decoration: none;
     border: 0px solid red;
-    font-size: 3rem; }
+    font-size: 2.4rem; }
+    @media (min-width: 768px) {
+      .work-clients i {
+        font-size: 3rem; } }
   .work-clients .client-logos {
     margin: 2rem 0 2rem 0;
     border: 0px solid red; }
