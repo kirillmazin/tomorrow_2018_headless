@@ -147,14 +147,14 @@ this.setState({
 
           let bg_image_1 ={
 
-            backgroundImage: "url(" + img_1 + ")",
+            backgroundImage: "url(" + img_2 + ")",
 
 
           }
 
           let bg_image_2 ={
 
-            backgroundImage: "url(" + img_2 + ")",
+            backgroundImage: "url(" + img_1 + ")",
 
 
           }
@@ -165,13 +165,13 @@ this.setState({
 
           const bg_image_1_height = {
             border:'0px solid red',
-            'paddingTop': 100/img_1_ar+'%',
+            'paddingTop': 100/img_2_ar+'%',
              display:'block'
           }
 
           const bg_image_2_height = {
             border:'0px solid red',
-            'paddingTop': 100/img_2_ar+'%',
+            'paddingTop': 100/img_1_ar+'%',
              display:'block'
           }
 
@@ -183,14 +183,14 @@ this.setState({
 
           return (
 
-            <div className="component-margin two-desktops-new" >
+            <div className="component-margin two-desktops-new">
 
                 <Reveal effect="fadeInUpCustom">
               <div className="all-images-wrapper" style={this.state.full_height}>
                   <div className="all-images">
                   <div className="row no-gutters">
 
-                    <div ref={el => this.first_image = el} className="col-8 browser" style={this.state.browser_2_style} onMouseOver={() => this.bring_to_front(2)}>
+                    <div ref={el => this.first_image = el} className="col-8 browser" style={this.state.browser_2_style} onClick={() => this.bring_to_front(2)} onMouseOver={() => this.bring_to_front(2)}>
                             <div className="large-image" style={bg_image_2_height}>
                                 <div className="image" style={bg_image_2}></div>
                                 <div className="cover" style={this.state.bg_image_2_cover}></div>
@@ -199,7 +199,7 @@ this.setState({
 
 
 
-                    <div ref={el => this.last_image = el} className="col-8 offset-4 layered-1" style={this.state.browser_1_style} onMouseOver={() => this.bring_to_front(1)}>
+                    <div ref={el => this.last_image = el} className="col-8 offset-4 layered-1" style={this.state.browser_1_style} onClick={() => this.bring_to_front(1)} onMouseOver={() => this.bring_to_front(1)}>
                         <div className="large-image" style={bg_image_1_height}>
                               <div className="image" style={bg_image_1}></div>
                               <div className="cover" style={this.state.bg_image_1_cover}></div>

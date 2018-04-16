@@ -63,8 +63,8 @@ export default class Home extends React.Component {
 
   componentDidMount(){
 
-    this.$header_color = $(this.header_color );
-
+  //  this.$header_color = $(this.header_color );
+      document.title = "Tomorrow Partners | Welcome to Tomorrow";
 
 
 

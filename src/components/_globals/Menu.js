@@ -209,9 +209,9 @@ class Menu extends Component {
 
               <ul className="main-nav" style={this.state.nav_style}>
               <div className="col-md-8 offset-md-2 no-gutters">
-                  <li><Link to={"../about/"}>About</Link></li>
-                  <li><Link to={"../work/"}>Work</Link></li>
-                  <li><Link to={"../contact/"}>Contact</Link></li>
+                  <li><Link to={"../about/"} onClick={()=>this.hamburgerClick()}>About</Link></li>
+                  <li><Link to={"../work/"} onClick={()=>this.hamburgerClick()}>Work</Link></li>
+                  <li><Link to={"../contact/"} onClick={()=>this.hamburgerClick()}>Contact</Link></li>
                   </div>
             </ul>
 

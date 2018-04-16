@@ -255,8 +255,9 @@ class WorkHeader extends Component {
                   var o = {}
 
                     o.slug = this.props.work_landing_page_data[i].items[l].casestudy.slug;
-                    o.offset = this.props.work_landing_page_data[i].items[l].px_top_offset;
+
                     featured_case_studies.push(o);
+
 
 
                 }
@@ -268,8 +269,7 @@ class WorkHeader extends Component {
 
           clients_visible = true;
 
-        //  console.log(" +++++ WE HAVE CLIENTS ");
-        //  console.log();
+
           clients_title =  this.props.work_landing_page_data[i].primary.clients_title[0].text;
           for(let l=0;l<this.props.work_landing_page_data[i].items.length;l++){
             let o = {};
@@ -288,7 +288,11 @@ class WorkHeader extends Component {
     };
 
     let mytext = this.props.page_intro;
-        this.setState();
+
+
+      let section_title = this.props.filterBy;
+      document.title = "Tomorrow Partners | Work | " +  this.props.filterLabel;
+
     return (
 
 
@@ -315,12 +319,12 @@ class WorkHeader extends Component {
 
 
 
-            <div className="container-fluid no-gutters featured-projects work-casestudies" ref={el => this.featured_projects_container = el}>
+            <div className="container-fluid no-gutters featured-projects" ref={el => this.featured_projects_container = el}>
 
 
               <div className="col-md-12 col-lg-10 offset-lg-1" >
 
-                <ProjectGridFeatured projects={this.props.projects} show={this.state.selected} featured_case_studies={featured_case_studies} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
+              <ProjectGridFeatured projects={this.props.projects} show={this.state.selected} featured_case_studies={featured_case_studies} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
                 </div>
               </div>
 
@@ -333,14 +337,13 @@ class WorkHeader extends Component {
                   {this.getServicesModule(services_visible, services, featured_case_studies)}
 
 
-
                             <ProjectGrid projects={this.props.projects} grid_items_filters={this.props.grid_items_filters} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
                   </div>
 
                   </div>
 
             <div className="container-fluid no-gutters">
-              <div className="col-md-12 col-lg-10 offset-lg-1" >
+              <div className="col-md-12 col-lg-10 offset-lg-1 " >
                 {this.getClientsModule(clients_visible, clients_title, clients_data)}
                 <Footer/>
               </div>

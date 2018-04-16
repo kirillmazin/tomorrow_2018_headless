@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Reveal from 'react-reveal/Reveal';
 import Img_logo from '../../imgs/ui/tomorrow-logo.svg';
-import { ParallaxProvider, Parallax } from 'react-skrollr'
+
 /**
  * This is a quote component used on the case study page
  */
@@ -28,7 +28,7 @@ class Tag extends Component {
   }
   render() {
 
-    console.log(this.props.images)
+
     const intro_font_color = {
 
       color: this.props.intro_font_color
@@ -41,14 +41,7 @@ class Tag extends Component {
 
       <div className="intro">
 
-      <Parallax
-    data={{
-      'data-top-bottom':'transform: translate(0, -300px); opacity: 0;',
-      'data-top-center':'transform: translate(0, 0px); opacity: 1;',
-      'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
 
-    }}
-  >
 <Reveal effect="fadeInUpCustom">
       <div className="work-clients component-margin">
       <div className="row no-gutters">
@@ -68,7 +61,7 @@ class Tag extends Component {
       </div>
          </div>
 </Reveal>
-</Parallax>
+
        </div>
 
 

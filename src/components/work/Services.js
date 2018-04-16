@@ -45,17 +45,10 @@ class Services extends Component {
           <div className="col-lg-3 ">
 
 <Reveal effect="fadeInUpCustom">
-          <Parallax
-        data={{
-          'data-top-bottom':'transform: translate(0, -100%); opacity: 0;',
-          'data-top-center':'transform: translate(0, 0px); opacity: 1;',
-          'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
 
-        }}
-        >
 
                 <h2 className="section-title"><i>Our services</i></h2>
-                </Parallax>
+
                 </Reveal>
         </div>
 
@@ -64,14 +57,8 @@ class Services extends Component {
           <div className="col-md-5 col-lg-3">
 
 
-          <Parallax
-        data={{
-          'data-top-bottom':'transform: translate(0, -40%); opacity: 0;',
-          'data-top-center':'transform: translate(0, 0px); opacity: 1;',
-          'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
 
-        }}
-        >
+        
             <ul>
                 {
 
@@ -84,7 +71,7 @@ class Services extends Component {
                 }
 
             </ul>
-            </Parallax>
+
           </div>
 
           </Reveal>
@@ -94,14 +81,7 @@ class Services extends Component {
 
 
           <div className="col-md-6 col-lg-4">
-          <Parallax
-        data={{
-          'data-top-bottom':'transform: translate(0, -70%); opacity: 0;',
-          'data-top-center':'transform: translate(0, 0px); opacity: 1;',
-          'data-center-bottom':'transform: translate(0, 0px); opacity: 1;transition:all 1s;'
 
-        }}
-        >
             <ul>
               {
 
@@ -114,7 +94,7 @@ class Services extends Component {
               }
 
               </ul>
-              </Parallax>
+
           </div>
 
 

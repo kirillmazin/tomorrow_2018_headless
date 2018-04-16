@@ -185,9 +185,10 @@
   position: absolute;
   right:0;
   top:0;
-  margin:30px 25px 0 0;
+  margin:25px 25px 0 0;
   width:35px;
   height:35px;
+  border: 0px solid red;
 
   cursor: pointer;
       align-self: center;
@@ -203,7 +204,7 @@
   @include media-breakpoint-up(lg) {
 
 
-      margin:50px;
+      margin:45px 50px 50px 50px;
 
    }
 

@@ -59,7 +59,7 @@ export default class Contact extends React.Component {
 
 
 
-
+      document.title = "Tomorrow Partners | Contact";
 
 
 

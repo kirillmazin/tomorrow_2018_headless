@@ -1,0 +1,32 @@
+.not-found{
+
+
+  font-size: 2rem;
+
+  .sorry{
+    font-family: "Tiempos-Bold";
+    font-size: 4rem;
+    margin-bottom: 4rem;
+
+  }
+
+  a{
+
+    border-bottom: 1px solid $body-color;
+
+    background-repeat: no-repeat;
+    background-position: 0 19px;
+    background-size: 0% 100%;
+    color:$body-color;
+    text-decoration: none;
+
+
+    transition: all 500ms;
+  }
+
+  a:hover{
+    text-decoration: none;
+      border-bottom: 1px solid $color-link;
+      color: $color-link;
+  }
+}

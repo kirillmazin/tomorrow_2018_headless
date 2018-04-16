@@ -1,9 +1,9 @@
 .tags{
-  border: 1px solid red;
+
   margin:0 0 6rem 0;
   .tag{
     font-size: 2.4rem;
-    border: 0px solid red;
+
     line-height: 1.3;
     cursor: pointer;
 
@@ -24,14 +24,15 @@
       background-size: 0% 100%;
       color:#ffffff;
       text-decoration: none;
-      border:0px solid red;
-      transition: background-size 500ms;
+      border:1px solid rgba(255,255,255,0);
+      transition: border 500ms;
     }
 
     a:hover{
-      transition: background-size 200ms;
+    /*  transition: background-size 200ms;
       transition-timing-function: ease-in;
-      background-size: 100% 100%;
+      background-size: 100% 100%;*/
+        border-bottom:1px solid rgba(255,255,255,1);
 
 
     }
@@ -46,21 +47,25 @@
 
 
 .selected {
-  color: black;
+  color: white;
   cursor: default !important;
-  border: 0px solid green;
 
+      i{
+          border-bottom: 1px solid white !important;
+      }
   i{
-    background-image: linear-gradient(90deg, #ff5e62, #F9D423);
+  /*  background-image: linear-gradient(90deg, #ff5e62, #F9D423);
     background-image: linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.3));
     background-image: linear-gradient(90deg, rgba(0,0,0,.1), rgba(0,0,0,.1));
+
+
     background-repeat: no-repeat;
     background-position: 0 19px;
     background-size: 100% 100%;
     color:#ffffff;
     text-decoration: none;
-    border:0px solid red;
-  
+    border:0px solid red;*/
+
 
   }
 }

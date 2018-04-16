@@ -23,7 +23,7 @@ class TwoDesktops extends Component {
 
   }
   bring_to_front(id){
-    console.log("bring to front " + id);
+
 
 //    this.state.browser_1_style = {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.3)) grayscale(0)"}
 
@@ -77,10 +77,10 @@ this.setState({
             <div class="website-module two-desktop row no-gutters component-margin">
 
                   <div class="overlap row no-gutters">
-                      <div class="col-lg-8 browser" style={this.state.browser_1_style} onMouseOver={() => this.bring_to_front(1)}>
+                      <div class="col-lg-8 browser " style={this.state.browser_1_style} onMouseOver={() => this.bring_to_front(1)} onClick={() => this.bring_to_front(1)}>
                             {this.returnImage(img_1)}
                       </div>
-                      <div class="col-lg-8 offset-lg-4 browser-overlap" style={this.state.browser_2_style} onMouseOver={() => this.bring_to_front(2)}>
+                      <div class="col-lg-8 offset-lg-4 browser-overlap" style={this.state.browser_2_style} onMouseOver={() => this.bring_to_front(2)} onClick={() => this.bring_to_front(2)}>
                           {this.returnImage(img_2)}
                       </div>
                   </div>

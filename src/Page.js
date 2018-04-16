@@ -22,6 +22,7 @@ export default class Page extends React.Component {
   state = {
     doc: null,
     notFound: false,
+
   }
 
   componentWillMount() {
@@ -36,6 +37,11 @@ export default class Page extends React.Component {
   componentDidUpdate() {
   //  this.props.prismicCtx.toolbar();
     window.scrollTo(0, 0);
+  }
+
+  componentDidMount(){
+        document.title = "Tomorrow Partners";
+
   }
 
   fetchPage(props) {
@@ -64,12 +70,15 @@ export default class Page extends React.Component {
 
 
       let cs_modules = [];
+
+
+
       const subtitle = this.state.doc.data.subtitle[0].text;
       const title = this.state.doc.data.title[0].text;
       const hero_image = this.state.doc.data.hero_image.url;
       const ui_color = this.state.doc.data.tomorrow_logo_color != null ? this.state.doc.data.tomorrow_logo_color : "#ffffff";
 
-
+      document.title = "Tomorrow Partners | " + title;
 
 
       for(var i=0; i<this.state.doc.data.body.length;i++){
@@ -136,7 +145,9 @@ export default class Page extends React.Component {
         if(  o.slice_type == "large_paragraph"){
 
             o.copy  = PrismicReact.RichText.render(this.state.doc.data.body[i].primary.paragraph, this.props.prismicCtx.linkResolver);
-        //  o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
+
+
+
         }
 
           if( o.slice_type == "quote"){
@@ -150,7 +161,7 @@ export default class Page extends React.Component {
 
           if( o.slice_type == "video"){
             //    o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
-                
+
 
                 o.video = this.state.doc.data.body[i].primary.video;
           }
@@ -161,6 +172,7 @@ export default class Page extends React.Component {
               o.image_height = this.state.doc.data.body[i].primary.image.dimensions.height;
               o.aspect_ratio = o.image_width / o.image_height ;
               o.image = this.state.doc.data.body[i].primary.image.url;
+              o.width_type = this.state.doc.data.body[i].primary.image_width != null ?this.state.doc.data.body[i].primary.image_width : "full";
             }
 
 
@@ -215,7 +227,7 @@ export default class Page extends React.Component {
 
           if(cs_modules[i].slice_type == "large_image"){
 
-            to_render.push(<LargeImage image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
+            to_render.push(<LargeImage width_type={cs_modules[i].width_type} image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
 
           }
 

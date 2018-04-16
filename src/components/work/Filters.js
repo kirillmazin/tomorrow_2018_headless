@@ -244,13 +244,7 @@ class Filters extends Component {
 
       <div className="work-filters">
 
-      <Parallax
-    data={{
-      'data-top-bottom':'transform[bounce]: translate(0, -40%); opacity: 1;',
-      'data-top-top':'transform[bounce]: translate(0, 0px); opacity: 1;',
-      'data-center-top':'transform[bounce]: translate(0, 0px); opacity: 1;'
 
-    }}>
  <Reveal effect="fadeInUpCustom">
         <div>Show me</div>
         <div className="selector-element" onClick={() => this.handleClick()}><a href="#"><div className="selector">{this.state.filterLabel}</div><span className="arrow-down" style={this.state.arrow_rotation} ></span></a></div>
@@ -260,7 +254,7 @@ class Filters extends Component {
           </div>
         </div>
 </Reveal>
-        </Parallax>
+      
 
       </div>
 

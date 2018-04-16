@@ -32,13 +32,13 @@ class ProjectGridFeatured extends Component {
               for(let m=0;m<this.props.projects[l].slug.length;m++){
 
                   if(slug == this.props.projects[l].slug[m]){
-                    
+
 
                       featured_projects.push(this.props.projects[l])
                   }
               }
 
-          //  console.log(" slug ------ " + this.props.projects[l].slug);
+
 
         }
       }

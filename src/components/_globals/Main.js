@@ -16,9 +16,9 @@ import Home from '../../Home';
 
 import Interview from '../../Interview';
 import Menu from './Menu.js';
-import { ParallaxProvider, Parallax } from 'react-skrollr'
+
 const Main = (props) => (
-  <ParallaxProvider>
+
   <Router>
 
     <Switch>
@@ -31,14 +31,14 @@ const Main = (props) => (
       <Route exact path="/contact/" render={routeProps => <Contact {...routeProps} prismicCtx={props.prismicCtx} />} />
         <Route exact path="/about/" render={routeProps => <About {...routeProps} prismicCtx={props.prismicCtx} />} />
         <Route exact path="/home/" render={routeProps => <Home {...routeProps} prismicCtx={props.prismicCtx} />} />
-  
+
       <Route exact path="/preview" render={routeProps => <Preview {...routeProps} prismicCtx={props.prismicCtx} />} />
 
       <Route component={NotFound} />
     </Switch>
   </Router>
 
-    </ParallaxProvider>
+
 )
 
 export default Main

@@ -25,6 +25,26 @@ class LargeImage extends Component {
       'paddingTop': 100/this.props.aspect_ratio+'%',
        display:'block'
     }
+    console.log("WIDTH TYPE " + this.props.width_type);
+    let width_type;
+
+    if(this.props.width_type == "full"){
+        width_type = "col-12";
+
+    } else if(this.props.width_type == "three_quarters_left"){
+        width_type = "col-lg-9";
+    }
+    else if(this.props.width_type == "three_quarters_right"){
+        width_type = "col-lg-9 offset-lg-3";
+    }
+
+    else if(this.props.width_type == "half_right"){
+        width_type = "col-lg-6";
+    }
+
+    else if(this.props.width_type == "half_left"){
+        width_type = "col-lg-6 offset-lg-6";
+    }
 
 
     return (
@@ -36,14 +56,16 @@ class LargeImage extends Component {
 
 
               <Reveal effect="fadeInUpCustom">
-            <div className="large-image" style={image_height}>
+                <div className="row no-gutters">
+                <div className={width_type}>
+                  <div className="large-image" style={image_height}>
 
-              <div class="image" style={style}>
+              <div className="image" style={style}>
 
                   <img src={this.props.image} />
               </div>
-
-
+              </div>
+              </div>
             </div>
               </Reveal>
 

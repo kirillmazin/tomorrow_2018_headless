@@ -31,7 +31,10 @@ export default class Work extends React.Component {
     this.fetchPage(props);
   }
   componentDidMount(){
+
       window.scrollTo(0, 0);
+
+      document.title = "Tomorrow Partners | Work";
   }
   componentDidUpdate() {
   //  this.props.prismicCtx.toolbar();
@@ -119,6 +122,9 @@ export default class Work extends React.Component {
 
             project_data.slug = this.state.doc.results[i].slugs;
             project_data.title = this.state.doc.results[i].data.title[0].text;
+
+
+          
             project_data.subtitle =  this.state.doc.results[i].data.subtitle[0] != undefined ? this.state.doc.results[i].data.subtitle[0].text : '';
             project_data.hero_image = this.state.doc.results[i].data.hero_image.url;
 
@@ -173,7 +179,7 @@ export default class Work extends React.Component {
 
 
 
-                //work_landing_page_data = this.state.doc.results[i].data.body;
+
 
 
 
@@ -252,12 +258,12 @@ export default class Work extends React.Component {
 
             if(all_filters[i].filter == "Digital"){
                 o =  all_filters.splice(i, 1)[0];
-                  all_o[2] = o;
+                  all_o[3] = o;
 
             }
             if(all_filters[i].filter == "Brand"){
                 o =  all_filters.splice(i, 1)[0];
-                all_o[3] = o;
+                all_o[2] = o;
 
             }
         }

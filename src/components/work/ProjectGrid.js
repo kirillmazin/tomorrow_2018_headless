@@ -20,8 +20,10 @@ class ProjectGrid extends Component {
 
     let featured_projects = [];
     let projects_to_include = [];
-
+    let projects_to_remove = [];
     if(featured_case_studies.length > 0){
+
+
     for(let i=0;i<featured_case_studies.length;i++){
       let featured_projects;
       let slug = featured_case_studies[i].slug;
@@ -32,18 +34,36 @@ class ProjectGrid extends Component {
 
             for(let m=0;m<all_projects[l].slug.length;m++){
                 // remove items that have already been featured
+
                 if(slug == all_projects[l].slug[m]){
+                    projects_to_remove.push(l)
+                    if(all_projects.length > 0) {
 
+                  }
 
-                    all_projects.splice(l,1)
 
                 }
             }
 
 
-          }
+      }
+
+
 
     }
+
+
+
+
+      projects_to_remove.sort();
+    
+    for(let i=0;i<projects_to_remove.length;i++){
+
+
+        all_projects.splice(projects_to_remove[i]-i,1);
+
+    }
+
 
 }
 
@@ -69,7 +89,7 @@ class ProjectGrid extends Component {
 
             }
       } else {
-          console.log(" categories are NOT defined ");
+
           projects_to_include = all_projects.slice();
       }
 

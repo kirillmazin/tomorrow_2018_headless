@@ -13,13 +13,14 @@
 
   .header-color{
       background-color: #FC7753;
-        padding-top: 10em;
+        padding-top: 15em;
+        border: 0px solid red;
       @include media-breakpoint-up(md) {
-          padding-top: 20rem;
+          padding-top: 25rem;
 
        }
       @include media-breakpoint-up(lg) {
-        padding-top: 25rem;
+        padding-top: 30rem;
 
 
       }
@@ -52,26 +53,47 @@
 
 
 .featured-projects{
-    /*  background: linear-gradient(#FC7753, #FC7753);
-      background-size: 1px 100px;
-      background-repeat: repeat-x;
-      transition: background-size 500ms;*/
-  
-      @include media-breakpoint-up(md) {
-        background-size: 1px 120px;
-
-       }
-      @include media-breakpoint-up(lg) {
-        background-size: 1px 170px;
+  border: 0px solid pink;
 
 
-      }
+    margin-top: -5rem;
+    margin-bottom: 15rem;
+    border:0px solid green;
+
+    @include media-breakpoint-up(md) {
+        border:0px solid red;
+          margin-top: -8rem;
+     }
+    @include media-breakpoint-up(lg) {
+      border:0px solid blue;
+      margin-top: -10rem;
+        margin-bottom: 20rem;
+
+
+    }
+
+
 
 }
 
 
 .work-casestudies{
   border: 0px solid pink;
-  margin-top: -100px;
-    margin-bottom: 100px;
+
+
+    margin-top: -15rem;
+    margin-bottom: 15rem;
+
+
+    @include media-breakpoint-up(md) {
+        border:0px solid red;
+          margin-top: -18rem;
+     }
+    @include media-breakpoint-up(lg) {
+      border:0px solid blue;
+      margin-top: -20rem;
+        margin-bottom: 20rem;
+
+
+    }
 }

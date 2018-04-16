@@ -4,6 +4,8 @@ html{
     font-size:62.5%;
     margin: 0;
     padding: 0;
+
+
 }
 
 .container-fluid{
@@ -15,9 +17,9 @@ body{
 
     background-color: $color-background !important;
     color: $body-color;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-smooth: always;
+    text-rendering:geometricPrecision !important;
+  
+
 
 
 }
