@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import TwoDesktops from './website/two_desktops_new'
-import FourDesktops from './website/four_desktops'
+import ThreeDesktops from './website/three_desktops'
+import ThreeMobile from './website/three_mobile'
 import DesktopMobile from './website/desktop_mobile'
 
 import ImageGridTwoImages from './imagegrid/ImageGridTwoImages'
@@ -71,11 +72,20 @@ class Website extends Component {
 
       }
 
-      if(this.props.layout_type === "four_desktops"){
+      if(this.props.layout_type === "four_desktops" || this.props.layout_type === "three_desktops"){
 
 
           return(
-            <FourDesktops image_items={this.props.image_items}/>
+            <ThreeDesktops image_items={this.props.image_items}/>
+          )
+
+      }
+
+      if(this.props.layout_type === "three_mobile"){
+
+
+          return(
+            <ThreeMobile image_items={this.props.image_items}/>
           )
 
       }

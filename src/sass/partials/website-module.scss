@@ -68,14 +68,12 @@ $margin-md: 40px;
 
 
   .layered-1{
-
-      position: absolute;
-      border:1px solid red !important;
-    margin-top:300px;
-
+    position: absolute;
+    margin-top:200px;
     zIndex:3;
     width:100%;
     height:auto;
+          @include media-breakpoint-up(lg) { margin-top: 300px;}
   }
 
 
@@ -84,6 +82,7 @@ $margin-md: 40px;
         }
 
         .browser-overlap{
+          border:1px solid red;
           margin-top:25px;
           transition: margin 1s;
           margin-top:25px;
@@ -104,8 +103,9 @@ $margin-md: 40px;
 
 .desktop-mobile{
   position: relative;
+
   .large-image{
-      border: 1px solid red;
+      border:0;
       margin:0;
       padding: 0;
       position: relative;
@@ -136,14 +136,14 @@ $margin-md: 40px;
         }
 
         .mobile-overlap{
-            position: absolute;
-            right: 0;
-          margin-top:25px;
+          position: absolute;
+          right: 0;
+          margin-top:80px;
           transition: margin 1s;
           margin-left:0px;
-          @include media-breakpoint-up(md) { margin-top:$margin-md; }
+
           @include media-breakpoint-up(lg) { margin-top: 100px;}
-          @include media-breakpoint-up(xl) { margin-top: 200px;}
+          @include media-breakpoint-up(xl) { margin-top: 160px;}
 
 
 
@@ -153,10 +153,9 @@ $margin-md: 40px;
 
 
 
-.four-desktops{
+.three-desktops{
   position: relative;
-    border: 0px solid red;
-    overflow:hidden;
+
 
     .all-images-wrapper{
 
@@ -177,6 +176,8 @@ $margin-md: 40px;
         background-repeat:no-repeat;
 
 
+
+
       }
 
     }
@@ -184,7 +185,8 @@ $margin-md: 40px;
 
 
   .large-image{
-    border: 0px solid red !important;
+
+
     background-color: white !important;
       margin:0;
       padding: 0;
@@ -230,21 +232,23 @@ $margin-md: 40px;
   .layered-1{
 
       position: absolute;
-
-    margin-top:300px;
-
-    zIndex:3;
-    width:100%;
-    height:auto;
+      margin-top:200px;
+      zIndex:3;
+      width:100%;
+      height:auto;
+          @include media-breakpoint-up(lg) { margin-top: 300px;}
   }
 
   .layered-2{
       position: absolute;
 
-    margin-top:150px;
+    margin-top:100px;
     right:0;
     width:100%;
     height:auto;
+
+
+    @include media-breakpoint-up(lg) { margin-top: 150px;}
   }
 
 
@@ -292,7 +296,7 @@ $margin-md: 40px;
 .two-desktops-new{
   position: relative;
     border: 0px solid red;
-  
+
 
     .all-images-wrapper{
 
@@ -356,11 +360,12 @@ $margin-md: 40px;
   .layered-1{
 
     position: absolute;
-    margin-top:200px;
-
+    margin-top:100px;
+      border: 0px solid red;
     zIndex:3;
     width:100%;
     height:auto;
+      @include media-breakpoint-up(lg) { margin-top: 200px;}
   }
 
 

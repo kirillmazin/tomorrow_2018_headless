@@ -16,6 +16,7 @@ import Menu from './components/_globals/Menu.js';
 import Research from './components/casestudies/Research';
 import Website from './components/casestudies/Website';
 import Loading from './components/_globals/Loading';
+import ProjectNav from './components/casestudies/ProjectNavLoad';
 // Declare your component
 export default class Page extends React.Component {
 
@@ -254,19 +255,35 @@ export default class Page extends React.Component {
 
     return(
       <div>
+
+
           <Menu ui_color={ui_color}/>
+
+
+
       <div className="case-study">
 
       <Window image={hero_image} title={title} subtitle={subtitle}/>
           <div className="container-fluid no-gutters" >
-            <div className="col-sm-12 col-md-10 offset-md-1">
-            <div className="case-study-margin-wrapper">
-            {to_render}
-            <Footer/>
+            <div className="col-12 col-md-10 offset-md-1">
+              <div className="case-study-margin-wrapper">
+                {to_render}
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
       </div>
+
+      <ProjectNav prismicCtx={this.props.prismicCtx} />
+
+
+
+        <div className="col-12 col-md-10 offset-md-1">
+            <div className="container-fluid no-gutters" >
+        </div>
+      <Footer/>
+      </div>
+
+
       </div>
     );
 

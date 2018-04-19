@@ -147,14 +147,14 @@ this.setState({
 
           let bg_image_1 ={
 
-            backgroundImage: "url(" + img_2 + ")",
+            backgroundImage: "url(" + img_1 + ")",
 
 
           }
 
           let bg_image_2 ={
 
-            backgroundImage: "url(" + img_1 + ")",
+            backgroundImage: "url(" + img_2 + ")",
 
 
           }
@@ -164,14 +164,14 @@ this.setState({
 
 
           const bg_image_1_height = {
-            border:'0px solid red',
-            'paddingTop': 100/img_2_ar+'%',
+
+            'paddingTop': 100/img_1_ar+'%',
              display:'block'
           }
 
           const bg_image_2_height = {
-            border:'0px solid red',
-            'paddingTop': 100/img_1_ar+'%',
+
+            'paddingTop': 100/img_2_ar+'%',
              display:'block'
           }
 

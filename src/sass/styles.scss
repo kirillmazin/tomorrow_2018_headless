@@ -29,6 +29,7 @@
 
 @import "partials/home/homeIntro";
 @import "partials/case-study/video";
+@import "partials/case-study/three-mobile";
 @import "partials/_globals/loading";
 @import "partials/about/PersonTile";
 @import "partials/about/Instagram";
@@ -37,3 +38,6 @@
 @import "partials/_globals/heroImage";
 @import "partials/_globals/not_found";
 @import "partials/text/LargeParagraph";
+@import "slick/slick";
+@import "slick/slick-theme-tomorrow";
+@import "partials/case-study/project-nav";

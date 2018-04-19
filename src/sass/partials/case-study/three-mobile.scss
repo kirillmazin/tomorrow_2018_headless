@@ -1,0 +1,144 @@
+.three-mobile{
+  position: relative;
+  border:0px solid red;
+    .phone{
+
+      /*border-radius: 40px;
+      background-color: #333333;
+      padding: 40px 10px 40px 10px;*/
+    }
+    .all-images-wrapper{
+
+        margin:0;
+        padding: 0;
+        position: relative;
+        padding-top: 100%;
+
+      .all-images{
+
+        position: absolute;
+        top:0;
+        left:0;
+        bottom: 0;
+        right: 0;
+        background-size:100% auto;
+        background-position:"center center";
+        background-repeat:no-repeat;
+
+
+
+
+      }
+
+    }
+
+
+
+  .large-image{
+
+
+      background-color: white !important;
+      margin:0;
+      padding: 0;
+      position: relative;
+      padding-top: 100%;
+
+    .image{
+
+      position: absolute;
+      top:0;
+      left:0;
+      bottom: 0;
+      right: 0;
+      background-size:100% auto;
+      background-position:"center center";
+      background-repeat:no-repeat;
+    }
+
+  }
+
+  .cover {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,.9);
+        transition: all 1s;
+    }
+  .layered-0{
+    border: 0px solid pink;
+    position: absolute;
+
+    margin-top:0;
+
+
+    width:100%;
+    height:auto;
+  }
+
+  .layered-1{
+
+      position: absolute;
+      margin-top:200px;
+      zIndex:3;
+      width:100%;
+      height:auto;
+          @include media-breakpoint-up(lg) { margin-top: 300px;}
+  }
+
+  .layered-2{
+      position: absolute;
+
+    margin-top:100px;
+    right:0;
+    width:100%;
+    height:auto;
+
+
+    @include media-breakpoint-up(lg) { margin-top: 150px;}
+  }
+
+
+
+
+
+
+      .browser{
+          transition: all 300ms;
+          border:0px solid pink;
+
+
+
+
+        }
+
+        .browser-2{
+            position: absolute;
+            right: 0;
+          margin-top:25px;
+          transition: margin 1s;
+          margin-left:-400px;
+          @include media-breakpoint-up(md) { margin-top:$margin-md; }
+          @include media-breakpoint-up(lg) { margin-top: 100px;}
+          @include media-breakpoint-up(xl) { margin-top: 200px;}
+
+
+
+
+        }
+
+        .browser-3{
+          display: none;
+          position: absolute;
+          right: 0;
+        margin-top:25px;
+        transition: margin 1s;
+        margin-left:-400px;
+        @include media-breakpoint-up(md) { margin-top:$margin-md; }
+        @include media-breakpoint-up(lg) { margin-top: 100px;}
+        @include media-breakpoint-up(xl) { margin-top: 200px;}
+        }
+}

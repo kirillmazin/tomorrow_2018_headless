@@ -23,7 +23,7 @@ class TwoDesktops extends Component {
 
   }
   bring_to_front(id){
-    console.log("bring to front " + id);
+
 
 //    this.state.browser_1_style = {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.3)) grayscale(0)"}
 
@@ -95,13 +95,13 @@ this.setState({
 
 
           const bg_image_height = {
-            border:'0px solid red',
+
             'paddingTop': 100/img_1_ar+'%',
              display:'block'
           }
 
           const bg_image_2_height = {
-            border:'0px solid red',
+
             'paddingTop': 100/img_2_ar+'%',
              display:'block'
           }
@@ -109,18 +109,18 @@ this.setState({
           return (
 
             <div className="component-margin desktop-mobile">
-
+          
                   <div className="row no-gutters">
 
-                    <div className="col-10 browser">
+                    <div className="col-10">
                           <div className="large-image" style={bg_image_height}>
                               <div className="image" style={bg_image}></div>
                             </div>
                     </div>
 
-                    <div className="col-sm-5 col-md-3 mobile-overlap" style={this.state.color}>
+                    <div className="col-5 col-lg-3 mobile-overlap" style={this.state.color}>
 
-                    
+
                       <div className="large-image" style={bg_image_2_height}>
                             <div className="image" style={bg_image_2}></div>
 
