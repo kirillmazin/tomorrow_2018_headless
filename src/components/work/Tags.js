@@ -28,7 +28,7 @@ class Tags extends Component {
       uid: uid,
       selected:this.props.selected
     };
-    //this.state.tags.push("selected")
+  
 
 
 
@@ -41,9 +41,7 @@ class Tags extends Component {
       }
     //  this.state.tags.push("normal")
   }
-  // console.log("SELECTED ++++++ ");
-  //console.log(this.props.selected );
-  //  console.log(this.state.styles );
+
   }
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import NotFound from './NotFound';
 import PrismicReact from 'prismic-reactjs';
 import Prismic from 'prismic-javascript';
@@ -7,7 +8,7 @@ import LargeParagraphTitle from './components/text/LargeParagraphTitle';
 
 import LargeTitle from './components/contact/LargeTitle';
 import Header from './components/casestudies/Header';
-import Map from './components/casestudies/LargeImage';
+import Process from './components/about/Process_new';
 
 
 
@@ -25,16 +26,21 @@ import Instagram from './components/about/Instagram';
 
 
 import Intro from './components/home/Intro';
-import ProjectGridIntro from './components/home/ProjectGridIntro';
+
+import scrollToComponent from 'react-scroll-to-component';
 import $ from 'jquery';
 
 // Declare your component
+
+let cs_modules = [];
+let people_data = [];
 export default class About extends React.Component {
 
 
 
   constructor(props){
     super(props);
+
 
 
     this.state = {
@@ -48,7 +54,13 @@ export default class About extends React.Component {
         },
         contact_band_color:{
 
-        }
+        },
+
+
+
+
+
+
 
 
 
@@ -57,10 +69,12 @@ export default class About extends React.Component {
   }
   componentWillMount() {
     this.fetchPage(this.props);
-    window.scrollTo(0, 0);
+
+  //  window.scrollTo(0, 0);
   }
 
   componentDidMount(){
+
 
     //this.$header_color = $(this.header_color );
     document.title = "Tomorrow Partners | About";
@@ -70,6 +84,11 @@ export default class About extends React.Component {
 
 
 
+
+
+    //window.scrollTo(0, 1000);
+
+
   }
   componentWillReceiveProps(props) {
     this.fetchPage(props);
@@ -77,7 +96,14 @@ export default class About extends React.Component {
 
   componentDidUpdate() {
     //this.props.prismicCtx.toolbar();
-    window.scrollTo(0, 0);
+    if(this.props.match.params.people == "people"){
+
+
+            scrollToComponent(this.People,{ offset: 0, align: 'top', duration: 0});
+
+
+    }
+
   }
 
   fetchPage(props) {
@@ -107,8 +133,23 @@ export default class About extends React.Component {
     }
     return null;
   }
+  // close bio
+  handleCloseClick(){
 
 
+
+
+
+
+
+  }
+
+  handleBiosClick(id){
+
+
+   window.scrollTo(0, 0);
+
+  }
   render() {
     // We will fill in this section in Step 3...
     if (this.state.doc) {
@@ -118,7 +159,7 @@ export default class About extends React.Component {
 
 
 
-      let cs_modules = [];
+      //let cs_modules = [];
 
         let video_overlay_copy = [];
         let all_case_studies = [];
@@ -187,7 +228,7 @@ export default class About extends React.Component {
               for(let l=0;l<root.body[i].items.length;l++){
                 o.links.push(root.body[i].items[l].sections.uid);
 
-                  //console.log(root.body[i].items[l].sections);
+
               }
 
         }
@@ -200,11 +241,9 @@ export default class About extends React.Component {
 
             o.type = grid_type;
 
-                      for(let l=0;l<root.body[i].items.length;l++){
-
-            o.uids.push(root.body[i].items[l].casestudy.uid);
-
-          }
+                  for(let l=0;l<root.body[i].items.length;l++){
+                          o.uids.push(root.body[i].items[l].casestudy.uid);
+                  }
 
 
 
@@ -223,8 +262,7 @@ export default class About extends React.Component {
         }
 
           if( o.slice_type == "large_title"){
-                //o.copy = root.body[i].primary.paragraph[0].text;
-                //console.log(root.body[i].primary.title[0].text);
+
                 o.copy = root.body[i].primary.title[0].text;
                 o.title = root.body[i].primary.section_title[0].text;
           }
@@ -269,11 +307,18 @@ export default class About extends React.Component {
 
                 for(let k=0;k<root.body[i].items.length;k++){
                   let person = {}
-                    console.log(root.body[i].items[k]);
+
+
+                    person.profile_link = root.body[i].items[k].profile_link.uid != undefined ? root.body[i].items[k].profile_link.uid : '';
+                    person.data  = root.body[i].items[k];
                     person.name = root.body[i].items[k].name[0].text;
                     person.title = root.body[i].items[k].title[0].text;
+                    person.show_bio = root.body[i].items[k].show_bio
+
+
 
                     person.img = root.body[i].items[k].staff;
+
 
                       o.people.push(person);
 
@@ -337,17 +382,18 @@ export default class About extends React.Component {
 
         if(cs_modules[i].slice_type  == "our_process"){
 
-        to_render.push(<Map image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
+        to_render.push(<Process image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
 
 
         }
 
         if(cs_modules[i].slice_type  == "people"){
+            people_data = cs_modules[i].people;
+        to_render.push(
 
-        to_render.push(<div className="container-fluid no-gutters">
-        <div className="col-md-10 offset-md-1">
-        <People people={cs_modules[i].people}  />
-        </div>
+          <div ref={(el) => { this.People = el; }}>
+
+              <People people={cs_modules[i].people}  onClick={(id)=> this.handleBiosClick(id)} />
 
         </div>
       )
@@ -364,8 +410,10 @@ export default class About extends React.Component {
 
         if(cs_modules[i].slice_type  == "grid_of_images"){
           to_render.push(
-            <div className="container-fluid no-gutters">
+            <div className="container-fluid">
               <div className="col-md-10 offset-md-1">
+
+
               <ImageGrid images={cs_modules[i].images} grid_type={cs_modules[i].grid_type}/>
             </div>
               </div>
@@ -383,10 +431,10 @@ export default class About extends React.Component {
 
               <div className="container-fluid">
 
-
+                  <div className="col-md-10 offset-md-1">
               <LargeParagraphTitle copy={cs_modules[i].copy} title={cs_modules[i].title}/>
 
-
+                </div>
                 </div>
 
 
@@ -415,6 +463,8 @@ export default class About extends React.Component {
 
     return(
       <div>
+
+          <div style={this.state.page_state}>
           <Menu ui_color={ui_color}/>
 
           <div>
@@ -424,10 +474,12 @@ export default class About extends React.Component {
             {to_render}
 
           </div>
-          <div className="container-fluid no-gutters">
-            <div className="col-md-10 offset-md-1">
+          <div className="container-fluid">
+            <div  className="col-md-10 offset-md-1">
               <Footer/>
               </div>
+          </div>
+
           </div>
       </div>
     );

@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
 
 import { Link} from 'react-router-dom'
-import { ParallaxProvider, Parallax } from 'react-skrollr'
+
 import $ from 'jquery';
 /**
  * This is a quote component used on the case study page
@@ -16,7 +16,7 @@ class ProjectLargeTile extends Component {
     this.state = {
 
       show: true,
-      imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")"},
+      imageBg:  {backgroundImage: "url(" + this.props.img + ")"},
       tile_size : {border:"0px solid red",transform: 'scale(1)', transition: 'all 500ms'},
       link_underline:{
 
@@ -39,8 +39,8 @@ class ProjectLargeTile extends Component {
 
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")",transform: 'scale(1.05)'},
-        tile_size : {border:"0px solid red", transition: 'all 500ms'},
+        imageBg:  {backgroundImage: "url(" + this.props.img + ")",transform: 'scale(1.05)'},
+        tile_size : {transition: 'all 500ms'},
         image_height :{
 
 
@@ -63,8 +63,8 @@ class ProjectLargeTile extends Component {
   handleMouseOut(){
     this.setState(
       {
-        imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")"},
-          tile_size : {border:"0px solid red",transform: 'scale(1)', transition: 'all 500ms'},
+        imageBg:  {backgroundImage: "url(" + this.props.img + ")"},
+          tile_size : {transform: 'scale(1)', transition: 'all 500ms'},
           link_underline:{
 
                 backgroundSize: "0% 100%",
@@ -77,7 +77,7 @@ class ProjectLargeTile extends Component {
     )
   }
 
-  getTile(image_height, type, bottom_padding, alignment ){
+  getTile(image_height){
     let style_to_add = "image-tile"
     let type_style = "image-tile-large";
 
@@ -100,36 +100,24 @@ class ProjectLargeTile extends Component {
 
 
   componentDidMount(){
-      this.$el = $(this.el);
-      this.$project_name_underline = $(this.project_name_underline);
 
 
-      this.$el.css("border":"1px solid red")
+
+
+
 
 
   }
   render() {
 
-     let id = this.props.id;
 
-     let alignment = this.props.alignment;
-     let gutter = 2;
-     let bottom_margin = 10;
 
-    // let offset = (id == 0)? offset = 0 : offset =  Math.floor(Math.random()*250)+50;
 
-     //offset = 0;
-      const random = (Math.random()*1)+.9
-      let aspect_ratio = random;
-      if(this.props.type == "full-width"){
-        aspect_ratio = 1.8;
 
-      }
+      let aspect_ratio = 1.6;
 
-      if(this.props.type == "government"){
-        aspect_ratio = 0.8;
 
-      }
+
       this.state.image_height = {
 
         'paddingTop': 100/aspect_ratio+'%',
@@ -139,10 +127,7 @@ class ProjectLargeTile extends Component {
 
       }
 
-      const bottom_padding = {
-          margin:'0 0 '+bottom_margin+'rem 0'
 
-      }
 
 
 
@@ -155,7 +140,7 @@ class ProjectLargeTile extends Component {
 
 <Reveal effect="fadeInUpCustom">
 
-      <div className="col-sm-12 col-md-12">
+      <div className="col-12 col-md-12">
 
       <div className="projectTile"  onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
 
@@ -163,7 +148,7 @@ class ProjectLargeTile extends Component {
           <Link to={"../project/"+this.props.data.uid}>
 
 
-            {this.getTile(this.state.image_height, this.props.type, bottom_padding, alignment)}
+            {this.getTile(this.state.image_height)}
 
 
           </Link>

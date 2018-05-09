@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import PhoneTop from '../../../imgs/ui/devices/device-phone-top.svg';
+import PhoneBottom from '../../../imgs/ui/devices/device-phone-bottom.svg';
+import BrowserTopFrame from '../../_globals/Browser_top_frame.js';
 class TwoDesktops extends Component {
   constructor(props){
     super(props);
@@ -109,23 +111,26 @@ this.setState({
           return (
 
             <div className="component-margin desktop-mobile">
-          
+
                   <div className="row no-gutters">
 
                     <div className="col-10">
+                            {BrowserTopFrame}
                           <div className="large-image" style={bg_image_height}>
                               <div className="image" style={bg_image}></div>
                             </div>
                     </div>
 
-                    <div className="col-5 col-lg-3 mobile-overlap" style={this.state.color}>
-
-
-                      <div className="large-image" style={bg_image_2_height}>
-                            <div className="image" style={bg_image_2}></div>
-
+                    <div className="col-5 col-lg-3 mobile-overlap " style={this.state.color}>
+                      <div className="phone-top">
+                          <img src={PhoneTop}/>
                       </div>
-
+                          <div className="phone-frame">
+                            <div className="large-image phone-screen" style={bg_image_2_height}>
+                              <div className="image" style={bg_image_2}></div>
+                            </div>
+                          </div>
+                      <div className="phone-bottom"><img src={PhoneBottom}/></div>
                     </div>
 
 

@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 import Reveal from 'react-reveal/Reveal';
 import Img_logo from '../../imgs/ui/tomorrow-logo.svg';
 import $ from 'jquery';
-import { ParallaxProvider, Parallax } from 'react-skrollr';
-import VideoCopy from './VideoCopy';
-import { Player } from 'video-react';
 import hero_video_mp4 from './3_landing_page_video.mp4';
 import hero_video_webm from './3_landing_page_video.webm';
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
-/**
- * This is a quote component used on the case study page
- */
-
- /*const video_youtube ="https://r5---sn-n4v7sne7.googlevideo.com/videoplayback?id=o-AH_EilnJdGAP-LEsrEzcyP28yL5qLDHl5o9zrXzn-JLC&ms=au,onr&expire=1523924642&mt=1523902989&initcwndbps=1778750&mv=m&ei=QurUWs_7IZTu-wPH-aiIDg&itag=22&signature=A2343E3B8718B049C4977A17A5943ADADC6F795F.99BE143264CBDF66AB9CD833F9F0E0D242CC27AC&ipbits=0&mime=video/mp4&ip=173.11.90.25&mm=31,26&mn=sn-n4v7sne7,sn-a5meknlz&ratebypass=yes&fvip=5&pl=18&dur=41.935&source=youtube&c=WEB&sparams=dur,ei,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&key=yt6&requiressl=yes&lmt=1523902852955081"*/
 class Video extends Component {
 
   constructor(props){
@@ -62,7 +55,9 @@ class Video extends Component {
       this.$el.css({
         height:height
       });
-
+      this.$el2.css({
+        height:height
+      });
 
 
       let aspect_ratio = $(window).width()/ $(window).height();
@@ -76,6 +71,7 @@ class Video extends Component {
 
 
     this.$el = $(this.el);
+this.$el2 = $(this.el2);
 
     this.$background_image = $(this.background_image);
 
@@ -182,14 +178,17 @@ class Video extends Component {
 
 
 
-    console.log(this.props.video);
+
     const intro_font_color = {
 
       color: this.props.intro_font_color
     }
 
 
-
+    let image =   {
+      backgroundImage: "url(" + this.props.still_image + ")",
+      backgroundSize:'cover',
+      backgroundPosition:'center'}
 
 
 
@@ -198,7 +197,11 @@ class Video extends Component {
 
 
       <div ref={el => this.el = el} className="video">
+          <div  ref={el2 => this.el2 = el2}  className="image-container" style={image}>
 
+          </div>
+
+          <BrowserView device={isBrowser}>
             <div style={this.state.video_style} className="video-container">
                   <video playsinline="true" autoPlay muted loop className="embedded-video" height="1080" width="1920">
                         {  <source src={hero_video_webm} type="video/webm"/>}
@@ -206,13 +209,15 @@ class Video extends Component {
 
                   </video>
                 </div>
+          </BrowserView>
 
-      <div className="video-glow"></div>
+
+
 
       <div className="home-hero-copy">
-        <div className="container-fluid no-gutters">
+        <div className="container-fluid">
 
-          <div className="col-sm-10 col-md-8 offset-md-1 col-lg-8 col-xl-6">
+          <div className="col-12 col-md-8 offset-lg-1 col-lg-8 col-xl-6  no-gutters">
 
             <p style={line_1}>
               {this.props.video_overlay_copy[0]}
@@ -226,7 +231,14 @@ class Video extends Component {
         </div>
 
       </div>
+
+
+
 </div>
+
+
+
+
     );
   }
 }

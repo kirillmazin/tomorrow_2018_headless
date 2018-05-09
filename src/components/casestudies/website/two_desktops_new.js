@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Reveal from 'react-reveal/Reveal'
+import BrowserTopFrame from '../../_globals/Browser_top_frame.js';
+
 
 class FourDesktops extends Component {
   constructor(props){
@@ -191,7 +193,9 @@ this.setState({
                   <div className="row no-gutters">
 
                     <div ref={el => this.first_image = el} className="col-8 browser" style={this.state.browser_2_style} onClick={() => this.bring_to_front(2)} onMouseOver={() => this.bring_to_front(2)}>
+                        {BrowserTopFrame}
                             <div className="large-image" style={bg_image_2_height}>
+
                                 <div className="image" style={bg_image_2}></div>
                                 <div className="cover" style={this.state.bg_image_2_cover}></div>
                               </div>
@@ -200,6 +204,7 @@ this.setState({
 
 
                     <div ref={el => this.last_image = el} className="col-8 offset-4 layered-1" style={this.state.browser_1_style} onClick={() => this.bring_to_front(1)} onMouseOver={() => this.bring_to_front(1)}>
+                        {BrowserTopFrame}
                         <div className="large-image" style={bg_image_1_height}>
                               <div className="image" style={bg_image_1}></div>
                               <div className="cover" style={this.state.bg_image_1_cover}></div>

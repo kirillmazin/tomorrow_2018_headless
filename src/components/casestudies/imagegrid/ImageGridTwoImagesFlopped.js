@@ -60,7 +60,7 @@ class ImageGridTwoImagesFlopped extends Component {
 
 
                 <div className="image-tile" style={image_height_1}>
-                    <div className="image" style={imageVertical_1}> ></div>
+                    <div className="image" style={imageVertical_1}> </div>
                 </div>
 
 

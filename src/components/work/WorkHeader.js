@@ -232,6 +232,7 @@ class WorkHeader extends Component {
     let services_visible = false;
 
 
+
     for(let i=0;i<this.props.work_landing_page_data.length;i++){
 
 
@@ -305,11 +306,17 @@ class WorkHeader extends Component {
 
 
 
-            <div className="container-fluid no-gutters header-color" ref={el => this.header_color = el}>
+            <div className="container-fluid header-color" ref={el => this.header_color = el}>
 
-              <div className="col-md-12 col-lg-11 offset-lg-1">
+              <div className="col-12 col-lg-11 offset-lg-1 no-gutters">
 
                   <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color} />
+
+
+
+
+
+
                   <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onMenuExpand={(value) => this.onMenuExpand(value)} onClick={(value) => this.handleTagClick(value)}/>
 
               </div>
@@ -319,10 +326,10 @@ class WorkHeader extends Component {
 
 
 
-            <div className="container-fluid no-gutters featured-projects" ref={el => this.featured_projects_container = el}>
+            <div className="container-fluid featured-projects" ref={el => this.featured_projects_container = el}>
 
 
-              <div className="col-md-12 col-lg-10 offset-lg-1" >
+              <div className="col-12 col-lg-10 offset-lg-1 no-gutters " >
 
               <ProjectGridFeatured projects={this.props.projects} show={this.state.selected} featured_case_studies={featured_case_studies} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
                 </div>
@@ -332,18 +339,19 @@ class WorkHeader extends Component {
 
             <div>
 
-              <div ref={el => this.el_2 = el}> </div>
-                  <div className="no-gutters col-md-12 col-lg-10 offset-lg-1 work-casestudies">
-                  {this.getServicesModule(services_visible, services, featured_case_studies)}
-
+              <div  ref={el => this.el_2 = el}> </div>
+                  <div >
+                      <div className="work-casestudies">
+                            {this.getServicesModule(services_visible, services, featured_case_studies)}
 
                             <ProjectGrid projects={this.props.projects} grid_items_filters={this.props.grid_items_filters} featured_case_studies={featured_case_studies} show={this.state.selected} aspect_ratio={this.props.global_thumbnail_aspect_ratio}/>
-                  </div>
 
+                      </div>
                   </div>
+              </div>
 
-            <div className="container-fluid no-gutters">
-              <div className="col-md-12 col-lg-10 offset-lg-1 " >
+            <div className="container-fluid">
+              <div className="col-md-12 col-lg-10 offset-lg-1  no-gutters" >
                 {this.getClientsModule(clients_visible, clients_title, clients_data)}
                 <Footer/>
               </div>

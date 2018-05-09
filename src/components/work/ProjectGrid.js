@@ -18,6 +18,9 @@ class ProjectGrid extends Component {
   removeFeatured(all_projects, featured_case_studies, categories){
 
 
+
+
+
     let featured_projects = [];
     let projects_to_include = [];
     let projects_to_remove = [];
@@ -52,17 +55,22 @@ class ProjectGrid extends Component {
 
     }
 
-
-
-
-      projects_to_remove.sort();
     
+      function sortNumber(a,b) {
+          return a - b;
+      }
+
+      projects_to_remove.sort(sortNumber);
+
+
+
     for(let i=0;i<projects_to_remove.length;i++){
 
 
         all_projects.splice(projects_to_remove[i]-i,1);
 
     }
+
 
 
 }
@@ -109,7 +117,6 @@ class ProjectGrid extends Component {
       let offset = 0;
       let minimum_offset = 100;
       let difference;
-
 
       let projects_to_use = this.removeFeatured(this.props.projects,this.props.featured_case_studies,this.props.grid_items_filters);
 
@@ -158,10 +165,16 @@ class ProjectGrid extends Component {
     return (
 
 
-
+      <div className="container-fluid">
+      <div className="col-12 col-lg-10 offset-lg-1 no-gutters " >
       <div className="row no-gutters">
+
       {this.buildProjects()}
+
+
       </div>
+    </div>
+    </div>
     )
   }
 }

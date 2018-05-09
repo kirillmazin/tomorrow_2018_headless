@@ -2,8 +2,23 @@
 
 
   background-color: white;
-  border: 0px solid red;
-  padding:10rem 0 10rem 0;
+  padding:5rem 0 5rem 0;
+
+  @include media-breakpoint-up(md) {
+        padding:8rem 0 8rem 0;
+
+   }
+  @include media-breakpoint-up(lg) {
+        padding:10rem 0 12rem 0;
+
+
+  }
+
+  @include media-breakpoint-up(lg) {
+
+
+
+  }
 
   a{
     text-decoration: none;
@@ -18,10 +33,12 @@
 
 
   h3{
-    border:0px solid red;
-    padding-top: 1.5rem;
-    font-size: 1.7rem;
 
+
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    
+      width:100%;
     @include media-breakpoint-up(md) {
 
         padding-top: 2.5rem;
@@ -35,12 +52,13 @@
     @include media-breakpoint-up(lg) {
 
       padding-top: 3.5rem;
+      width:80%;
 
     }
 
   }
   .project_tile{
-    border: 0px solid red;
+
     padding-left: 0.9rem;
     padding-right: 0.9rem;
 
@@ -51,10 +69,10 @@
     width:100%;
 
 
-    border: 0px solid red;
+
     margin:0;
     padding: 0;
-    padding-top: 77%;
+    padding-top: 77.5%;
     position: relative;
 
 

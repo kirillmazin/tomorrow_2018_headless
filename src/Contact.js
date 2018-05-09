@@ -9,7 +9,7 @@ import Quote from './components/casestudies/Quote';
 import LargeTitle from './components/contact/LargeTitle';
 import Header from './components/casestudies/Header';
 import Whatwedid from './components/casestudies/Whatwedid';
-import Window from './components/casestudies/Window';
+
 import Intro from './components/work/Intro';
 import IntroParagraph from './components/contact/IntroParagraph';
 import Footer from './components/_globals/Footer';
@@ -312,9 +312,9 @@ export default class Contact extends React.Component {
           <HeroPhotoContact intro_font_color={'black'} copy={my_text} introcopy={hero_copy} aspect_ratio={hero_aspect_ratio} image={hero_image} introtext={hero_copy}/>
           <div className="workheader" ref={el => this.el = el}>
 
-          <div className="container-fluid no-gutters" ref={el => this.header_color = el}>
+          <div className="container-fluid" ref={el => this.header_color = el}>
 
-            <div className="col-md-12 col-lg-10 offset-lg-1 ">
+            <div className="col-md-12 col-lg-10 offset-lg-1  no-gutters">
 
 
 
@@ -328,8 +328,8 @@ export default class Contact extends React.Component {
       <div className="contact-band">
 
 
-          <div className="container-fluid no-gutters" >
-            <div className="col-sm-12 col-md-10 offset-md-1">
+          <div className="container-fluid" >
+            <div className="col-sm-12 col-md-10 offset-md-1 no-gutters">
             <div className="case-study-margin-wrapper">
 
 

@@ -8,9 +8,10 @@ import {
 import Preview from '../../Preview';
 import Help from '../../Help';
 import NotFound from '../../NotFound';
-import Page from '../../Page';
+import Page from '../../Casestudy';
 import Contact from '../../Contact';
 import About from '../../About';
+import Person from '../../Person';
 import Work from '../../Work';
 import Home from '../../Home';
 
@@ -30,6 +31,9 @@ const Main = (props) => (
       <Route exact path="/work/" render={routeProps => <Work {...routeProps} prismicCtx={props.prismicCtx} />} />
       <Route exact path="/contact/" render={routeProps => <Contact {...routeProps} prismicCtx={props.prismicCtx} />} />
         <Route exact path="/about/" render={routeProps => <About {...routeProps} prismicCtx={props.prismicCtx} />} />
+        <Route exact path="/about/:people" render={routeProps => <About {...routeProps} prismicCtx={props.prismicCtx} />} />
+
+  <Route exact path="/people/:uid" render={routeProps => <Person {...routeProps} prismicCtx={props.prismicCtx} />} />
         <Route exact path="/home/" render={routeProps => <Home {...routeProps} prismicCtx={props.prismicCtx} />} />
 
       <Route exact path="/preview" render={routeProps => <Preview {...routeProps} prismicCtx={props.prismicCtx} />} />

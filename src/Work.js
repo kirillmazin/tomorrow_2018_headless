@@ -125,6 +125,8 @@ export default class Work extends React.Component {
 
 
 
+
+
             project_data.subtitle =  this.state.doc.results[i].data.subtitle[0] != undefined ? this.state.doc.results[i].data.subtitle[0].text : '';
             project_data.hero_image = this.state.doc.results[i].data.hero_image.url;
 
@@ -190,7 +192,6 @@ export default class Work extends React.Component {
                 o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
 
 
-
                 if(filterBy == o.uid){
 
                   filterLabel = o.filter;
@@ -246,11 +247,12 @@ export default class Work extends React.Component {
         all_filters.sort(compare);
 
 
-        console.log(all_filters);
+
 
 
         let all_o = [];
         let o = {};
+
         for(let i=0; i<all_filters.length;i++){
             if(all_filters[i].filter == "Everything"){
                o = all_filters.splice(i, 1)[0];

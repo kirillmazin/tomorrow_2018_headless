@@ -8,7 +8,7 @@ import Video from './components/casestudies/Video';
 import Header from './components/casestudies/Header';
 import LargeImage from './components/casestudies/LargeImage';
 import Whatwedid from './components/casestudies/Whatwedid';
-import Window from './components/casestudies/Window';
+import Hero from './components/casestudies/Hero';
 import Footer from './components/_globals/Footer';
 import Interview from './components/casestudies/Interview';
 import ImageGrid from './components/casestudies/ImageGrid';
@@ -16,9 +16,10 @@ import Menu from './components/_globals/Menu.js';
 import Research from './components/casestudies/Research';
 import Website from './components/casestudies/Website';
 import Loading from './components/_globals/Loading';
-import ProjectNav from './components/casestudies/ProjectNavLoad';
+import ProjectNav from './components/casestudies/ProjectNav';
+
 // Declare your component
-export default class Page extends React.Component {
+export default class Casestudy extends React.Component {
 
   state = {
     doc: null,
@@ -73,7 +74,9 @@ export default class Page extends React.Component {
       let cs_modules = [];
 
 
+      const current_project = this.props.match.params.uid;
 
+      console.log(current_project)
       const subtitle = this.state.doc.data.subtitle[0].text;
       const title = this.state.doc.data.title[0].text;
       const hero_image = this.state.doc.data.hero_image.url;
@@ -174,6 +177,12 @@ export default class Page extends React.Component {
               o.aspect_ratio = o.image_width / o.image_height ;
               o.image = this.state.doc.data.body[i].primary.image.url;
               o.width_type = this.state.doc.data.body[i].primary.image_width != null ?this.state.doc.data.body[i].primary.image_width : "full";
+              o.website_frame = this.state.doc.data.body[i].primary.website_frame !=null ? this.state.doc.data.body[i].primary.website_frame: "no";
+
+
+
+              console.log(o.website_frame);
+
             }
 
 
@@ -184,15 +193,21 @@ export default class Page extends React.Component {
               o.questions = this.state.doc.data.body[i].items;
 
 
-              //console.log(this.state.doc.data.primary[0]);
+              let staff = {};
 
               o.interview_title = this.state.doc.data.body[i].primary.interview_title[0].text;
-              o.staff_photo = this.state.doc.data.body[i].primary.staff_photo.url;
+
               o.work_sample = this.state.doc.data.body[i].primary.work_sample.url;
+              o.staff_photo = this.state.doc.data.body[i].primary.staff_photo.url;
 
-                //o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
+              staff.title = this.state.doc.data.body[i].primary.staff_title != null ? this.state.doc.data.body[i].primary.staff_title : '';
+              staff.name = this.state.doc.data.body[i].primary.staff_name != null ? this.state.doc.data.body[i].primary.staff_name : '';
+              staff.photo = this.state.doc.data.body[i].primary.staff_photo.url;
 
-                  //o.copy = this.state.doc.data.body[i].primary.paragraph[0].text;
+
+              o.staff = staff;
+
+
             }
 
 
@@ -228,7 +243,7 @@ export default class Page extends React.Component {
 
           if(cs_modules[i].slice_type == "large_image"){
 
-            to_render.push(<LargeImage width_type={cs_modules[i].width_type} image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
+            to_render.push(<LargeImage width_type={cs_modules[i].width_type} website_frame={cs_modules[i].website_frame} image={cs_modules[i].image} image_width={cs_modules[i].image_width} image_height={cs_modules[i].image_height} aspect_ratio={cs_modules[i].aspect_ratio}/>)
 
           }
 
@@ -237,7 +252,7 @@ export default class Page extends React.Component {
           }
 
           if(cs_modules[i].slice_type == "interview"){
-              to_render.push(<Interview image={cs_modules[i].work_sample} staff_photo={cs_modules[i].staff_photo} interview_title={cs_modules[i].interview_title} questions={cs_modules[i].questions}/>);
+              to_render.push(<Interview staff={cs_modules[i].staff} image={cs_modules[i].work_sample} staff_photo={cs_modules[i].staff_photo} interview_title={cs_modules[i].interview_title} questions={cs_modules[i].questions}/>);
           }
 
           if(cs_modules[i].slice_type == "research"){
@@ -263,9 +278,9 @@ export default class Page extends React.Component {
 
       <div className="case-study">
 
-      <Window image={hero_image} title={title} subtitle={subtitle}/>
-          <div className="container-fluid no-gutters" >
-            <div className="col-12 col-md-10 offset-md-1">
+      <Hero image={hero_image} title={title} subtitle={subtitle}/>
+          <div className="container-fluid">
+            <div className="col-12 col-md-10 offset-md-1 no-gutters">
               <div className="case-study-margin-wrapper">
                 {to_render}
               </div>
@@ -273,14 +288,15 @@ export default class Page extends React.Component {
           </div>
       </div>
 
-      <ProjectNav prismicCtx={this.props.prismicCtx} />
+      <ProjectNav current_project={current_project} prismicCtx={this.props.prismicCtx} />
 
 
 
         <div className="col-12 col-md-10 offset-md-1">
-            <div className="container-fluid no-gutters" >
-        </div>
-      <Footer/>
+            <div className="container-fluid no-gutters">
+                <Footer/>
+            </div>
+
       </div>
 
 

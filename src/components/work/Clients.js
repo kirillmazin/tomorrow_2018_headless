@@ -22,7 +22,7 @@ class Tag extends Component {
 
       }
 
-    all_images.push(<div className="client-logo col-xs-6 col-sm-6 col-lg-3 mr-auto" style={background_image}></div>);
+    all_images.push(<div className="client-logo col-xs-6 col-sm-6 col-lg-3 mr-auto no-gutters" style={background_image}></div>);
   }
   return all_images;
   }

@@ -180,13 +180,13 @@ class HeroPhotoContact extends Component {
 
 
             <div className="image" style={image}></div>
-          <div className="glow"></div>
+        
 
 
                 <Reveal effect="fadeInUpCustom">
           <div className="home-hero-copy">
-              <div className="container-fluid no-gutters">
-                <div className="col-sm-10 col-md-8 offset-md-1 col-lg-6 col-xl-5">
+              <div className="container-fluid">
+                <div className="col-sm-10 col-md-8 offset-md-1 col-lg-6 col-xl-5  no-gutters">
                   <p>
                       {this.props.copy}
                   </p>

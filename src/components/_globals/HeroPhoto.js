@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Reveal from 'react-reveal/Reveal';
 import Img_logo from '../../imgs/ui/tomorrow-logo.svg';
 import $ from 'jquery';
-import { ParallaxProvider, Parallax } from 'react-skrollr';
 
 import { Player } from 'video-react';
 
@@ -166,7 +165,7 @@ class HeroPhoto extends Component {
 
 
 
-    console.log(this.props.video);
+
     const intro_font_color = {
 
       color: this.props.intro_font_color
@@ -192,7 +191,7 @@ class HeroPhoto extends Component {
       <div className="video-glow"></div>
 
       <div className="home-hero-copy">
-        <div className="container-fluid no-gutters">
+        <div className="container-fluid">
 
           <div className="col-sm-10 col-md-8 offset-md-1 col-lg-6 col-xl-5">
 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
-
 import { Link} from 'react-router-dom'
-import { ParallaxProvider, Parallax } from 'react-skrollr'
+
 import $ from 'jquery';
 /**
  * This is a quote component used on the case study page
@@ -15,7 +14,7 @@ class ProjectTile extends Component {
 
     this.state = {
 
-      show: true,
+
       imageBg:  {backgroundImage: "url(" + this.props.data.thumbnail_image + ")"},
       tile_size : {},
       link_underline:{
@@ -118,13 +117,11 @@ class ProjectTile extends Component {
      let gutter = 2;
      let bottom_margin = 10;
 
-    // let offset = (id == 0)? offset = 0 : offset =  Math.floor(Math.random()*250)+50;
 
-     //offset = 0;
-      const random = (Math.random()*1)+.9
-      let aspect_ratio = random;
 
-      aspect_ratio = 0.9;
+
+
+      let aspect_ratio = 1.3;
       this.state.image_height = {
 
         'paddingTop': 100/aspect_ratio+'%',

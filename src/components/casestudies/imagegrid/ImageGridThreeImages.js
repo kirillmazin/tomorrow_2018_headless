@@ -64,7 +64,7 @@ class ImageGridThreeImages extends Component {
         <div className="row no-gutters">
 
 
-            <div className="col-sm-12 col-md-6  shift-bottom-200">
+            <div className="col-12 col-md-6  shift-bottom-200">
 
 
               <div className="image-tile" style={image_height_1}>
@@ -78,7 +78,7 @@ class ImageGridThreeImages extends Component {
 
 
 
-            <div className="col-sm-12 col-md-6">
+            <div className="col-12 col-md-6">
 
 
               <div className="image-tile" style={image_height_2}>
@@ -91,7 +91,7 @@ class ImageGridThreeImages extends Component {
               </div>
           </div>
           <div className="row no-gutters  justify-content-end">
-          <div className="col-sm-12 col-md-6">
+          <div className="col-12 col-md-6">
 
 
             <div className="image-tile" style={image_height_2}>

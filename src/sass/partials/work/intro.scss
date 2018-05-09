@@ -3,9 +3,10 @@
     font-family: "Tiempos-Bold";
     line-height: 120%;
     padding: 0 0 2.5rem 0;
+    margin:0;
     background-position: bottom left;
     transition: all 500ms;
-    border:0px solid red;
+
 
 
 
@@ -16,7 +17,9 @@
 
     p{
       width: 90%;
-      border: 0px solid red;
+      border: 0 solid red;
+      margin:0;
+      padding:0;
     }
 
 

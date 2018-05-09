@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
 
-
+      transition: height 500ms;
 
 
 
@@ -102,7 +102,7 @@
         background-position: 0 40px;
         height: auto;
         color:black;
-
+        transition: all 500ms;
       @include media-breakpoint-up(md) {
 
 
@@ -127,8 +127,8 @@
     }
 
       li a:hover{
-        color: #FC7753;
-        transition: color 500ms;
+        color: $color-red;
+
 
       }
   }
@@ -146,7 +146,8 @@
     width:140px;
     transition: margin 500ms;
     padding-top: 0px;
-
+    transition:all 500ms;
+    z-index: 1000;
     @include media-breakpoint-up(md) {
 
 
@@ -168,11 +169,12 @@
     }
 
     img{
-      border: 0px solid red;
+
       width:100%;
     }
     svg * {
     transition: all 500ms;
+
   }
     @include media-breakpoint-up(md) {
           width: 160px;
@@ -189,17 +191,12 @@
   width:35px;
   height:35px;
   border: 0px solid red;
-
+  z-index: 1000;
   cursor: pointer;
-      align-self: center;
-
+  align-self: center;
   transition: all 500ms;
 
-  @include media-breakpoint-up(md) {
 
-
-
-  }
 
   @include media-breakpoint-up(lg) {
 
@@ -231,7 +228,7 @@
     height:2px;
     background-color:white;
     width: 100%;
-    transition: all 500ms;
+    transition: all 300ms;
 
 
   }

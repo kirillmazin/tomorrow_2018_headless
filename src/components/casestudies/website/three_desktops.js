@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Reveal from 'react-reveal/Reveal'
-
-
-const grayscale = {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.1)) grayscale(1)", opacity:1, zIndex:0};
-const color = {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)",opacity:1, zIndex:3}
+import BrowserTopFrame from '../../_globals/Browser_top_frame.js';
 
 
 class ThreeDesktops extends Component {
@@ -15,20 +12,16 @@ class ThreeDesktops extends Component {
     this.state = {
       value: null,
 
-      grayscale:{filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.1)) grayscale(1)", opacity:1, zIndex:0},
-      color: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)",opacity:1, zIndex:3},
-
-      browser_1_style: {filter:color},
-      browser_2_style:{filter:grayscale},
-      browser_3_style:{filter:grayscale},
-
+      grayscale: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.1)) grayscale(1)", opacity:1, zIndex:1},
+      color: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)",opacity:1, zIndex:5},
+      browser_1_style:{},
+      browser_2_style:{},
+      browser_3_style:{},
       bg_image_1_cover:{background: "rgba(255,255,255,0)"},
       bg_image_2_cover:{},
       bg_image_3_cover:{},
       white_overlay_on: {background: "rgba(255,255,255,0)"},
       white_overlay_off: {background: "rgba(255,255,255,.8)"},
-
-
       full_height:{
           height:300+'px'
         }
@@ -122,11 +115,9 @@ this.setState({
   let active = `browser_${id}_style`;
 
   if(id  == 1){
-
     this.setState({
         browser_1_style: this.state.color,
         bg_image_1_cover:  this.state.white_overlay_on
-
     })
   }
 
@@ -153,7 +144,7 @@ this.setState({
   }
   render() {
 
-      this.state.browser_1_style = color;
+      this.state.browser_1_style = {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)",opacity:1, zIndex:2};
 
 
           let img_1 = (this.props.image_items[0] != undefined) ? this.props.image_items[0].image.url : "";
@@ -238,7 +229,7 @@ this.setState({
 
 
 
-                    <div ref={el => this.middle_image = el}  className="col-7 offset-2 layered-1" style={this.state.browser_1_style} onClick={() => this.bring_to_front(1)} onMouseOver={() => this.bring_to_front(1)}>
+                    <div ref={el => this.middle_image = el}  className="col-7 offset-2 layered-1  " style={this.state.browser_1_style} onClick={() => this.bring_to_front(1)} onMouseOver={() => this.bring_to_front(1)}>
                         <div className="large-image" style={bg_image_1_height}>
                               <div className="image" style={bg_image_1}></div>
                               <div className="cover" style={this.state.bg_image_1_cover}></div>

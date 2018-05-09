@@ -1,0 +1,83 @@
+.browser-frame{
+    height:15px;
+    border-radius:5px 5px 0 0;
+      background-image: url('../imgs/ui/devices/device-browser-corner.svg');
+      background-repeat: no-repeat;
+      background-size:auto 100%;
+
+    @include media-breakpoint-up(md) {
+      height:20px;
+      border-radius:8px 8px 0 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height:25px;
+      border-radius:10px 10px 0 0;
+    }
+
+}
+
+.browser-ui-color{
+  background-color: rgba(180,180,180,0.5);
+
+}
+
+.phone-screen{
+    overflow: hidden;
+        border-radius:10px;
+
+
+
+    @include media-breakpoint-up(lg) {
+
+      border-radius:20px;
+    }
+
+
+}
+
+.phone-frame{
+    overflow: hidden;
+    background-color: rgba(180,180,180,0.5);
+    border-left: 8px solid  rgba(180,180,180,0);
+    border-right: 8px solid rgba(180,180,180,0);
+    @include media-breakpoint-up(md) {
+      border-left: 10px solid  rgba(180,180,180,0);
+      border-right: 10px solid rgba(180,180,180,0);
+     }
+
+}
+
+
+.phone-top{
+
+
+  border:0px solid red;
+    border-radius:20px 20px 0 0;
+  background-color: rgba(180,180,180,0.5);
+    @include media-breakpoint-up(md) {
+          border-radius:25px 25px 0 0;
+    }
+  img{
+    width:100%;
+  }
+}
+
+.phone-bottom{
+
+  border:0px solid red;
+  border-radius:0 0 20px 20px;
+
+
+
+    background-color: rgba(180,180,180,0.5);
+
+
+    @include media-breakpoint-up(md) {
+            border-radius:0 0 25px 25px;
+    }
+
+    img{
+      width:100%;
+    }
+}

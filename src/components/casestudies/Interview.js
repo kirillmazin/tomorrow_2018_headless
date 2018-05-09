@@ -7,7 +7,7 @@ class Interview extends Component {
 
   buildQuestions(questions){
     let all_questions = [];
-    console.log("BUILD ");
+
     for(let i=0;i<questions.length;i++){
       all_questions.push(<InterviewQuestion question={questions[i].question} answer={questions[i].answer}/>);
     }
@@ -15,9 +15,10 @@ class Interview extends Component {
     return all_questions;
   }
   render() {
-
-
-
+      console.log("staff")
+      console.log(this.props.staff.name[0].text)
+      const name = this.props.staff.name[0].text;
+      const title = this.props.staff.title[0].text;
       const animation = "slideInUp";
       const animateOnce = "true";
       const style = {
@@ -50,31 +51,46 @@ class Interview extends Component {
               </Reveal>
             </div>
 
-
-            <div className="row no-gutters col-lg-10 offset-lg-1">
+            <div className="row no-gutters">
+            <div className="col-12 col-lg-10 offset-lg-1">
                   <Reveal effect="fadeInUpCustom">
                     <h2 className="section-title"><a href="">{this.props.interview_title}</a></h2>
                 </Reveal>
             </div>
+            </div>
 
 
-
-            <div className="interview-content row no-gutters col-lg-10 offset-lg-1">
-
-
-                <div className="col-sm-4 col-md-4 interview-photo">
+            <div className="interview-content">
+              <div className="row no-gutters">
+              <div className="col-lg-10 offset-lg-1">
+              <div className="row no-gutters">
+                  <div className="col-12 col-md-5 interview-photo">
                     <Reveal bottom>
                       <img src={this.props.staff_photo} />
+
+                          <div className="staff-name">
+                              <p>{name}</p>
+                              <p>{title}</p>
+                            </div>
                     </Reveal>
+                  </div>
+
+
+
+                        <Reveal bottom>
+                            <div className="col-12 col-md-7">
+                              {this.buildQuestions(all_questions)}
+                            </div>
+                        </Reveal>
+
                 </div>
 
 
-                <div className="col-sm-7 col-md-7">
-                  <Reveal bottom>
-                  {this.buildQuestions(all_questions)}
 
-                </Reveal>
-                </div>
+
+              </div>
+
+</div>
 
             </div>
           </Reveal>

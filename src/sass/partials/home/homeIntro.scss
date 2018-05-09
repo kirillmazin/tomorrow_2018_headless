@@ -6,6 +6,7 @@
     transition: all 500ms;
 
       padding:4rem 0 8rem 0;
+
     a{
 
       text-decoration: none;
@@ -36,7 +37,7 @@
 
     .intro-category{
 
-          border-top:1px solid $color-light-gray;
+          /*border-top:1px solid $color-light-gray;*/
           transition: all 500ms;
           letter-spacing: -1px;
 
@@ -115,22 +116,23 @@
       }
 
       .category-description{
-          border:0px solid red;
-          font-size: 1.8rem;
+          border:0 solid red;
+
           margin:1rem 0 3rem .5rem;
           text-transform: none;
           letter-spacing: 0;
           transition: all 500ms;
-          width: 70%;
+          width: 90%;
           display: none !important;
           @include media-breakpoint-up(sm) {
-                display: inline-block !important;
+
 
            }
 
           @include media-breakpoint-up(md) {
-
-
+            display: inline-block !important;
+            font-size: 2.4rem;
+                width: 70%;
            }
 
           @include media-breakpoint-up(lg) {
@@ -156,6 +158,9 @@
         color: #AAABA4;
         display: inline-block !important;
         @include media-breakpoint-up(sm) {
+            margin:2rem 0 3rem 0.2rem;
+         }
+        @include media-breakpoint-up(md) {
             display: none !important;
          }
       }
@@ -174,14 +179,20 @@
     .category-image{
 
 
+
       overflow: hidden;
+      margin-bottom: 5rem;
+
+      @include media-breakpoint-up(sm) {
+          margin-bottom: 8rem;
+       }
       img{
           width:100%;
+
+          overflow: hidden;
           transition: all 500ms;
-          margin-bottom: 5rem;
-          @include media-breakpoint-up(sm) {
-              margin-bottom: 8rem;
-           }
+
+
       }
 
 
@@ -236,11 +247,10 @@
 .intro-copy-margin{
   margin:0 0 3rem 0;
   padding: 0 !important;
-  border: 0px solid red;
+  border:0px solid red;
 
   p{
     font-size: 4.8rem;
-    border: 0px solid red;
     font-size: 2rem;
     margin: 0;
     padding: 0;
@@ -250,7 +260,6 @@
   }
 
   @include media-breakpoint-up(md) {
-
       margin:0 0 7rem 0;
     p{
       font-size: 2.4rem;
@@ -261,8 +270,9 @@
 
    }
   @include media-breakpoint-up(lg) {
-margin:0 0 12rem 0;
-                p{
+        margin:0 0 12rem 0;
+        
+            p{
                   font-size: 4.6rem;
 
                 }

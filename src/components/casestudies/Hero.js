@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Reveal from 'react-reveal/Reveal';
-
-class Window extends React.Component {
+const bottom_margin = 100;
+class Hero extends React.Component {
   constructor(props) {
     super(props);
     this.state = {bg: "100% 100%", aspect_ratio: 2};
@@ -25,7 +25,7 @@ class Window extends React.Component {
 
 
 
-    let window_height = $( window ).height();
+    let window_height = $( window ).height()-bottom_margin;
 
     let window_width = $( window ).width();
 
@@ -92,10 +92,12 @@ class Window extends React.Component {
       return (
 
       <div className="case-study-hero" ref={el => this.el = el} >
-        <div className="case-study-image" ref={el => this.el2 = el} style={style} ></div>
-        <div className="container-fluid no-gutters">
+        <div className="case-study-image" ref={el => this.el2 = el} style={style}></div>
 
-         <div className="case-study-header col-sm-12 col-md-10 offset-md-1">
+        <div className="container-fluid">
+
+         <div className="col-12 col-md-10 offset-md-1 ">
+         <div className="case-study-header">
               <Reveal effect="fadeInUpCustom">
               <div className="header-type">
                <h4>{this.props.title}</h4>
@@ -103,7 +105,7 @@ class Window extends React.Component {
                </div>
                </Reveal>
            </div>
-
+           </div>
        </div>
 
 
@@ -113,4 +115,4 @@ class Window extends React.Component {
     )
     }
 }
-export default Window;
+export default Hero;

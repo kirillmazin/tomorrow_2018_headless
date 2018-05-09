@@ -82,7 +82,7 @@ class ImageGridTwoImages extends Component {
                   </div>
               </div>
 
-          
+
           </div>
 </Reveal>
 

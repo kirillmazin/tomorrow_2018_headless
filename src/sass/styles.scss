@@ -1,7 +1,9 @@
 @import "bootstrap/scss/bootstrap";
-@import "partials/_globals/menu";
-@import "partials/fonts";
 @import "partials/variables";
+@import "partials/_globals/menu";
+@import "partials/_globals/device-frames";
+@import "partials/fonts";
+
 @import "partials/base";
 @import "partials/header";
 @import "partials/case-study";
@@ -18,6 +20,7 @@
 @import "partials/work/tags";
 @import "partials/work/workheader";
 @import "partials/work/filters";
+@import "partials/casestudy/filters";
 @import "partials/work/services";
 @import "partials/work/clients";
 @import "partials/contact/largeTitle";
@@ -33,6 +36,7 @@
 @import "partials/_globals/loading";
 @import "partials/about/PersonTile";
 @import "partials/about/Instagram";
+@import "partials/about/Bios";
 @import "partials/contact/address";
 @import "partials/_globals/buttons";
 @import "partials/_globals/heroImage";
@@ -41,3 +45,4 @@
 @import "slick/slick";
 @import "slick/slick-theme-tomorrow";
 @import "partials/case-study/project-nav";
+@import "partials/about/process";

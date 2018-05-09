@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll'
-import styles from '../../stylesheets/styles.css'
 import Reveal from 'react-reveal/Reveal'
-import { ParallaxProvider, Parallax } from 'react-skrollr'
-import HighlightCopyLeft from './HighlightCopyLeft'
-import HighlightCopyRight from './HighlightCopyRight'
 import Arrow from '../../imgs/ui/arrow-simple.svg';
 import { Link} from 'react-router-dom'
 class Highlight extends Component {
@@ -71,7 +66,7 @@ class Highlight extends Component {
       margin:'0 0 -120px 0'
     }
 
-    console.log(this.props.section_link.uid);
+
     return (
 
 
@@ -89,7 +84,7 @@ class Highlight extends Component {
 
         <Reveal effect="fadeInUpCustom">
           <div className="container-fluid">
-            <div className="row no-gutters" >
+
             <div className="col-lg-8 offset-lg-1">
 
               <Link to={"../" +this.props.section_link.uid}>
@@ -107,7 +102,7 @@ class Highlight extends Component {
               <div>
 
               </div>
-            </div>
+
             </div>
         </div>
         </Reveal>

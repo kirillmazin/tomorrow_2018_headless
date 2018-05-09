@@ -1,0 +1,277 @@
+.bios{
+
+  width:100%;
+
+
+  padding: 10rem 0 18rem 0;
+
+  @include media-breakpoint-up(lg) {
+
+
+      padding: 15rem 0 10rem 0;
+
+   }
+
+
+  @include media-breakpoint-up(xl) {
+
+  }
+
+
+  p{
+
+    margin:2rem 0 2rem 0;
+
+
+  }
+  p.name{
+
+
+  }
+  p.next{
+    a{
+
+      border: none;
+    }
+    @include media-breakpoint-up(md) {
+        font-size: 3rem;
+        margin-top:7rem;
+    }
+
+
+
+    &:after{
+      background-image: url('../imgs/ui/arrow-simple.svg');
+      background-size: 100%;
+          background-repeat: no-repeat;
+          margin-left: 8px;
+          width: 18px;
+          height:18px;
+          background-position: 0 3px;
+
+          display: inline-block;
+          content: '';
+          transition: margin 200ms;
+
+
+          @include media-breakpoint-up(md) {
+              font-size: 3rem;
+
+              margin-left: 8px;
+              width: 22px;
+              height:22px;
+              background-position: 0 3px;
+           }
+
+
+    }
+
+    &:hover{
+      color:$color-link;
+
+      &:after{
+        background-image: url('../imgs/ui/arrow-simple-blue.svg');
+        margin-left: 10px;
+
+                  @include media-breakpoint-up(md) {
+                        margin-left: 14px;
+                  }
+
+
+      }
+    }
+
+  }
+
+
+  .staff_name_bio{
+    font-size: 2.6rem;
+    margin-top: 1.5rem;
+
+
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0.7rem;
+        font-size: 2.3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 2.3rem;
+        margin-top: 10rem;
+        line-height: 1.2;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+        line-height: 1.2;
+    }
+
+
+
+    i{
+
+
+      background-image: linear-gradient(90deg, #fff, #fff);
+      background-repeat: repeat-x;
+      background-position: 0 18px;
+      background-size:1px 19px;
+      color:$body-color;
+      text-decoration: none;
+
+      transition: background-size 500ms;
+
+
+
+
+
+      @include media-breakpoint-up(md) {
+                background-position: 0 22px;
+      }
+
+      @include media-breakpoint-up(lg) {
+            background-position: 0 32px;
+      }
+
+
+
+    }
+
+  }
+
+  .close-bios{
+    position: absolute;
+    right:0;
+    top:0;
+    margin:25px 25px 0 0;
+    width:35px;
+    height:35px;
+
+
+    cursor: pointer;
+    align-self: center;
+    transition: all 500ms;
+
+
+
+    @include media-breakpoint-up(lg) {
+
+
+        margin:45px 50px 50px 50px;
+
+     }
+
+
+    @include media-breakpoint-up(xl) {
+
+    }
+
+    .bottom-bar{
+      top:10px;
+      margin-bottom: 0;
+      background-color:black;
+
+
+    }
+    .bar{
+      top:10px;
+      position: absolute;
+      height:2px;
+      background-color:black;
+      width: 100%;
+      transition: all 500ms;
+
+
+    }
+
+  }
+  .bio{
+    font-size: 2.2rem;
+    margin-top:5rem;
+    @include media-breakpoint-up(lg) {
+
+
+      font-size: 3rem;
+
+     }
+
+
+
+
+
+
+
+  }
+
+  a{
+
+    color:black;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    transition: all 300ms;
+
+
+  }
+
+  a:hover{
+    color:$color-link;
+    border-bottom: 1px solid $color-link;
+  }
+
+  .linkedIn{
+
+    font-size: 2.6rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+
+    }
+  }
+  .next{
+      margin:5rem 0 0 0;
+      font-size: 2.6rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+
+        margin:18rem 0 0 0;
+
+     }
+
+
+    p{
+      margin:0;
+      padding: 0;
+    }
+  }
+
+
+
+
+  .thumbnail_image{
+
+    width:100%;
+
+
+
+    margin:0;
+    padding: 0;
+    padding-top: 77%;
+    position: relative;
+
+
+
+    .thumbnail_source{
+      position: absolute;
+
+      top:0;
+      left:0;
+      bottom: 0;
+      right: 0;
+      background-size:cover;
+      background-position:"center center";
+      background-repeat:no-repeat;
+    }
+
+
+
+
+  }
+}

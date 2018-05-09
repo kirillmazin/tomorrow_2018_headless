@@ -98,6 +98,9 @@ class Filters extends Component {
 
 
   //  this.props.onMenuExpand(this.state.height);
+
+
+
     this.props.onMenuExpand(expand_by);
 
 
@@ -111,8 +114,7 @@ class Filters extends Component {
       let height =
     this.$el.css("height");
 
-
-
+    
     this.state.height= height;
 
     this.setState({
@@ -189,52 +191,13 @@ class Filters extends Component {
                 }
             });
         }
-      /*
-      if(this.state.isShown == true){
-        start_visibility = 'hidden';
-        end_visibility = 'visible';
 
-
-        this.setState({
-          menuStyle:
-            {
-              visibility:start_visibility,
-              height:height
-            }
-        });
-
-
-        height = this.$el.css("height");
-
-
-        this.setState({
-
-          menuStyle:
-            {
-              visibility:end_visibility,
-              height:0+'px'
-
-            },
-
-        });
-
-
-
-      } else {
-
-          height = this.$el.css("height");
-
-
-
-
-      }
-
-      */
 
   }
   render() {
 
     const menuStyle = {}
+
     return (
 
 
@@ -254,7 +217,7 @@ class Filters extends Component {
           </div>
         </div>
 </Reveal>
-      
+
 
       </div>
 

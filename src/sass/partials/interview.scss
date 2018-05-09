@@ -1,17 +1,28 @@
 .interview{
 
     background-color: #FFFFFF;
-    padding-top: 70px;
+      padding-top: 4rem;
 
+    @include media-breakpoint-up(sm) {
+
+     }
+
+    @include media-breakpoint-up(md) {
+        padding-top: 7rem;
+    }
 
     h1{
-        border:0px solid red;
+
 
     }
     .section-title{
 
           margin:0;
-          padding: 0;
+          padding: 0 3rem 0 3rem;
+
+
+
+
           /*  background-image: url("../imgs/ui/line-gray.png");*/
 
 
@@ -73,20 +84,23 @@
     }
 
     .interview-content{
-        font-size: 1.7rem;
-        margin-top:50px;
+        font-size: 1.8rem;
+        margin-top:5rem;
 
-        padding-bottom: 30px;
+        padding-bottom: 3rem;
+
+
+
         @include media-breakpoint-up(sm) {
             text-align:left;
          }
 
         @include media-breakpoint-up(md) {
 
-         }
+        }
         @include media-breakpoint-up(lg) {
-            margin-top:75px;
-            padding-bottom: 70px;
+            margin-top:7.5rem;
+            padding-bottom: 7rem;
 
          }
         @include media-breakpoint-up(xl) {
@@ -97,9 +111,13 @@
 
         h4{
             font-family: "Akkurat-Bold";
-            border:0px solid red;
-            margin:0 0 3rem 0;
+            font-size: 1.7rem;
+            margin:0 0 2rem 0;
+            padding:0 3rem 0 3rem;
 
+              @include media-breakpoint-up(md) {
+                padding:0;
+              }
 
         }
 
@@ -107,25 +125,46 @@
 
         }
         p{
-          margin: 0 0 3rem 0;
+          margin: 0 0 5rem 0;
+          padding:0 4rem 0 3rem;
+          @include media-breakpoint-up(md) {
+            padding:0 2rem 0 0;
+
+          }
+
         }
 
 
         .interview-photo{
 
 
-
+          border: 0px solid red;
           text-align: center;
 
+          .staff-name{
+            border: 0px solid red;
+            text-align: left;
+            padding-left:3rem;
+            p{
+
+                margin:0 ;
+                padding: 0;
+
+            }
+            margin:0 0 3rem 0;
+          }
           img{
-            width:80%;
-            margin-bottom:50px;
+            width:70%;
+            margin-bottom:2rem;
+            padding-left:0;
             @include media-breakpoint-up(sm) {
+                  padding-left:3rem;
 
              }
 
              @include media-breakpoint-up(md) {
-                border: 0px solid red;
+                 width:80%;
+
               }
           }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll'
 import styles from '../../stylesheets/styles.css'
 import Reveal from 'react-reveal/Reveal'
-import { ParallaxProvider, Parallax } from 'react-skrollr'
+
 class IntroCopy extends Component {
 
 
@@ -16,14 +16,14 @@ class IntroCopy extends Component {
 
 
 
-          <div className="row">
-            <div className="col-sm-10 col-md-8 offset-lg-1 col-lg-7 col-xl-6">
+
+            <div className="col-12 col-sm-10 col-md-8 offset-lg-1 col-lg-8 col-xl-6 no-gutters">
             <div className="intro-copy-margin">
               <p>{this.props.copy}</p>
 
             </div>
             </div>
-          </div>
+
 
 
 

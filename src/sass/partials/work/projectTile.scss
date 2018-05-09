@@ -147,48 +147,6 @@
   }
 
 }
-.image-tile-government-left{
-      border: 0 solid blue !important;
-      margin-top: -10rem;
-
-      @include media-breakpoint-up(md) {
-
-
-          margin-right: 1.4rem;
-
-       }
-      @include media-breakpoint-up(lg) {
-
-
-      }
-      @include media-breakpoint-up(xl) {
-
-
-      }
-
-
-}
-
-.image-tile-government-right{
-      border: 0 solid red !important;
-      margin-left: 0;
-      margin-right: 0;
-      @include media-breakpoint-up(md) {
-
-              margin-left: 1.4rem;
-                margin-top: -20rem;
-       }
-      @include media-breakpoint-up(lg) {
-          margin-top: -40rem;
-
-      }
-      @include media-breakpoint-up(xl) {
-
-
-      }
-
-
-}
 
 
 }

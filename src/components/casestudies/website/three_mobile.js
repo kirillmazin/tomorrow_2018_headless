@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import Reveal from 'react-reveal/Reveal'
 
-
+import PhoneTop from '../../../imgs/ui/devices/device-phone-top.svg';
+import PhoneBottom from '../../../imgs/ui/devices/device-phone-bottom.svg';
 
 const color = { filter:"drop-shadow(0px 0px 20px rgba(0,0,0,.1)) grayscale(0)",opacity:1, zIndex:3}
 
@@ -112,16 +113,38 @@ class ThreeMobile extends Component {
                   <div className="row">
 
                                       <div ref={el => this.middle_image = el}  className="col-4" style={color} >
-                                          <div className="large-image" style={bg_image_1_height}>
+
+                                        <div className="phone-top">
+                                            <img src={PhoneTop}/>
+                                        </div>
+                                        <div className="phone-frame">
+                                          <div className="large-image phone-screen" style={bg_image_1_height}>
                                                 <div className="image" style={bg_image_1}></div>
 
                                             </div>
+                                            </div>
+                                            <div className="phone-bottom"><img src={PhoneBottom}/></div>
                                       </div>
-                    <div ref={el => this.first_image = el} className="col-4" style={color} >
-                            <div className="large-image" style={bg_image_2_height}>
-                                <div className="image" style={bg_image_2}></div>
 
+
+
+
+
+                    <div ref={el => this.first_image = el} className="col-4" style={color} >
+
+                      <div className="phone-top">
+                          <img src={PhoneTop}/>
+                      </div>
+                    <div className="phone-frame">
+                      <div className="phone">
+                            <div className="large-image phone-screen" style={bg_image_2_height}>
+                                <div className="image" style={bg_image_2}></div>
                               </div>
+
+                        </div>
+                      </div>
+
+                      <div className="phone-bottom"><img src={PhoneBottom}/></div>
                           </div>
 
 
@@ -133,15 +156,18 @@ class ThreeMobile extends Component {
 
 
                     <div ref={el => this.last_image = el}  className="col-4" style={color}>
-                    <div className="phone">
-                      <div className="large-image" style={bg_image_3_height}>
+                      <div className="phone-top">
+                          <img src={PhoneTop}/>
+                      </div>
+                          <div className="phone-frame">
+                      <div className="phone">
+                        <div className="large-image phone-screen" style={bg_image_3_height}>
                             <div className="image" style={bg_image_3}></div>
-
+                       </div>
                       </div>
-                      </div>
 
-
-
+                    </div>
+                      <div className="phone-bottom"><img src={PhoneBottom}/></div>
 
 
 
