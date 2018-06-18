@@ -1,4 +1,6 @@
-
+$component-margin-lg: 10rem 0 10rem 0;
+$component-margin-md: 6rem 0 6rem 0;
+$component-margin-sm: 2.5rem 0 2.5rem 0;
 
 html{
     font-size:62.5%;
@@ -18,6 +20,7 @@ body{
     background-color: $color-background !important;
     color: $body-color;
     text-rendering:geometricPrecision !important;
+    -moz-osx-font-smoothing: grayscale;
 
 
 
@@ -75,6 +78,32 @@ body{
       margin: $component-margin-lg;
       margin-top: 0;
 
+
+   }
+  @include media-breakpoint-up(xl) {
+   }
+
+}
+
+.component-margin-recognition,.component-margin-clients{
+
+  margin: $component-margin-sm;
+  margin-bottom: 8rem;
+  @include media-breakpoint-up(sm) {
+      margin: $component-margin-sm;
+   }
+
+  @include media-breakpoint-up(md) {
+      margin: $component-margin-md;
+      margin-bottom: 12rem;
+    }
+
+
+
+
+  @include media-breakpoint-up(lg) {
+      margin: $component-margin-lg;
+      margin-bottom: 18rem;
 
    }
   @include media-breakpoint-up(xl) {

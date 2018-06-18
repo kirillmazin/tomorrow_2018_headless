@@ -2,6 +2,7 @@
 @import "partials/variables";
 @import "partials/_globals/menu";
 @import "partials/_globals/device-frames";
+@import "partials/_globals/footer";
 @import "partials/fonts";
 
 @import "partials/base";
@@ -9,18 +10,18 @@
 @import "partials/case-study";
 @import "partials/research";
 @import "partials/interview";
-@import "partials/footer";
+
 @import "partials/image-grid";
-@import "partials/website-module";
+@import "partials/case-study/website-module";
 @import "partials/whatwedid";
-@import "partials/quote";
+@import "partials/_globals/quote";
 @import "partials/large-image";
 @import "partials/work/intro";
 @import "partials/work/projectTile";
 @import "partials/work/tags";
-@import "partials/work/workheader";
+@import "partials/work/workcontent";
 @import "partials/work/filters";
-@import "partials/casestudy/filters";
+@import "partials/case-study/filters";
 @import "partials/work/services";
 @import "partials/work/clients";
 @import "partials/contact/largeTitle";

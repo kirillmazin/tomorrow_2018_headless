@@ -2,13 +2,12 @@ import React from 'react';
 import NotFound from './NotFound';
 import $ from 'jquery';
 import Prismic from 'prismic-javascript';
-
-import styles from './work.css'
 import Tag from './components/work/Tag';
-import Loading from './components/_globals/Loading.js';
+
 import Footer from './components/_globals/Footer.js';
-import WorkHeader from './components/work/WorkHeader';
-// Declare your component
+import Work_content from './components/work/WorkContent';
+import {Helmet} from "react-helmet";
+
 export default class Work extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,7 @@ export default class Work extends React.Component {
 
       window.scrollTo(0, 0);
 
-      document.title = "Tomorrow Partners | Work";
+    //  document.title = "Tomorrow Partners | Work";
   }
   componentDidUpdate() {
   //  this.props.prismicCtx.toolbar();
@@ -111,9 +110,7 @@ export default class Work extends React.Component {
 
             let project_data = {};
 
-          //  console.log("DATA %%%%%");
-          //  console.log(this.state.doc.results[i]);
-          //  console.log(" slugs " + this.state.doc.results[i].slugs);
+
 
 
 
@@ -283,10 +280,13 @@ export default class Work extends React.Component {
           return (
             <div>
 
+              <Helmet>
+                  <title>Tomorrow Partners | Work</title>
+                  <meta name="description" content="We cross sectors and merge mindsets to find creative, impactful solutions for every kind of client." />
+              </Helmet>
 
 
-
-        <WorkHeader ui_color={ui_color} grid_items_filters={areas_of_expertise_to_include} all_filters={all_o} intro_font_color={intro_font_color} background_color={background_color} filterLabel={filterLabel} filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
+        <Work_content ui_color={ui_color} grid_items_filters={areas_of_expertise_to_include} all_filters={all_o} intro_font_color={intro_font_color} background_color={background_color} filterLabel={filterLabel} filterBy={filterBy} page_intro={page_intro} projects={all_projects} work_landing_page_data={work_landing_page_data} global_thumbnail_aspect_ratio={global_thumbnail_aspect_ratio}/>
 
 
 

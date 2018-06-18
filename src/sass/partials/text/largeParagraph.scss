@@ -1,14 +1,17 @@
 
 
 .large-paragraph{
-  border: 0px solid red;
+
+
+
+
   h3{
-
-
     font-size: 2.8rem;
     margin-bottom: 3.5rem;
 
+    @include media-breakpoint-up(sm) {
 
+    }
 
     @include media-breakpoint-up(md) {
           font-size: 3rem;
@@ -21,28 +24,31 @@
 
 
       background-image: linear-gradient(90deg, #fff, #fff);
-      background-repeat: repeat-x;
-      background-position: 0 18px;
-      background-size:1px 19px;
-      color:$body-color;
       text-decoration: none;
+      color:$body-color;
+      background-position-y: bottom;
+      background-repeat:no-repeat;
+      background-size: 100% 12px;
 
-      transition: background-size 500ms;
+      transition: background-size 300ms;
 
-
-
-      @include media-breakpoint-up(md) {
-                background-position: 0 22px;
+      @include media-breakpoint-up(sm) {
+          background-size: 100% 14px;
       }
-
       @include media-breakpoint-up(lg) {
-            background-position: 0 37px;
+
+            background-size: 100% 22px;
+
       }
 
 
 
     }
   }
+
+
+
+
       p{
         border: 0px solid red;
         font-size: 1.8rem;

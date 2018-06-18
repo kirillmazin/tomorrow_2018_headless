@@ -11,68 +11,48 @@
         padding-top: 7rem;
     }
 
-    h1{
+  
 
 
-    }
+
     .section-title{
-
-          margin:0;
-          padding: 0 3rem 0 3rem;
-
+       margin:0;
+        padding: 0 3rem 0 3rem;
 
 
 
-          /*  background-image: url("../imgs/ui/line-gray.png");*/
-
-
-        /*  border: 0px solid red;*/
 
 
 
-        a{
+
+
+
+        i{
 
           background-image: linear-gradient(90deg, #EEEEEC, #EEEEEC);
-          background-repeat: no-repeat;
-          background-position: 0 20px;
-          color:$body-color;
           text-decoration: none;
-          border:0px solid red;
+          color:$body-color;
+          background-position-y: bottom;
+          background-repeat:no-repeat;
+          background-size: 100% 10px;
+
+          transition: background-size 300ms;
+
+          @include media-breakpoint-up(sm) {
+              background-size: 100% 12px;
+          }
+          @include media-breakpoint-up(lg) {
+
+                background-size: 100% 14px;
+
+          }
 
         }
 
-        a:hover{
 
-        }
-        /*
-
-          a{
-              background-image: linear-gradient(90deg, #EEEEEC, #EEEEEC);
-              background-position: 0 20px;
-              border: 0px solid red;
-              display:inline-block;
-              color:#000;
-
-          }*/
     }
 
 
-/*
-    .strike{
-      position: relative;
-      display: inline-block;
-    }
-
-    .strike::before{
-      content:"";
-      border-bottom: 2px solid red;
-      width: 100%;
-      position: absolute;
-      right: 0;
-      top: 50%;
-    }
-
-*/
 
     .interview-work{
         margin-bottom: 100px;

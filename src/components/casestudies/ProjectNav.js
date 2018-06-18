@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import $ from 'jquery';
+
 import Prismic from 'prismic-javascript';
 import Slider from "react-slick";
-import { Link} from 'react-router-dom';
+
 import Filters from './Filters';
-import Fade from 'react-reveal/Fade';
+
 import Reveal from 'react-reveal/Reveal';
 import ProjectNavTile from './ProjectNavTile';
 // Declare your component
@@ -65,31 +65,81 @@ export default class ProjectNav extends React.Component {
   //  this.props.prismicCtx.toolbar();
   }
 
-  processData (data, type){
+  processData (data, type, project_areas_of_expertise){
     let processed_data=[];
-
+    let include = false;
 
     for(let i=0;i<data.length;i++){
 
       let o ={};
       o.type = data[i].type;
-
+      o.areas_of_expertise = [];
 
     // casestudy
 
-    if(o.type  == "casestudy" && type == "casestudy"){
-
-      o.uid = data[i].uid;
-      o.type = data[i].type;
-
-      o.title = data[i].data.title[0].text;
-      o.thumbnail_image = data[i].data.thumbnail_image;
+    if(o.type  === "casestudy" && type === "casestudy"){
+      // console.log("+------------")
+      // console.log("+------------ " + project_areas_of_expertise)
 
 
 
+        include = false;
+
+      for(var l=0; l< project_areas_of_expertise.length; l++){
+
+          //console.log(project_areas_of_expertise[l])
+          for(var k=0;k< data[i].data.area_of_expertise.length; k++){
 
 
-      processed_data.push(o);
+                o.areas_of_expertise.push(data[i].data.area_of_expertise[k].area);
+                if(project_areas_of_expertise[l] ===  data[i].data.area_of_expertise[k].area){
+                  // console.log(" MATCH ");
+                  // console.log(project_areas_of_expertise[l] + " /// " + data[i].data.area_of_expertise[k].area);
+                  o.areas_of_expertise.push(project_areas_of_expertise[l]);
+                  include = true;
+
+                }
+
+          }
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      if(include !== false) {
+        o.uid = data[i].uid;
+        o.type = data[i].type;
+
+        o.title = data[i].data.title[0].text;
+        o.thumbnail_image = data[i].data.thumbnail_image;
+
+        // console.log(i + "  + "  +   o.title);
+        // console.log(data[i].data.area_of_expertise)
+        processed_data.push(o);
+      } else {
+        //  console.log(i + "  DO NOT INCLUDE "  +   data[i].data.title[0].text);
+        //  console.log(data[i].data.area_of_expertise)
+      }
     }
 
 
@@ -110,7 +160,7 @@ export default class ProjectNav extends React.Component {
         let o ={};
         o.type = data[i].type;
 
-        if(o.type  == "work_landing_page"){
+        if(o.type  === "work_landing_page"){
 
           o.uid = this.state.doc.results[i].uid;
           o.filter = this.state.doc.results[i].data.filter_by_tag[0].text;
@@ -128,12 +178,10 @@ export default class ProjectNav extends React.Component {
 
     let all_projects = [];
       for(let i=0;i<data.length;i++){
-        if(this.props.current_project != data[i].uid){
+        if(this.props.current_project !== data[i].uid){
 
 
-        let thumbnail_source = {
-          backgroundImage: "url(" + data[i].thumbnail_image.url + ")"
-        }
+
 
 
 
@@ -154,7 +202,7 @@ export default class ProjectNav extends React.Component {
 
     let all_projects = [];
       for(let i=0;i<data.length;i++){
-        if(this.props.current_project != data[i].uid){
+        if(this.props.current_project !== data[i].uid){
 
 
         let thumbnail_source = {
@@ -194,7 +242,7 @@ export default class ProjectNav extends React.Component {
       return props.prismicCtx.api.query(
 
 
-          Prismic.Predicates.any('document.type', ['casestudy','work_landing_page']),{ pageSize : 100}
+          Prismic.Predicates.any('document.type', ['casestudy','work_landing_page']),{ pageSize : 100, orderings : '[my.casestudy.title]'}
 
 
 ).then((doc) =>
@@ -220,6 +268,10 @@ export default class ProjectNav extends React.Component {
 
 
   render() {
+
+
+    //console.log("PROJECT NAV +++++++ ");
+   //console.log(this.props.areas_of_expertise);
     var settings = {
       dots: false,
       infinite: true,
@@ -272,7 +324,7 @@ export default class ProjectNav extends React.Component {
 
 
             data = this.state.doc.results;
-            all_projects = this.processData(data, "casestudy");
+            all_projects = this.processData(data, "casestudy", this.props.areas_of_expertise);
             all_filters = this.getFilters(data, "work_landing_page");
 
             function compare(a,b){

@@ -38,9 +38,9 @@ class Services extends Component {
 
 
 
-<div className="container-fluid">
-  <div className="col-12 col-lg-10 offset-lg-1 no-gutters">
-      <div className="services row">
+
+  <div className="col-12 col-lg-10 offset-lg-1">
+      <div className="services row no-gutters">
 
 
           <div className="col-lg-3">
@@ -107,7 +107,7 @@ class Services extends Component {
 
       </div>
       </div>
-</div>
+
 
     );
   }

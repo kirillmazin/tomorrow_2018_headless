@@ -20,10 +20,10 @@ import Loading from './components/_globals/Loading.js';
 import Research from './components/casestudies/Research';
 import Website from './components/casestudies/Website';
 import HeroPhotoContact from './components/contact/HeroPhotoContact';
-import MapSimple from './components/contact/MapSimple';
+import MapSimple from './components/contact/MapSimpleClick';
 import Reveal from 'react-reveal/Reveal'
 import $ from 'jquery';
-
+import {Helmet} from "react-helmet";
 // Declare your component
 export default class Contact extends React.Component {
 
@@ -59,10 +59,15 @@ export default class Contact extends React.Component {
 
 
 
-      document.title = "Tomorrow Partners | Contact";
+      //document.title = "Tomorrow Partners | Contact";
 
 
 
+  }
+handleMarkerClick(){
+
+
+    window.open( "https://www.google.com/maps?q=2332+5th+Street,+Berkeley,+CA+94710&hnear=2332+5th+St,+Berkeley,+California+94710&gl=us&t=m&z=16")
   }
   componentWillReceiveProps(props) {
     this.fetchPage(props);
@@ -270,10 +275,10 @@ export default class Contact extends React.Component {
             to_render.push(
 
   <Reveal effect="fadeInUpCustom">
-              <div className="contact-map">
+              <div className="contact-map" >
               <MapSimple
     isMarkerShown
-
+     onMarkerClick={this.handleMarkerClick}
     googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI2Z86ugShB77GZ4JOJfYTQYiPGBe41SY&v=3.exp&libraries=geometry,drawing,places"
     loadingElement={<div style={{ height: `100%` }} />}
     containerElement={<div style={{ height: `500px` }} />}
@@ -308,6 +313,10 @@ export default class Contact extends React.Component {
 
     return(
       <div>
+        <Helmet>
+            <title>Tomorrow Partners | Contact</title>
+            <meta name="description" content="Let’s start a conversation about what we can do with you today." />
+        </Helmet>
           <Menu/>
           <HeroPhotoContact intro_font_color={'black'} copy={my_text} introcopy={hero_copy} aspect_ratio={hero_aspect_ratio} image={hero_image} introtext={hero_copy}/>
           <div className="workheader" ref={el => this.el = el}>

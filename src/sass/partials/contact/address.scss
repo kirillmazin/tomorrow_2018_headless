@@ -7,9 +7,14 @@
 .address{
   border: 0px solid pink !important;
 
+
+
+
+
+
   h3{
 
-    border: 0px solid pink;
+
     font-size: 2.8rem;
     margin-bottom: 3.5rem;
 
@@ -28,27 +33,27 @@
 
 
       background-image: linear-gradient(90deg, #fff, #fff);
-      background-repeat: repeat-x;
-      background-position: 0 18px;
-      background-size:1px 19px;
-      color:$body-color;
       text-decoration: none;
+      color:$body-color;
+      background-position-y: bottom;
+      background-repeat:no-repeat;
+      background-size: 100% 12px;
 
-      transition: background-size 500ms;
+      transition: background-size 300ms;
 
       @include media-breakpoint-up(sm) {
-          background-position: 0 22px;
+          background-size: 100% 14px;
       }
+      @include media-breakpoint-up(lg) {
 
-      @include media-breakpoint-up(md) {
-            background-position: 0 37px;
+            background-size: 100% 22px;
+
       }
 
 
 
     }
   }
-
 
 
       p{

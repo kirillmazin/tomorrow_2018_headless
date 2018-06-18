@@ -10,7 +10,7 @@ class Hero extends React.Component {
   }
   determineBGResizing(){
     let window_width = $( window ).width();
-    let window_height = $( window ).height();
+    let window_height = $( window ).height()-bottom_margin;
     let window_apect_ratio = window_width/ window_height;
     if(window_apect_ratio < this.state.aspect_ratio){
 

@@ -16,7 +16,7 @@ class TwoDesktops extends Component {
 
 
 
-    console.log(this.state.value)
+
 
   }
   returnImage(img){
@@ -24,10 +24,25 @@ class TwoDesktops extends Component {
     return <div><img src={img} /></div>
 
   }
+
+getAnimationStyle(){
+
+
+  if(this.props.image_items[1].animate === "yes"){
+    return `image image animate_desktop_mobile`;
+
+  } else {
+    return "image";
+  }
+
+}
+
+
   bring_to_front(id){
 
 
 //    this.state.browser_1_style = {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.3)) grayscale(0)"}
+
 
 this.setState({
     browser_1_style: this.state.grayscale,
@@ -79,7 +94,7 @@ this.setState({
 
           let img_2_ar = this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height;
 
-
+          img_2_ar = 640 / (1280);
 
           let bg_image ={
 
@@ -91,6 +106,7 @@ this.setState({
           let bg_image_2 ={
 
             backgroundImage: "url(" + img_2 + ")",
+
 
 
           }
@@ -127,7 +143,7 @@ this.setState({
                       </div>
                           <div className="phone-frame">
                             <div className="large-image phone-screen" style={bg_image_2_height}>
-                              <div className="image" style={bg_image_2}></div>
+                              <div className={this.getAnimationStyle()}  style={bg_image_2}></div>
                             </div>
                           </div>
                       <div className="phone-bottom"><img src={PhoneBottom}/></div>

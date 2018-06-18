@@ -34,7 +34,7 @@ componentDidUpdate(){
 //  console.log("+++ top " + $(window).scrollTop());
   //this.$bios.css("top",$(window).scrollTop());
 
-  console.log("BIO UPDATE ===== +++ ")
+
 //  this.$bios.css("display","block");
 
 }

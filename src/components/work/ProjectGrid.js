@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import styles from './ProjectTile.css'
 import ProjectTile from './ProjectTile'
+import Quote from '../casestudies/Quote';
 /**
  * This is a quote component used on the case study page
  */
@@ -55,7 +56,7 @@ class ProjectGrid extends Component {
 
     }
 
-    
+
       function sortNumber(a,b) {
           return a - b;
       }
@@ -111,41 +112,32 @@ class ProjectGrid extends Component {
 
   }
 
-  buildProjects(){
+  buildProjects(quote){
       let case_studies = [];
       let prevOffset;
       let offset = 0;
       let minimum_offset = 100;
       let difference;
 
+
+
       let projects_to_use = this.removeFeatured(this.props.projects,this.props.featured_case_studies,this.props.grid_items_filters);
 
 
 
       if(projects_to_use.length > 0){
+
+
+
+
       for(let i=0;i<projects_to_use.length;i++){
 
           let alignment = i%2;
-          if(alignment == 1){
-              prevOffset = offset;
 
 
-          }
-
-          offset = this.getOffset(i);
-
-          if(alignment == 1){
-
-              let difference = offset-prevOffset;
 
 
-              if(difference < 100 ){
-                offset = offset + minimum_offset;
 
-            }
-
-
-          }
 
 
 
@@ -153,6 +145,14 @@ class ProjectGrid extends Component {
 
 
           case_studies.push(<ProjectTile alignment={alignment} id={i} data={projects_to_use[i]} show={this.props.show} offset={offset} aspect_ratio={this.props.aspect_ratio}/>);
+          if(quote.copy != undefined){
+          if(i==quote.copy.position-1 ){
+
+
+            case_studies.push( <Quote copy={quote.copy}/>);
+
+          }
+        }
 
       }
     }
@@ -165,16 +165,26 @@ class ProjectGrid extends Component {
     return (
 
 
-      <div className="container-fluid">
-      <div className="col-12 col-lg-10 offset-lg-1 no-gutters " >
-      <div className="row no-gutters">
 
-      {this.buildProjects()}
+
+
+
+  <div className="container-fluid work-casestudies">
+
+    <div className="col-lg-10 offset-lg-1">
+    <div className="row no-gutters">
+
+  {this.buildProjects(this.props.quote)}
+
+
+</div>
+</div>
 
 
       </div>
-    </div>
-    </div>
+
+
+
     )
   }
 }

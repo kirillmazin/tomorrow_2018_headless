@@ -5,16 +5,14 @@ import Fade from 'react-reveal/Fade';
 class Whatwedid extends Component {
 
   render() {
-    console.log(this.props.scope);
-    console.log(this.props.scope.length);
+
 
     const num_of_items = this.props.scope.length;
     const remainder = num_of_items%2;
 
-    console.log(" remainder " + remainder);
-    console.log(" number of items " + num_of_items);
+
     const half = Math.round(num_of_items/2)-remainder;
-    console.log(" half " + half);
+  
     const col_1 = [];
     const col_2 = [];
 

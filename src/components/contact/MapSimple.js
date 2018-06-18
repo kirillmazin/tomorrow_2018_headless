@@ -8,20 +8,25 @@ const demoFancyMapStyles = require("./map_style.json");
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
 
+
   <GoogleMap
     defaultZoom={11}
       defaultOptions={{ styles: demoFancyMapStyles }}
     defaultCenter={{ lat: 37.861968, lng: -122.297472}}
 
+
   >
     {props.isMarkerShown && <Marker
 
       position={{ lat: 37.861968, lng: -122.297472}}
-      title={'my marker'}
+      title={'Tomorrow Partners'}
       icon={mapMarker}
 
+
       />}
+
   </GoogleMap>
+
 
 
 ))

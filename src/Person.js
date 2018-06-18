@@ -48,7 +48,6 @@ export default class Person extends React.Component {
   }
 
   componentDidUpdate() {
-  //  this.props.prismicCtx.toolbar();
     window.scrollTo(0, 0);
   }
 
@@ -81,13 +80,7 @@ export default class Person extends React.Component {
 
       top_bar:   {transform:"rotate(405deg)", top: "20px"},
       bottom_bar:{transform:"rotate(-45deg)", top: "20px"},
-      link_underline:{
 
-            backgroundSize: "100% 100%"
-
-
-
-      }
 
 
 
@@ -118,14 +111,8 @@ export default class Person extends React.Component {
     this.setState({
 
       top_bar:   {transform:"rotate(45deg)", top: "20px"},
-      bottom_bar: {transform:"rotate(-225deg)", top: "20px"},
-      link_underline:{
+      bottom_bar: {transform:"rotate(-225deg)", top: "20px"}
 
-            backgroundSize: "0% 100%"
-
-
-
-      }
 
 
 

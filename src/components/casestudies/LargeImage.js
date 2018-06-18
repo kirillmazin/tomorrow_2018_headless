@@ -29,9 +29,7 @@ class LargeImage extends Component {
 
     }
 
-    console.log(this.props)
 
-    console.log(this.props.website_frame);
     const image_height = {
       border:'0px solid red',
       'paddingTop': 100/this.props.aspect_ratio+'%',

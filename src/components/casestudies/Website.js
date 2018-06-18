@@ -12,7 +12,7 @@ class Website extends Component {
     this.state = {
       value: null
     }
-    console.log(this.state.value)
+
 
   }
   returnImage(img){
@@ -22,8 +22,7 @@ class Website extends Component {
   }
 
   render() {
-      console.log("PROPS " + this.props.layout_type)
-      console.log(this.props.image_items[0].image.url)
+
 
 
       const browserIndex = {zIndex: this.state.browserIndex};

@@ -1,13 +1,12 @@
 .section-title{
-
-        font-size: 2.4rem;
+  /*      font-size: 2.4rem;
         font-family: "Akkurat-Light";
 
         background-position: 0 15px;
         display: inline-block;
         margin: 0 0 0 0;
         padding: 0 0 3rem 0;
-        border: 0px solid red;
+        border: 1px solid red;
         @include media-breakpoint-up(md) {
             font-size: 3rem;
             background-position: 0 22px;
@@ -27,8 +26,37 @@
             border:0px solid red;
             cursor: default;
 
-          }
+          }*/
 
+}
+
+
+.section-title{
+  padding: 0 0 3rem 0;
+  font-size: 2.4rem;
+  font-family: "Akkurat-Light";
+
+  
+  i{
+
+    background-image: linear-gradient(90deg, #fff, #fff);
+    text-decoration: none;
+    color:$body-color;
+    background-position-y: bottom;
+    background-repeat:no-repeat;
+    background-size: 100% 10px;
+
+    transition: background-size 300ms;
+
+    @include media-breakpoint-up(sm) {
+        background-size: 100% 12px;
+    }
+    @include media-breakpoint-up(lg) {
+
+          background-size: 100% 14px;
+
+    }
+  }
 }
 
 

@@ -1,5 +1,5 @@
 .projectTile{
-  border: 0px solid red;
+
 
 
   h4{
@@ -78,9 +78,10 @@
 
   margin-right: 0;
 
-  border:0px solid red;
+
+
   @include media-breakpoint-up(md) {
-      margin-right: 0rem;
+
 
    }
   @include media-breakpoint-up(lg) {
@@ -108,10 +109,11 @@
 }
 
 .image-tile-right{
-      border: 0px solid blue !important;
 
 
+      margin-right: 0;
       @include media-breakpoint-up(md) {
+
 
               margin-left: 1.4rem;
               margin-top: 70px;
@@ -127,6 +129,30 @@
 
 
 }
+
+.image-tile-left{
+
+
+      margin-right: 0;
+      @include media-breakpoint-up(md) {
+
+
+              margin-right: 1.4rem;
+
+       }
+      @include media-breakpoint-up(lg) {
+
+
+      }
+      @include media-breakpoint-up(xl) {
+
+
+      }
+
+
+}
+
+
 .image-tile-large{
 
   margin-bottom: 1rem;

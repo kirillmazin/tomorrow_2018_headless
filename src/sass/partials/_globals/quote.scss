@@ -15,7 +15,7 @@
 
     @include media-breakpoint-up(md) {
           font-size: 3rem;
-        
+
      }
     @include media-breakpoint-up(lg) {
         font-size: 3.8rem;
@@ -40,8 +40,14 @@
 content: '“';
 
   margin-left: -1.3rem;
+
+  @include media-breakpoint-up(sm) {
+      margin-left: -1.6rem;
+
+   }
 @include media-breakpoint-up(md) {
-    margin-left: -2rem;
+    margin-left: -1.9rem;
+
  }
 @include media-breakpoint-up(lg) {
     margin-left: -2.7rem;

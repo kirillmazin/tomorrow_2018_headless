@@ -13,7 +13,7 @@ class FourDesktops extends Component {
       value: null,
 
       grayscale: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.1)) grayscale(.8)", opacity:`${opacity_off}`, zIndex:0},
-      color: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)", zIndex:1,opacity:`${opacity_on}`,zIndex:3},
+      color: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)",opacity:`${opacity_on}`,zIndex:3},
       browser_1_style: {filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.2)) grayscale(0)", zIndex:1,opacity:`${opacity_on}`},
       browser_2_style:{filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.1)) grayscale(1)", opacity:`${opacity_off}`},
       browser_3_style:{filter:"drop-shadow(5px 5px 20px rgba(0,0,0,.1)) grayscale(1)", opacity:`${opacity_off}`},
@@ -136,12 +136,12 @@ this.setState({
 
 
 
-          let img_1_ar = this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height;
+          let img_1_ar = Math.round(this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height);
 
 
 
 
-          let img_2_ar = this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height;
+          let img_2_ar = Math.round(this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height);
 
 
 

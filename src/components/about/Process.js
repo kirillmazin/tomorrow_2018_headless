@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
 import BrowserCorner from '../../imgs/ui/browser-corner.svg';
 
-
+const stroke_width_on = "4.29"
 class LargeImage extends Component {
 
   render(props) {
@@ -28,7 +28,7 @@ class LargeImage extends Component {
       'paddingTop': 100/this.props.aspect_ratio+'%',
        display:'block'
     }
-    console.log("WIDTH TYPE " + this.props.width_type);
+
     let width_type;
 
     if(this.props.width_type == "full"){

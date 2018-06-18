@@ -1,11 +1,41 @@
 import React, { Component } from 'react';
 import Reveal from 'react-reveal/Reveal';
 import Img_logo from '../../imgs/ui/tomorrow-logo.svg';
+import Slider from "react-slick";
 
 /**
  * This is a quote component used on the case study page
  */
-class Tag extends Component {
+
+
+
+ function SampleNextArrow(props) {
+
+   console.log(props)
+   const { className, style, onClick } = props;
+   return (
+     <div
+       className={className}
+       style={{ ...style, display: "block" }}
+       onClick={onClick}
+     />
+   );
+ }
+
+ function SamplePrevArrow(props) {
+   const { className, style, onClick } = props;
+   return (
+     <div
+       className={className}
+       style={{ ...style, display: "block" }}
+       onClick={onClick}
+     />
+   );
+ }
+
+
+
+class Clients extends Component {
 
 
   getImages(images){
@@ -22,10 +52,34 @@ class Tag extends Component {
 
       }
 
-    all_images.push(<div className="client-logo col-xs-6 col-sm-6 col-lg-3 mr-auto no-gutters" style={background_image}></div>);
+    all_images.push(<div><div className="client-logo" style={background_image}></div></div>);
   }
   return all_images;
   }
+
+
+
+
+  getImage(image){
+    let all_images = [];
+    let background_image = {};
+
+
+
+
+      background_image = {
+          backgroundImage: "url(" + image.client_logo + ")",
+
+
+
+      }
+
+
+
+  return <div>><div className="client-logo" style={background_image}></div></div>;
+  }
+
+
   render() {
 
 
@@ -33,35 +87,62 @@ class Tag extends Component {
 
       color: this.props.intro_font_color
     }
+    var settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
 
+
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true
+
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+
+
+
+          }
+        }
+      ]
+    };
     return (
 
 
 
 
-      <div className="intro">
-
-
+      <div className="work-clients component-margin-clients">
 <Reveal effect="fadeInUpCustom">
-      <div className="work-clients component-margin">
-      <div className="row no-gutters">
-        <div className="col-sm-10 col-lg-4 offset-1">
-           <h2><i>{this.props.title}</i></h2>
-        </div>
-      </div>
-      <div >
+  <h2><i>{this.props.title}</i></h2>
+    <div className="white-block">
+    <div className="block-margin">
+      <Slider {...settings}>
+          {this.getImages(this.props.images)}
+        </Slider>
+   </div>
+   </div>
 
-        <div className="row no-gutters">
-          <div className="col-10 offset-1">
-          <div className="row no-gutters client-logos">
-            {this.getImages(this.props.images)}
-            </div>
-            </div>
-        </div>
-      </div>
-         </div>
-</Reveal>
 
+   </Reveal>
        </div>
 
 
@@ -71,4 +152,4 @@ class Tag extends Component {
   }
 }
 /** @component */
-export default Tag;
+export default Clients;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
-import styles from './ProjectTile.css'
+
 import { Link} from 'react-router-dom'
 import { ParallaxProvider, Parallax } from 'react-skrollr'
 import $ from 'jquery';
@@ -78,8 +78,11 @@ class ProjectTile extends Component {
   }
 
   getTile(image_height, bottom_padding, alignment ){
+
+
+
     let style_to_add = "image-tile"
-    let type_style = "";
+    let type_style = "image-tile-left";
 
     if(alignment == 1){
 
@@ -89,7 +92,7 @@ class ProjectTile extends Component {
 
     return (
     <div className={type_style}  style={this.state.tile_size} ref={el => this.el = el}>
-      <div className={style_to_add} style={this.state.image_height} >
+      <div className={style_to_add}  style={this.state.image_height} >
           <div className="image" style={this.state.imageBg}/>
       </div>
 
@@ -190,22 +193,18 @@ class ProjectTile extends Component {
 
 <Reveal effect="fadeInUpCustom">
 
-      <div className="col-sm-12 col-md-6">
+          <div className="col-12 col-md-6">
 
-      <div className="projectTile"  onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
-
-
-          <Link to={"../project/"+this.props.data.uid}>
+          <div className="projectTile"  onMouseOver={() => this.handleMouseOver()} onMouseOut={() => this.handleMouseOut()}>
 
 
-            {this.getTile(this.state.image_height, bottom_padding, alignment)}
+              <Link to={"../project/"+this.props.data.uid}>
+                {this.getTile(this.state.image_height, bottom_padding, alignment)}
+              </Link>
 
+            </div>
+            </div>
 
-          </Link>
-
-      </div>
-
-      </div>
   </Reveal>
     );
 

@@ -4,7 +4,7 @@
 
 footer{
     margin-bottom:15rem;
-  
+
     .phone{
 
       margin: 0 0 0 -12px;
@@ -15,39 +15,37 @@ footer{
 
             font-family: "Akkurat-Light";
 
-            background-position: 0 15px;
-            border: 0px solid red;
+
+
             display: inline-block;
-            margin: 0 0 0 0px;
-            padding: 0 0 0 0;
+            margin: 0;
+            padding: 0;
             font-size: 1.7rem;
-            @include media-breakpoint-up(md) {
-
-                background-position: 0 0px;
-             }
-            @include media-breakpoint-up(lg) { }
-            @include media-breakpoint-up(xl) { }
 
 
+
+
+              
 
               a{
-
-                background-image: linear-gradient(90deg, #ff5e62, #F9D423);
                 background-image: linear-gradient(90deg, #fff, #fff);
-                background-repeat: no-repeat;
-                background-position: 0 19px;
-                background-size: 0% 100%;
-                color:$body-color;
                 text-decoration: none;
-                border:0px solid red;
+                color:$body-color;
+                background-position-y: bottom;
+                background-repeat:no-repeat;
+                background-size: 0 2px;
+                padding: 0 0 2px 0;
                 transition: background-size 500ms;
+
+
+
 
               }
 
               a:hover{
                 transition: background-size 500ms;
                 transition-timing-function: ease-in;
-                    background-size: 100% 100%;
+                background-size: 100% 2px;
 
               }
 

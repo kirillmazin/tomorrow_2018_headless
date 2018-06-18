@@ -117,7 +117,7 @@ class Menu extends Component {
 
       this.setState({
 
-        logo_scale:{transform:"scale(1.02)",transition:"all 500ms"}
+        logo_scale:{opacity:0.7, transition:"all 500ms"}
       })
   }
 
@@ -125,13 +125,13 @@ class Menu extends Component {
 
       this.setState({
 
-        logo_scale:{transform:"scale(1)"}
+        logo_scale:{opacity:1}
       })
 
   }
 
   handleHamburgerMouseEnter(){
-    console.log("hamburger mouse enter");
+
 
     if(this.state.visibility == 'visible'){
 
@@ -154,7 +154,7 @@ class Menu extends Component {
   }
 
   handleHamburgerMouseLeave(){
-        console.log("hamburger mouse leave")
+
         if(this.state.visibility == 'hidden'){
           this.setState({
 

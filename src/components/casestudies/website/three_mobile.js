@@ -33,28 +33,39 @@ class ThreeMobile extends Component {
     return <div><img src={img} /></div>
 
   }
+  getAnimationStyle(id){
 
+
+    if(this.props.image_items[id-1].animate === "yes"){
+      return `image animate_${id}`;
+
+    } else {
+      return "image";
+    }
+
+  }
 
 
   render() {
+
 
 
           let img_1 = (this.props.image_items[0] != undefined) ? this.props.image_items[0].image.url : "";
           let img_2 = (this.props.image_items[1] != undefined) ? this.props.image_items[1].image.url : "";
           let img_3 = (this.props.image_items[2] != undefined) ? this.props.image_items[2].image.url : "";
 
+          let height_rounding = 0;
+
+        //  let img_1_ar = this.props.image_items[0].image.dimensions.width / (this.props.image_items[0].image.dimensions.height-height_rounding);
+
+let img_1_ar = 640 / (1280-height_rounding);
 
 
-          let img_1_ar = this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height;
+        //  let img_2_ar = this.props.image_items[1].image.dimensions.width / (this.props.image_items[1].image.dimensions.height-height_rounding);
+let img_2_ar = 640 / (1280-height_rounding);
+            //let img_3_ar = this.props.image_items[2].image.dimensions.width / (this.props.image_items[2].image.dimensions.height-height_rounding);
 
-
-
-
-          let img_2_ar = this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height;
-
-            let img_3_ar = this.props.image_items[2].image.dimensions.width / this.props.image_items[2].image.dimensions.height;
-
-
+let img_3_ar = 640 / (1280-height_rounding);
 
 
           let bg_image_1 ={
@@ -76,6 +87,7 @@ class ThreeMobile extends Component {
             backgroundImage: "url(" + img_3 + ")",
 
 
+
           }
 
 
@@ -91,13 +103,16 @@ class ThreeMobile extends Component {
             border:'0px solid red',
             'paddingTop': 100/img_2_ar+'%',
 
+
           }
 
           const bg_image_3_height = {
-            border:'0px solid red',
-            'paddingTop': 100/img_3_ar+'%',
+                border:'0px solid red',
+            'paddingTop': 100/img_3_ar+'%'
 
           }
+
+
 
 
 
@@ -112,17 +127,17 @@ class ThreeMobile extends Component {
 
                   <div className="row">
 
-                                      <div ref={el => this.middle_image = el}  className="col-4" style={color} >
+                                      <div  className="col-4" style={color} >
 
                                         <div className="phone-top">
                                             <img src={PhoneTop}/>
                                         </div>
-                                        <div className="phone-frame">
-                                          <div className="large-image phone-screen" style={bg_image_1_height}>
-                                                <div className="image" style={bg_image_1}></div>
+                                          <div className="phone-frame">
+                                                <div className="large-image phone-screen" style={bg_image_1_height}>
+                                                    <div className={this.getAnimationStyle(1)} style={bg_image_1}></div>
+                                                </div>
+                                            </div>
 
-                                            </div>
-                                            </div>
                                             <div className="phone-bottom"><img src={PhoneBottom}/></div>
                                       </div>
 
@@ -130,22 +145,22 @@ class ThreeMobile extends Component {
 
 
 
-                    <div ref={el => this.first_image = el} className="col-4" style={color} >
+                    <div  className="col-4" style={color} >
 
                       <div className="phone-top">
                           <img src={PhoneTop}/>
                       </div>
-                    <div className="phone-frame">
-                      <div className="phone">
-                            <div className="large-image phone-screen" style={bg_image_2_height}>
-                                <div className="image" style={bg_image_2}></div>
-                              </div>
 
+                      <div className="phone-frame">
+                            <div className="large-image phone-screen" style={bg_image_2_height}>
+                                <div className={this.getAnimationStyle(2)} style={bg_image_2}></div>
+                            </div>
                         </div>
-                      </div>
 
                       <div className="phone-bottom"><img src={PhoneBottom}/></div>
-                          </div>
+
+
+                </div>
 
 
 
@@ -155,16 +170,16 @@ class ThreeMobile extends Component {
 
 
 
-                    <div ref={el => this.last_image = el}  className="col-4" style={color}>
+                    <div   className="col-4" style={color}>
                       <div className="phone-top">
                           <img src={PhoneTop}/>
                       </div>
                           <div className="phone-frame">
-                      <div className="phone">
+
                         <div className="large-image phone-screen" style={bg_image_3_height}>
-                            <div className="image" style={bg_image_3}></div>
+                            <div className={this.getAnimationStyle(3)} style={bg_image_3}></div>
                        </div>
-                      </div>
+
 
                     </div>
                       <div className="phone-bottom"><img src={PhoneBottom}/></div>

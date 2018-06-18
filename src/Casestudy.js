@@ -15,7 +15,6 @@ import ImageGrid from './components/casestudies/ImageGrid';
 import Menu from './components/_globals/Menu.js';
 import Research from './components/casestudies/Research';
 import Website from './components/casestudies/Website';
-import Loading from './components/_globals/Loading';
 import ProjectNav from './components/casestudies/ProjectNav';
 
 // Declare your component
@@ -76,11 +75,22 @@ export default class Casestudy extends React.Component {
 
       const current_project = this.props.match.params.uid;
 
-      console.log(current_project)
+
       const subtitle = this.state.doc.data.subtitle[0].text;
       const title = this.state.doc.data.title[0].text;
       const hero_image = this.state.doc.data.hero_image.url;
       const ui_color = this.state.doc.data.tomorrow_logo_color != null ? this.state.doc.data.tomorrow_logo_color : "#ffffff";
+
+    //  console.log(this.state.doc.data.area_of_expertise)
+      const areas_of_expertise = [];
+
+      for(var i=0; i<this.state.doc.data.area_of_expertise.length;i++){
+
+      //  console.log(this.state.doc.data.area_of_expertise[i].area)
+        areas_of_expertise.push(this.state.doc.data.area_of_expertise[i].area);
+
+      }
+
 
       document.title = "Tomorrow Partners | " + title;
 
@@ -92,8 +102,7 @@ export default class Casestudy extends React.Component {
 
         o.slice_type = slice_type;
 
-      //  console.log(o.slice_type);
-      //  console.log(this.state.doc.data.body[i])
+  
 
         if(o.slice_type == "research"){
 
@@ -181,7 +190,7 @@ export default class Casestudy extends React.Component {
 
 
 
-              console.log(o.website_frame);
+              //console.log(o.website_frame);
 
             }
 
@@ -288,7 +297,7 @@ export default class Casestudy extends React.Component {
           </div>
       </div>
 
-      <ProjectNav current_project={current_project} prismicCtx={this.props.prismicCtx} />
+      <ProjectNav areas_of_expertise={areas_of_expertise} current_project={current_project} prismicCtx={this.props.prismicCtx} />
 
 
 

@@ -7,8 +7,8 @@ import BrowserTopFrame from '../../_globals/Browser_top_frame.js';
 class ThreeDesktops extends Component {
   constructor(props){
     super(props);
-    let opacity_off = 1;
-    let opacity_on = 1;
+    //let opacity_off = 1;
+    //let opacity_on = 1;
     this.state = {
       value: null,
 
@@ -153,14 +153,14 @@ this.setState({
 
 
 
-          let img_1_ar = this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height;
+          let img_1_ar = Math.round(this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height);
 
 
 
 
-          let img_2_ar = this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height;
+          let img_2_ar = Math.round(this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height);
 
-            let img_3_ar = this.props.image_items[2].image.dimensions.width / this.props.image_items[2].image.dimensions.height;
+            let img_3_ar = Math.round(this.props.image_items[2].image.dimensions.width / this.props.image_items[2].image.dimensions.height);
 
 
 
@@ -213,7 +213,7 @@ this.setState({
 
           return (
 
-            <div className="component-margin three-desktops" >
+            <div className="component-margin three-desktops">
 
                 <Reveal effect="fadeInUpCustom">
               <div className="all-images-wrapper" style={this.state.full_height}>
@@ -221,6 +221,7 @@ this.setState({
                   <div className="row no-gutters">
 
                     <div ref={el => this.first_image = el} className="col-7 browser" style={this.state.browser_2_style} onClick={() => this.bring_to_front(2)} onMouseOver={() => this.bring_to_front(2)}>
+                          {BrowserTopFrame}
                             <div className="large-image" style={bg_image_2_height}>
                                 <div className="image" style={bg_image_2}></div>
                                 <div className="cover" style={this.state.bg_image_2_cover}></div>
@@ -230,6 +231,7 @@ this.setState({
 
 
                     <div ref={el => this.middle_image = el}  className="col-7 offset-2 layered-1  " style={this.state.browser_1_style} onClick={() => this.bring_to_front(1)} onMouseOver={() => this.bring_to_front(1)}>
+                        {BrowserTopFrame}
                         <div className="large-image" style={bg_image_1_height}>
                               <div className="image" style={bg_image_1}></div>
                               <div className="cover" style={this.state.bg_image_1_cover}></div>
@@ -242,6 +244,7 @@ this.setState({
 
 
                     <div ref={el => this.last_image = el}  className="col-7 layered-2" style={this.state.browser_3_style} onClick={() => this.bring_to_front(3)} onMouseOver={() => this.bring_to_front(3)}>
+                        {BrowserTopFrame}
                       <div className="large-image" style={bg_image_3_height}>
                             <div className="image" style={bg_image_3}></div>
                             <div className="cover" style={this.state.bg_image_3_cover}></div>

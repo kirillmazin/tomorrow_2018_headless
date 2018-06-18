@@ -24,27 +24,158 @@
 
 .phone-screen{
     overflow: hidden;
-        border-radius:10px;
+    border-radius:6px;
 
+    @include media-breakpoint-up(sm) {
 
+      border-radius:10px;
+
+    }
+
+    @include media-breakpoint-up(md) {
+
+      border-radius:12px;
+      border:1px solid red;
+
+    }
 
     @include media-breakpoint-up(lg) {
 
       border-radius:20px;
+
     }
 
 
 }
 
+@keyframes mobileanimation_1{
+  0% {
+
+    background-position: 0% 0%;
+
+    }
+    10% {
+
+      background-position: 0% 0%;
+
+      }
+
+
+      40%{
+        background-position: 0% 50%;
+
+      }
+
+      50%{
+        background-position: 0% 50%;
+
+      }
+
+      90% {
+        background-position: 0% 100%;
+
+
+      }
+  100% {
+    background-position: 0% 100%;
+
+
+  }
+
+}
+.animate_1{
+  animation-name: mobileanimation_1;
+  animation-duration: 30s;
+
+   animation-direction: alternate;
+   animation-iteration-count: infinite;
+
+   animation-play-state: running;
+
+}
+
+.animate_2{
+  animation-name: mobileanimation_1;
+  animation-duration: 30s;
+  animation-delay: 20s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+}
+
+.animate_3{
+  animation-name: mobileanimation_1;
+  animation-duration: 30s;
+  animation-delay: 40s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+}
+
+.animate_desktop_mobile{
+  animation-name: desktopmobileanimation;
+  animation-duration: 30s;
+    animation-delay: 10s;
+   animation-direction: alternate;
+   animation-iteration-count: infinite;
+
+   animation-play-state: running;
+
+}
+
+@keyframes desktopmobileanimation{
+  0% {
+
+    background-position: 0% 0%;
+
+    }
+    10% {
+
+      background-position: 0% 0%;
+
+      }
+
+
+
+
+      90% {
+        background-position: 0% 100%;
+
+
+      }
+  100% {
+    background-position: 0% 100%;
+
+
+  }
+
+}
+
 .phone-frame{
+
     overflow: hidden;
     background-color: rgba(180,180,180,0.5);
-    border-left: 8px solid  rgba(180,180,180,0);
-    border-right: 8px solid rgba(180,180,180,0);
-    @include media-breakpoint-up(md) {
-      border-left: 10px solid  rgba(180,180,180,0);
-      border-right: 10px solid rgba(180,180,180,0);
+    border-left: 5px solid  rgba(180,180,180,0);
+    border-right: 5px solid rgba(180,180,180,0);
+
+
+    @include media-breakpoint-up(sm) {
+      background-color: rgba(180,180,180,0.5);
+      border-left: 6px solid  rgba(180,180,180,0);
+      border-right: 6px solid rgba(180,180,180,0);
      }
+    @include media-breakpoint-up(md) {
+      border-left: 7px solid  rgba(180,180,180,0);
+      border-right: 7px solid rgba(180,180,180,0);
+     }
+
+     @include media-breakpoint-up(lg) {
+       border-left: 10px solid  rgba(180,180,180,0);
+       border-right: 10px solid rgba(180,180,180,0);
+      }
+
 
 }
 
@@ -52,26 +183,43 @@
 .phone-top{
 
 
-  border:0px solid red;
-    border-radius:20px 20px 0 0;
+
+  border-radius:12px 12px 0 0;
   background-color: rgba(180,180,180,0.5);
+
+  @include media-breakpoint-up(sm) {
+      border-radius:15px 15px 0 0;
+  }
+
     @include media-breakpoint-up(md) {
-          border-radius:25px 25px 0 0;
+      border-radius:18px 18px 0 0;
     }
+
+    @include media-breakpoint-up(lg) {
+      border-radius:25px 25px 0 0;
+    }
+
   img{
     width:100%;
+
   }
 }
 
 .phone-bottom{
 
   border:0px solid red;
-  border-radius:0 0 20px 20px;
+  border-radius:0 0 12px 12px;
 
 
 
     background-color: rgba(180,180,180,0.5);
+    @include media-breakpoint-up(sm) {
+        border-radius:0 0 15px 15px;
+    }
 
+    @include media-breakpoint-up(md) {
+            border-radius:0 0 18px 18px;
+    }
 
     @include media-breakpoint-up(md) {
             border-radius:0 0 25px 25px;

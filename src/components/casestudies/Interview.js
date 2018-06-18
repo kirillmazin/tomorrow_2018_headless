@@ -54,7 +54,7 @@ class Interview extends Component {
             <div className="row no-gutters">
             <div className="col-12 col-lg-10 offset-lg-1">
                   <Reveal effect="fadeInUpCustom">
-                    <h2 className="section-title"><a href="">{this.props.interview_title}</a></h2>
+                    <h2 className="section-title"><i>{this.props.interview_title}</i></h2>
                 </Reveal>
             </div>
             </div>

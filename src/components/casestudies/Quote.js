@@ -7,7 +7,7 @@ import Reveal from 'react-reveal/Reveal'
  */
 class Quote extends Component {
   render() {
-    console.log(this.props.copy)
+  
 
     let attribution_title = (this.props.copy.attribution_title[0] != undefined) ? this.props.copy.attribution_title[0].text : "";
     let name = (this.props.copy.name[0] != undefined) ? this.props.copy.name[0].text : "";

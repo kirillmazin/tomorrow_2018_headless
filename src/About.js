@@ -8,7 +8,7 @@ import LargeParagraphTitle from './components/text/LargeParagraphTitle';
 
 import LargeTitle from './components/contact/LargeTitle';
 import Header from './components/casestudies/Header';
-import Process from './components/about/Process_new';
+import Process from './components/about/Process_responsive';
 
 
 
@@ -29,7 +29,7 @@ import Intro from './components/home/Intro';
 
 import scrollToComponent from 'react-scroll-to-component';
 import $ from 'jquery';
-
+import {Helmet} from "react-helmet";
 // Declare your component
 
 let cs_modules = [];
@@ -77,7 +77,7 @@ export default class About extends React.Component {
 
 
     //this.$header_color = $(this.header_color );
-    document.title = "Tomorrow Partners | About";
+  //  document.title = "Tomorrow Partners | About";
 
 
 
@@ -463,6 +463,14 @@ export default class About extends React.Component {
 
     return(
       <div>
+
+    <Helmet>
+        <title>Tomorrow Partners | About</title>
+        <meta name="description" content="We design with people, not for them. Get a window into our process." />
+    </Helmet>
+
+
+
 
           <div style={this.state.page_state}>
           <Menu ui_color={ui_color}/>

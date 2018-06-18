@@ -162,15 +162,14 @@ export default class Home extends React.Component {
 
           ui_color = root.tomorrow_logo_color != null ? root.tomorrow_logo_color : "#ffffff";
 
-          console.log("ROOT ")
-          console.log(root)
+
 
 
           hero_video = root.hero_video;
 
           video_embed = root.video_embed;
 
-          console.log(video_embed)
+        //  console.log(video_embed)
 
 
           video_overlay_still = root.video_still.url;

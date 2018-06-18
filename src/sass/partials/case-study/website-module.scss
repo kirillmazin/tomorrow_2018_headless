@@ -185,16 +185,13 @@ $margin-md: 40px;
 
 
   .large-image{
-
-
-    background-color: white !important;
+      background-color: white !important;
       margin:0;
       padding: 0;
       position: relative;
       padding-top: 100%;
 
     .image{
-
       position: absolute;
       top:0;
       left:0;
@@ -204,7 +201,6 @@ $margin-md: 40px;
       background-position:"center center";
       background-repeat:no-repeat;
     }
-
   }
 
   .cover {
@@ -218,19 +214,16 @@ $margin-md: 40px;
         background: rgba(255,255,255,.9);
         transition: all 1s;
     }
+
   .layered-0{
     border: 0px solid pink;
     position: absolute;
-
     margin-top:0;
-
-
     width:100%;
     height:auto;
   }
 
   .layered-1{
-
       position: absolute;
       margin-top:200px;
       zIndex:3;

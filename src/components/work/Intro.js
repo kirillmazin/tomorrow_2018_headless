@@ -20,17 +20,17 @@ class Tag extends Component {
 
 
 
-
-        <div className="col-12 col-md-10 no-gutters">
-          <div className="intro">
-      <Reveal effect="fadeInUpCustom">
-          <p style={intro_font_color}>{this.props.introtext}</p>
+        <div className="row no-gutters">
+        <div className="col-12 col-md-10">
+          <div className="intro" >
+            <Reveal effect="fadeInUpCustom">
+          <p  style={intro_font_color}>{this.props.introtext}</p>
          </Reveal>
 
        </div>
        </div>
 
-
+</div>
 
     );
   }
