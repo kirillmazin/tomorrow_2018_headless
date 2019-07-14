@@ -6616,17 +6616,21 @@ a.text-dark:hover, a.text-dark:focus {
 
 .phone-screen {
   overflow: hidden;
-  border-radius: 6px; }
+  border-radius: 6px;
+  border-radius: 0px; }
   @media (min-width: 576px) {
     .phone-screen {
-      border-radius: 10px; } }
+      border-radius: 10px;
+      border-radius: 0px; } }
   @media (min-width: 768px) {
     .phone-screen {
       border-radius: 12px;
-      border: 1px solid red; } }
+      border: 1px solid red;
+      border-radius: 0px; } }
   @media (min-width: 992px) {
     .phone-screen {
-      border-radius: 20px; } }
+      border-radius: 20px;
+      border-radius: 0px; } }
 
 @keyframes mobileanimation_1 {
   0% {
@@ -6734,7 +6738,7 @@ a.text-dark:hover, a.text-dark:focus {
 footer {
   margin-bottom: 15rem; }
   footer .phone {
-    margin: 0 0 0 -12px;
+    margin: 0 0 0 0;
     padding: 0; }
   footer .email {
     font-family: "Akkurat-Light";
@@ -6883,6 +6887,17 @@ body {
   @media (min-width: 992px) {
     .component-margin-recognition, .component-margin-clients {
       margin: 10rem 0 10rem 0;
+      margin-bottom: 18rem; } }
+
+.component-margin-jobs {
+  margin-bottom: 8rem;
+  margin-top: 0rem; }
+  @media (min-width: 768px) {
+    .component-margin-jobs {
+      margin-bottom: 12rem; } }
+  @media (min-width: 992px) {
+    .component-margin-jobs {
+      margin-top: -5rem;
       margin-bottom: 18rem; } }
 
 .case-study-hero {
@@ -8980,18 +8995,79 @@ h2.research-number {
       background-position: "center center";
       background-repeat: no-repeat; }
 
-.address {
-  border: 0px solid pink !important; }
-  .address h3 {
-    font-size: 2.8rem;
-    margin-bottom: 3.5rem; }
+.open-positions h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Akkurat-Bold";
+  margin: 0 0 3rem 0; }
+  @media (min-width: 576px) {
+    .open-positions h4 {
+      font-size: 2rem; } }
+  @media (min-width: 992px) {
+    .open-positions h4 {
+      font-size: 2rem; } }
+.open-positions h5 {
+  font-size: 1.8rem; }
+  @media (min-width: 576px) {
+    .open-positions h5 {
+      font-size: 2.4rem; } }
+  @media (min-width: 992px) {
+    .open-positions h5 {
+      font-size: 2.6rem; } }
+  .open-positions h5 a {
+    border-bottom: 1px solid #000;
+    background-repeat: no-repeat;
+    background-position: 0 19px;
+    background-size: 0% 100%;
+    color: #000;
+    text-decoration: none;
+    transition: all 500ms; }
+  .open-positions h5 a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #6B9ADB;
+    color: #6B9ADB; }
+
+.jobs {
+  width: 100%;
+  padding: 0 0 18rem 0; }
+  @media (min-width: 992px) {
+    .jobs {
+      padding: 0 0 10rem 0; } }
+  .jobs .jobs-header {
+    position: relative; }
+    .jobs .jobs-header h1 {
+      padding: 5rem 0 5rem 0;
+      margin: 0;
+      font-size: 2.7rem;
+      font-family: "Tiempos-Bold"; }
+      @media (min-width: 768px) {
+        .jobs .jobs-header h1 {
+          font-size: 4rem; } }
+      @media (min-width: 992px) {
+        .jobs .jobs-header h1 {
+          font-size: 4rem; } }
+      @media (min-width: 1200px) {
+        .jobs .jobs-header h1 {
+          font-size: 5rem;
+          padding: 20rem 0 20rem 0; } }
+  .jobs .job_title {
+    font-size: 2.6rem;
+    margin-top: 2rem; }
     @media (min-width: 768px) {
-      .address h3 {
-        font-size: 3rem; } }
+      .jobs .job_title {
+        margin-bottom: 0.7rem;
+        font-size: 2.3rem; } }
     @media (min-width: 992px) {
-      .address h3 {
-        font-size: 4.8rem; } }
-    .address h3 i {
+      .jobs .job_title {
+        font-size: 2.3rem;
+        margin-top: 10rem;
+        line-height: 1.2; } }
+    @media (min-width: 992px) {
+      .jobs .job_title {
+        font-size: 4rem;
+        line-height: 1.2;
+        padding-bottom: 5rem; } }
+    .jobs .job_title i {
       background-image: linear-gradient(90deg, #fff, #fff);
       text-decoration: none;
       color: #000;
@@ -9000,22 +9076,108 @@ h2.research-number {
       background-size: 100% 12px;
       transition: background-size 300ms; }
       @media (min-width: 576px) {
-        .address h3 i {
+        .jobs .job_title i {
           background-size: 100% 14px; } }
       @media (min-width: 992px) {
-        .address h3 i {
-          background-size: 100% 22px; } }
-  .address p {
-    border: 0px solid red;
-    font-size: 1.8rem;
-    font-family: "Akkurat-Light";
-    line-height: 130%;
-    padding: 0;
-    margin: 0; }
+        .jobs .job_title i {
+          background-size: 100% 20px; } }
+  .jobs .job_description {
+    font-size: 1.8rem; }
+    .jobs .job_description p {
+      margin: 2rem 0 2rem 0; }
+    .jobs .job_description h4 {
+      font-size: 1.8rem;
+      font-family: "Akkurat-Bold";
+      margin: 4rem 0 2rem 0; }
+    .jobs .job_description h5 {
+      font-size: 1.6rem;
+      font-family: "Akkurat-Bold";
+      margin: 4rem 0 2rem 0; }
+    .jobs .job_description strong {
+      margin: 4rem 0 4rem 0;
+      display: inline-block;
+      font-family: "Akkurat-Bold";
+      border: 1px solid green; }
+      .jobs .job_description strong p::before {
+        margin: 4rem 0 2rem 0; }
+    .jobs .job_description ul li {
+      margin: 2.5rem 0 2.5rem 2rem;
+      border: 0px solid red !important;
+      list-style: disc; }
+  .jobs .close-bios {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px 25px 0 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    align-self: center;
+    transition: all 500ms; }
+    @media (min-width: 992px) {
+      .jobs .close-bios {
+        margin: 45px 50px 50px 50px; } }
+    .jobs .close-bios .bottom-bar {
+      top: 10px;
+      margin-bottom: 0;
+      background-color: black; }
+    .jobs .close-bios .bar {
+      top: 10px;
+      position: absolute;
+      height: 2px;
+      background-color: black;
+      width: 100%;
+      transition: all 500ms; }
+  .jobs a {
+    color: black;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    transition: all 300ms; }
+  .jobs a:hover {
+    color: #6B9ADB;
+    border-bottom: 1px solid #6B9ADB; }
+
+.address h3 {
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem; }
   @media (min-width: 768px) {
+    .address h3 {
+      font-size: 3rem; } }
+  @media (min-width: 992px) {
+    .address h3 {
+      font-size: 4.8rem; } }
+  .address h3 i {
+    background-image: linear-gradient(90deg, #fff, #fff);
+    text-decoration: none;
+    color: #000;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 12px;
+    transition: background-size 300ms; }
+    @media (min-width: 576px) {
+      .address h3 i {
+        background-size: 100% 14px; } }
+    @media (min-width: 992px) {
+      .address h3 i {
+        background-size: 100% 22px; } }
+.address p {
+  border: 0px solid red;
+  font-size: 1.8rem;
+  font-family: "Akkurat-Light";
+  line-height: 130%;
+  padding: 0;
+  margin: 0; }
+@media (min-width: 576px) {
+  .address {
+    margin-bottom: 3rem; } }
+@media (min-width: 768px) {
+  .address {
+    margin-bottom: 5rem; }
     .address p {
       font-size: 2.4rem; } }
-  @media (min-width: 992px) {
+@media (min-width: 992px) {
+  .address {
+    margin-bottom: 12rem; }
     .address p {
       font-size: 2.2rem; } }
 
@@ -9046,11 +9208,11 @@ a:hover.button {
 
 .blue {
   border: 2px solid #6B9ADB !important;
-  color: #6B9ADB; }
+  color: #6B9ADB !important; }
 
 .blue:hover {
   background-color: #6B9ADB !important;
-  color: white; }
+  color: white !important; }
 
 .hero-image {
   color: white;

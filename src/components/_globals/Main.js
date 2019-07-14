@@ -14,7 +14,7 @@ import About from '../../About';
 import Person from '../../Person';
 import Work from '../../Work';
 import Home from '../../Home';
-
+import Job from '../../Job';
 
 
 const Main = (props) => (
@@ -29,6 +29,7 @@ const Main = (props) => (
 
       <Route exact path="/work/" render={routeProps => <Work {...routeProps} prismicCtx={props.prismicCtx} />} />
       <Route exact path="/contact/" render={routeProps => <Contact {...routeProps} prismicCtx={props.prismicCtx} />} />
+      <Route exact path="/contact/:uid" render={routeProps => <Job {...routeProps} prismicCtx={props.prismicCtx} />} />
         <Route exact path="/about/" render={routeProps => <About {...routeProps} prismicCtx={props.prismicCtx} />} />
         <Route exact path="/about/:people" render={routeProps => <About {...routeProps} prismicCtx={props.prismicCtx} />} />
 

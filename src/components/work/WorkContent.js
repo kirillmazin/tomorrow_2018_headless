@@ -318,7 +318,7 @@ class WorkContent extends Component {
               <div className="container-fluid header-color" ref={el => this.header_color = el}>
 
                     <div className="col-12 col-lg-10 offset-lg-1">
-
+                      
                       <Intro className="intro" introtext={mytext} intro_font_color={this.props.intro_font_color} />
                       <Filters all_filters={this.props.all_filters} filterLabel={this.props.filterLabel} filterBy={this.props.filterBy} onMenuExpand={(value) => this.onMenuExpand(value)} onClick={(value) => this.handleTagClick(value)}/>
 

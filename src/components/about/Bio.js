@@ -5,7 +5,7 @@ import Reveal from 'react-reveal/Reveal';
 class Bio extends Component {
 
   render(props) {
-  
+
     const style = {
 
         backgroundImage: "url(" + this.props.image + ")"

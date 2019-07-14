@@ -134,14 +134,15 @@ this.setState({
           let img_2 = (this.props.image_items[1] != undefined) ? this.props.image_items[1].image.url : "";
 
 
+          let perc_visible_1 = (this.props.image_items[0].percentage_visible != null) ? this.props.image_items[0].percentage_visible : 100;
+          let perc_visible_2 = (this.props.image_items[1].percentage_visible != null) ? this.props.image_items[1].percentage_visible : 100;
 
+          let img_1_ar = this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height;
 
-          let img_1_ar = Math.round(this.props.image_items[0].image.dimensions.width / this.props.image_items[0].image.dimensions.height);
+         
+     
 
-
-
-
-          let img_2_ar = Math.round(this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height);
+          let img_2_ar = this.props.image_items[1].image.dimensions.width / this.props.image_items[1].image.dimensions.height;
 
 
 
@@ -163,17 +164,17 @@ this.setState({
 
 
 
-
+          console.log("......percentage " + img_1_ar);
 
           const bg_image_1_height = {
 
-            'paddingTop': 100/img_1_ar+'%',
+            'paddingTop': 100/img_1_ar*(perc_visible_1/100)+'%',
              display:'block'
           }
 
           const bg_image_2_height = {
 
-            'paddingTop': 100/img_2_ar+'%',
+            'paddingTop': 100/img_2_ar*(perc_visible_2/100)+'%',
              display:'block'
           }
 

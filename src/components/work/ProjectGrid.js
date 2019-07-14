@@ -34,13 +34,15 @@ class ProjectGrid extends Component {
 
 
       for(let l=0;l<all_projects.length;l++){
-
-
+            
+            
+            
             for(let m=0;m<all_projects[l].slug.length;m++){
-                // remove items that have already been featured
+                
 
+                // remove items that have already been featured
                 if(slug == all_projects[l].slug[m]){
-                    projects_to_remove.push(l)
+                    projects_to_remove.push(l);
                     if(all_projects.length > 0) {
 
                   }
@@ -56,6 +58,15 @@ class ProjectGrid extends Component {
 
     }
 
+    for(let i=0;i<all_projects.length;i++){
+        // remove projects that need to be hidden
+
+        if(all_projects[i].hide_on_work_pages === 'Yes'){
+         
+          projects_to_remove.push(i);
+        }
+
+    }
 
       function sortNumber(a,b) {
           return a - b;
@@ -71,6 +82,8 @@ class ProjectGrid extends Component {
         all_projects.splice(projects_to_remove[i]-i,1);
 
     }
+
+    //console.log("Number of projects " + all_projects.length);
 
 
 

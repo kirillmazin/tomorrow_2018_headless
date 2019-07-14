@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
-
-
 import Arrow from '../../imgs/ui/arrow-white.svg';
+
+
 /**
  * This is a quote component used on the case study page
  */
@@ -86,16 +86,18 @@ class Tag extends Component {
 
 
 
-      <div className="intro-categories col-lg-10 offset-lg-1 "  onMouseEnter={()=> this.onMouseEnter()} onMouseLeave={()=> this.onMouseLeave()}>
+      <div className="intro-categories col-lg-10 offset-lg-1 "  style={{border:"0px solid red"}} onMouseEnter={()=> this.onMouseEnter()} onMouseLeave={()=> this.onMouseLeave()}>
 
 
-          <Reveal effect="fadeInUpCustom">
+
                     <div className="intro-category" style={this.state.line_style}>
 
-                      <div className="row no-gutters " >
+                      <div className="row">
 
-
-
+                     
+                      
+                      
+                      <Reveal effect="fadeInUp">
                           <div className="categories-copy col-sm-6 col-md-7 col-lg-8 col-xl-8">
                               <p className="category">{this.props.copy}</p>
                               <p className="category-description" style={this.state.description_style}>{this.props.description}</p>
@@ -108,19 +110,21 @@ class Tag extends Component {
                             </div>
                         </div>
 
-
+                       
+                       
+                        </Reveal>
                       </div>
-
+                      
                   </div>
 
-
-                  </Reveal>
+                 
+                 
     </div>
 
-
+  
 
     );
   }
 }
-/** @component */
+
 export default Tag;

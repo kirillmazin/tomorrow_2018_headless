@@ -7,6 +7,7 @@ import LargeParagraphTitle from './components/text/LargeParagraphTitle';
 import Address from './components/contact/Address';
 import Quote from './components/casestudies/Quote';
 import LargeTitle from './components/contact/LargeTitle';
+import JobPostings from './components/contact/JobPostings';
 import Header from './components/casestudies/Header';
 import Whatwedid from './components/casestudies/Whatwedid';
 
@@ -166,7 +167,7 @@ handleMarkerClick(){
         o.slice_type = slice_type;
 
 
-
+              console.log(o.slice_type);
 
 
 
@@ -177,6 +178,26 @@ handleMarkerClick(){
             o.image_width =  root.body[i].primary.image.dimensions.width;
             o.image_height = root.body[i].primary.image.dimensions.height;
             o.aspect_ratio = o.image_width / o.image_height ;
+        }
+
+        if(o.slice_type == "open_positions"){
+
+
+
+                o.open_positions = [];
+
+
+                for(let l=0;l<root.body[i].items.length;l++){
+                  let job = {};
+
+                    job.title = root.body[i].items[l].job_title[0].text;
+                    job.slug = root.body[i].items[l].job.slug;
+
+                    o.open_positions.push(job);
+
+                }
+
+
         }
 
 
@@ -254,6 +275,10 @@ handleMarkerClick(){
 
         }
 
+        if(cs_modules[i].slice_type == "open_positions"){
+      
+          to_render.push(<JobPostings open_positions={cs_modules[i].open_positions}/>)
+        }
 
 
           if(cs_modules[i].slice_type  == "address_"){
@@ -272,25 +297,7 @@ handleMarkerClick(){
           if(cs_modules[i].slice_type == "map"){
 
 
-            to_render.push(
-
-  <Reveal effect="fadeInUpCustom">
-              <div className="contact-map" >
-              <MapSimple
-    isMarkerShown
-     onMarkerClick={this.handleMarkerClick}
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI2Z86ugShB77GZ4JOJfYTQYiPGBe41SY&v=3.exp&libraries=geometry,drawing,places"
-    loadingElement={<div style={{ height: `100%` }} />}
-    containerElement={<div style={{ height: `500px` }} />}
-    mapElement={<div style={{ height: `100%` }} />}
-  />
-
-</div>
-
-</Reveal>
-
-
-  )
+          
 
           }
 

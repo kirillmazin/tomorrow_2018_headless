@@ -119,11 +119,11 @@ export default class Work extends React.Component {
 
             project_data.slug = this.state.doc.results[i].slugs;
             project_data.title = this.state.doc.results[i].data.title[0].text;
+            
 
+            
 
-
-
-
+            project_data.hide_on_work_pages = this.state.doc.results[i].data.hide_on_work_pages != null ? this.state.doc.results[i].data.hide_on_work_pages : 'No';
             project_data.subtitle =  this.state.doc.results[i].data.subtitle[0] != undefined ? this.state.doc.results[i].data.subtitle[0].text : '';
             project_data.hero_image = this.state.doc.results[i].data.hero_image.url;
 

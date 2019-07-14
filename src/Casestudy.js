@@ -116,6 +116,8 @@ export default class Casestudy extends React.Component {
           o.layout_type = this.state.doc.data.body[i].primary.type;
           o.image_items = this.state.doc.data.body[i].items;
 
+ 
+
 
         }
 
@@ -291,6 +293,7 @@ export default class Casestudy extends React.Component {
           <div className="container-fluid">
             <div className="col-12 col-md-10 offset-md-1 no-gutters">
               <div className="case-study-margin-wrapper">
+           
                 {to_render}
               </div>
             </div>

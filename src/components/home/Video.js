@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import Reveal from 'react-reveal/Reveal';
-import Img_logo from '../../imgs/ui/tomorrow-logo.svg';
 import $ from 'jquery';
-import hero_video_mp4 from './3_landing_page_video.mp4';
-import hero_video_webm from './3_landing_page_video.webm';
-import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
+
+import { BrowserView, MobileView, isBrowser, isMobile,isTablet } from "react-device-detect";
 
 class Video extends Component {
 
   constructor(props){
     super(props);
 
-
-
+  
 
     this.state = {
         visibility: this.props.visibility,
@@ -190,8 +187,8 @@ this.$el2 = $(this.el2);
       backgroundSize:'cover',
       backgroundPosition:'center'}
 
-
-
+     
+ 
     return (
 
 
@@ -200,12 +197,22 @@ this.$el2 = $(this.el2);
           <div  ref={el2 => this.el2 = el2}  className="image-container" style={image}>
 
           </div>
-
+          
           <BrowserView device={isBrowser}>
             <div style={this.state.video_style} className="video-container">
-                  <video playsinline="true" autoPlay muted loop className="embedded-video" height="1080" width="1920">
-                        {  <source src={hero_video_webm} type="video/webm"/>}
-                          <source src={hero_video_mp4} type="video/mp4"/>
+                  <video playsinline="true" playsinline autoPlay muted loop className="embedded-video" height="1080" width="1920">
+                          <source src={this.props.video_hero_webm} type="video/webm"/>
+                          <source src={this.props.video_hero_mp4} type="video/mp4"/>
+
+                  </video>
+                </div>
+          </BrowserView>
+
+          <BrowserView device={isTablet}>
+            <div style={this.state.video_style} className="video-container">
+                  <video playsinline="true" playsinline autoPlay muted loop className="embedded-video" height="1080" width="1920">
+                         <source src={this.props.video_hero_hero_webm} type="video/webm"/>
+                          <source src={this.props.video_hero_mp4} type="video/mp4"/>
 
                   </video>
                 </div>

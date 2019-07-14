@@ -40,42 +40,46 @@ class Footer extends Component {
 
 
 
-
+      <Reveal effect="fadeInUpCustom">
       <footer className="component-margin">
 
-        <Reveal effect="fadeInUpCustom">
+       
           <h4 className="row no-gutters">
 
             Let’s imagine tomorrow together.
 
             </h4>
-        </Reveal>
+   
         <div className="row no-gutters">
-          <Reveal effect="fadeInUpCustom">
-        <address className="col-md-4 col-lg-3">
-
-                2332 Fifth Street<br/>
-                Berkeley CA 94710<br/>
+        
+        <address className="col-md-5 col-lg-4">
+        2625 Alcatraz Avenue, Suite 340<br/>
+                Berkeley, CA 94705<br/>
                 USA
-
+              
         </address>
+
+      
+
+        
         <address className="col-md-5 col-lg-3">
+       
             <div className="phone">+1 510 644 2332</div>
             <div className="email"><a href="mailto:hello@tomorrowpartners.com" style={this.state.style} onMouseOver={() => this.handleMouseOver()}>hello@tomorrowpartners.com</a></div>
 
-
+          
         </address>
+       
             <div className="col-md-3 col-lg-6 social-media">
 
-                  <a href="https://twitter.com/TmrrwPartners"><img src="/imgs/case-studies/yerba-buena/icon-twitter.svg" /></a>
-                  <a href="https://www.instagram.com/tomorrowpartners/"><img src="/imgs/case-studies/yerba-buena/icon-instagram.svg" /></a>
+              
 
             </div>
-            </Reveal>
+          
         </div>
-
+        
       </footer>
-
+      </Reveal>
 
     );
   }

@@ -105,6 +105,34 @@ body{
       margin: $component-margin-lg;
       margin-bottom: 18rem;
 
+
+   }
+  @include media-breakpoint-up(xl) {
+   }
+
+}
+
+.component-margin-jobs{
+
+
+  margin-bottom: 8rem;
+  margin-top:0rem;
+  @include media-breakpoint-up(sm) {
+
+   }
+
+  @include media-breakpoint-up(md) {
+
+      margin-bottom: 12rem;
+    }
+
+
+
+
+  @include media-breakpoint-up(lg) {
+        margin-top:-5rem;
+      margin-bottom: 18rem;
+
    }
   @include media-breakpoint-up(xl) {
    }

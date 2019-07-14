@@ -16,7 +16,6 @@ class Intro extends Component {
      super(props);
       this.state = {
           intro_style: {
-
             backgroundColor: "#ffffff"
           }
 
@@ -42,7 +41,7 @@ class Intro extends Component {
 
 
                 <a  href={"/work/"+links[i]}>
-                    <IntroTag copy={links[i]} image={images[i]} description={descriptions[i]}   isActive={this.state.active_item} id={i}   />
+                    <IntroTag copy={links[i]} image={images[i]} description={descriptions[i]}  isActive={this.state.active_item} id={i}   />
                 </a>
 
 
@@ -77,19 +76,18 @@ class Intro extends Component {
 
 
             <Reveal effect="fadeInUpCustom">
-
+             
                     <IntroCopy copy={this.props.copy}/>
-
-        </Reveal>
-
+            </Reveal>
 
 
 
 
 
+            <div>
 
                     {this.getLinks(this.props.links, this.props.images, this.props.descriptions)}
-
+                    </div>
 
 
 

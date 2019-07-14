@@ -131,6 +131,8 @@ export default class Home extends React.Component {
         let video_overlay_width;
         let video_overlay_a_r;
         let video_embed;
+        let video_hero_mp4;
+        let video_hero_webm;
       for(let i=0;i<this.state.doc.results.length;i++){
 
 
@@ -169,16 +171,16 @@ export default class Home extends React.Component {
 
           video_embed = root.video_embed;
 
-        //  console.log(video_embed)
-
+         
 
           video_overlay_still = root.video_still.url;
           video_overlay_height = root.video_still.dimensions.height;
           video_overlay_width = root.video_still.dimensions.width;
           video_overlay_a_r =  root.video_still.dimensions.width/root.video_still.dimensions.height;
+          video_hero_mp4 = root.hero_video_mp4.url;
+          video_hero_webm = root.hero_video_webm.url;
 
-
-
+     
 
 
           for(let i=0;i<root.video_overlay_copy.length;i++){
@@ -277,8 +279,7 @@ export default class Home extends React.Component {
     }
 
         if(o.slice_type == "case_study_highlight"){
-          //console.log("PRIMARY");
-            //console.log(root.body[i].primary.section_link_label[0].text);
+
 
 
             o.copy = PrismicReact.RichText.render(root.body[i].primary.copy, this.props.prismicCtx.linkResolver);
@@ -340,12 +341,11 @@ export default class Home extends React.Component {
         if(  o.slice_type == "large_paragraph"){
 
           o.copy  = PrismicReact.RichText.render(root.body[i].primary.paragraph, this.props.prismicCtx.linkResolver);
-        //  o.copy = root.body[i].primary.paragraph[0].text;
+       
         }
 
           if( o.slice_type == "large_title"){
-                //o.copy = root.body[i].primary.paragraph[0].text;
-                //console.log(root.body[i].primary.title[0].text);
+              
                 o.copy = root.body[i].primary.title[0].text;
           }
 
@@ -365,6 +365,7 @@ export default class Home extends React.Component {
     let to_render = [];
     for(var i=0;i<cs_modules.length;i++){
       if(cs_modules[i].slice_type  == "intro"){
+       
         to_render.push(<Intro descriptions={cs_modules[i].descriptions} copy={cs_modules[i].copy} images={cs_modules[i].images} links={cs_modules[i].links}/>)
 
 
@@ -383,15 +384,17 @@ export default class Home extends React.Component {
       }
 
         if(cs_modules[i].slice_type  == "case_study_highlight"){
+       
           to_render.push(<Highlight section_link={cs_modules[i].section_link} section_label={cs_modules[i].section_label} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
 
 
-
+         
         }
 
 
 
         if(cs_modules[i].slice_type  == "government"){
+          
           to_render.push(<HighlightGovernment section_label={cs_modules[i].section_label} to_display={cs_modules[i].uids} projects={all_case_studies} section_link={cs_modules[i].section_link} copy={cs_modules[i].copy} alignment={cs_modules[i].alignment} images={cs_modules[i].images}/>)
 
 
@@ -418,7 +421,7 @@ export default class Home extends React.Component {
           <Menu ui_color={ui_color}/>
 
           <div>
-            <Video video_file={video_file} video_embed={video_embed} still_image={video_overlay_still} intro_font_color={'black'} video_overlay_copy={video_overlay_copy} video_overlay_still={video_overlay_still} video={hero_video}/>
+            <Video video_hero_webm={video_hero_webm} video_hero_mp4={video_hero_mp4} video_file={video_file} video_embed={video_embed} still_image={video_overlay_still} intro_font_color={'black'} video_overlay_copy={video_overlay_copy} video_overlay_still={video_overlay_still} video={hero_video}/>
             {to_render}
 
           </div>
